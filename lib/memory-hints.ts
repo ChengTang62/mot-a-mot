@@ -1,7 +1,7 @@
-// Generated from reviewed cues and sourced word histories.
-// Null means no approved mnemonic; never replace it with pronunciation or a translation.
-export type MemoryHint = { kind: "english" | "association"; text: string; origin?: { text: string; sources: { label: string; url: string }[] } };
-export const memoryHints: Record<string, MemoryHint | null> = {
+// Generated from data/memory-hints.tsv and sourced word histories.
+// Playful cues are invented memory aids, not claims about word origins.
+export type MemoryHint = { kind: "english" | "association" | "playful"; text: string; origin?: { text: string; sources: { label: string; url: string }[] } };
+export const memoryHints: Record<string, MemoryHint> = {
   "fr-001": {
     "kind": "association",
     "text": "bon（好）＋ jour（日）：见面祝对方有个好日子。"
@@ -26,7 +26,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "pardon"
   },
-  "fr-007": null,
+  "fr-007": {
+    "kind": "playful",
+    "text": "想起游戏机 Wii：屏幕问“要开始吗？”，你按确认说 oui！把这个短词绑在“好，开始！”上。"
+  },
   "fr-008": {
     "kind": "english",
     "text": "no / non-"
@@ -63,8 +66,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "把 père 和英语 paternal（父亲的）联想在一起。"
   },
-  "fr-017": null,
-  "fr-018": null,
+  "fr-017": {
+    "kind": "playful",
+    "text": "sœur 中间的 œ 像两个字母挤着合照：两姐妹贴得太近，连字母都黏在一起了。"
+  },
+  "fr-018": {
+    "kind": "playful",
+    "text": "frère 和 brother 都带着两个 r：R 哥喊 R 弟，两兄弟一个也不能少。"
+  },
   "fr-019": {
     "kind": "english",
     "text": "infant（婴儿）；enfant 的范围更广，指孩子"
@@ -101,17 +110,26 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "联想英语 portal（入口）：穿过门进入房间。"
   },
-  "fr-028": null,
+  "fr-028": {
+    "kind": "playful",
+    "text": "抓住 fen，借 fence（围栏）搭桥：给围栏挖个洞装玻璃，硬把它改造成一扇窗。"
+  },
   "fr-029": {
     "kind": "english",
     "text": "table"
   },
   "fr-030": {
     "kind": "english",
-    "text": "chair；法语是 chaise，别把结尾写成 r"
+    "text": "chair（椅子）和 chaise 的 chai- 完全相同：看到前半，就能先认出坐的地方。"
   },
-  "fr-031": null,
-  "fr-032": null,
+  "fr-031": {
+    "kind": "playful",
+    "text": "lit 像 lie（躺）换了个尾巴；把 t 当床脚——能躺下的地方就是床。"
+  },
+  "fr-032": {
+    "kind": "playful",
+    "text": "把 clé 的 c 当钥匙圈、l 当钥匙杆：这串字母可以拎起来开门。"
+  },
   "fr-033": {
     "kind": "association",
     "text": "联想英语 library（图书馆）：里面装满 livres。"
@@ -188,7 +206,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "latte（拿铁）是加奶的咖啡；用熟悉的 latte 中的 lat- 去带出 lait（奶）。"
   },
-  "fr-042": null,
+  "fr-042": {
+    "kind": "playful",
+    "text": "pomme 里藏着 mm：咬一口苹果，嘴里只剩“mmm，真甜！”"
+  },
   "fr-043": {
     "kind": "association",
     "text": "fromage 里把 fro- 暂时调回 for-，就容易联想到 forme（形状、模具）。",
@@ -202,13 +223,22 @@ export const memoryHints: Record<string, MemoryHint | null> = {
       ]
     }
   },
-  "fr-044": null,
+  "fr-044": {
+    "kind": "playful",
+    "text": "œuf 的 œ 像两颗挨在一起的蛋，f 是伸过来煎蛋的锅铲。"
+  },
   "fr-045": {
     "kind": "english",
     "text": "rice；法语写 riz"
   },
-  "fr-046": null,
-  "fr-047": null,
+  "fr-046": {
+    "kind": "playful",
+    "text": "poison 是毒药，poisson 多一个 s 就成了鱼：吃之前数清楚，两个 s 才放心。"
+  },
+  "fr-047": {
+    "kind": "playful",
+    "text": "poulet 看着像 pull it（拉过来）：盯着鸡腿喊“pull it！给我拉过来！”"
+  },
   "fr-048": {
     "kind": "english",
     "text": "soup"
@@ -217,10 +247,13 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "联想英语城市名里的 -ville，如 Nashville。"
   },
-  "fr-050": null,
+  "fr-050": {
+    "kind": "playful",
+    "text": "rue 里有个 u，直接把它当 U 形街道：绕着这个 u 走一圈就到家。"
+  },
   "fr-051": {
-    "kind": "association",
-    "text": "magasin 是商店；英语 magazine 是杂志，别混。",
+    "kind": "playful",
+    "text": "magasin 跟 magazine（杂志）很像：杂志上看中的包，最后还是要进商店去买。",
     "origin": {
       "text": "magasin 经普罗旺斯语追溯到阿拉伯语 makhāzin，原意是“仓库”（复数）。英语 magazine 也借自法语 magasin，后来有了“杂志”的意思。商店和杂志竟有共同的词语来路。",
       "sources": [
@@ -244,7 +277,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
       ]
     }
   },
-  "fr-053": null,
+  "fr-053": {
+    "kind": "playful",
+    "text": "gare 像把 garage（车库）压短了：小汽车进 garage，大火车挤进 gare。"
+  },
   "fr-054": {
     "kind": "english",
     "text": "restaurant",
@@ -274,7 +310,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "museum"
   },
-  "fr-059": null,
+  "fr-059": {
+    "kind": "playful",
+    "text": "boulangerie 开头硬借“布朗”：布朗先生每天烤一屋子面包，他的店就是 boulangerie。"
+  },
   "fr-060": {
     "kind": "english",
     "text": "bank",
@@ -301,8 +340,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
       ]
     }
   },
-  "fr-062": null,
-  "fr-063": null,
+  "fr-062": {
+    "kind": "playful",
+    "text": "demain 借英语 main（主要的）开玩笑：“今天先不干，主要任务留到明天。”"
+  },
+  "fr-063": {
+    "kind": "playful",
+    "text": "hier 看着差一点就是 here（这里）：人还在这里，日历却已经翻过昨天。"
+  },
   "fr-064": {
     "kind": "association",
     "text": "main（手）＋ tenant（拿着）：词源原意是“手里拿着东西的这个时候”，后来变成“当下、现在”。",
@@ -320,24 +365,54 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "tout（全部）＋ jours（天）：把“每一天都这样”连起来，就是“总是、一直”。"
   },
-  "fr-066": null,
+  "fr-066": {
+    "kind": "playful",
+    "text": "jamais 开头是 jam（果酱）：“这罐过期十年了，我绝不吃！”把 jam 和“从不”锁在一起。"
+  },
   "fr-067": {
     "kind": "association",
     "text": "联想英语 journal：按天记录的日记。"
   },
-  "fr-068": null,
-  "fr-069": null,
+  "fr-068": {
+    "kind": "playful",
+    "text": "semaine 开头 se，借 seven（七）提醒自己：七天凑成一周，周末就到了。"
+  },
+  "fr-069": {
+    "kind": "playful",
+    "text": "mois 抓住 mo，借 month 的开头：日历每翻一页，就是一个 mois。"
+  },
   "fr-070": {
     "kind": "english",
     "text": "annual（每年的）"
   },
-  "fr-071": null,
-  "fr-072": null,
-  "fr-073": null,
-  "fr-074": null,
-  "fr-075": null,
-  "fr-076": null,
-  "fr-077": null,
+  "fr-071": {
+    "kind": "playful",
+    "text": "matin 和 morning 都以 m 起头：闹钟一响，先张嘴“mmm……”，早晨又来了。"
+  },
+  "fr-072": {
+    "kind": "playful",
+    "text": "soir 长得像 sore（酸痛的）：忙到浑身酸痛，抬头一看已经晚上。"
+  },
+  "fr-073": {
+    "kind": "playful",
+    "text": "être 中间的 ê 戴着小帽子，像一顶写着“我是……”的名牌：我是学生、我是老师，都先报身份。"
+  },
+  "fr-074": {
+    "kind": "playful",
+    "text": "avoir 里有 voir，硬借“我有”这个回声：柜子一开，“我有、我有，这个我也有！”"
+  },
+  "fr-075": {
+    "kind": "playful",
+    "text": "aller 抓住 all（全体）：“All！所有人跟我走！”箭头统一朝外，大家一起去。"
+  },
+  "fr-076": {
+    "kind": "playful",
+    "text": "venir 借“为你而来”记：朋友说“我为你来的”，你招手让他来这边。"
+  },
+  "fr-077": {
+    "kind": "playful",
+    "text": "faire 看着像 fair（展会）：别人都在逛，你被安排“去做一个展品”。fair 多个 e，轮到你做事。"
+  },
   "fr-078": {
     "kind": "english",
     "text": "dictate（口述）里的 dict- 可作“说”的线索；dire 是最日常的“说、告诉”。"
@@ -346,7 +421,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "parliament（议会）可作字形线索；parler 是日常的“说话”，两者都围绕言语交流。"
   },
-  "fr-080": null,
+  "fr-080": {
+    "kind": "playful",
+    "text": "écouter 里抠出 écoute，借 acoustic（声音的）那种耳机感：先把耳朵接上，认真听。"
+  },
   "fr-081": {
     "kind": "association",
     "text": "联想英语 regard（注视）；regarder 是主动看。"
@@ -359,13 +437,22 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "script（文字、脚本）提供“写”的线索；écrire 把这个动作表达为“写”。"
   },
-  "fr-084": null,
-  "fr-085": null,
+  "fr-084": {
+    "kind": "playful",
+    "text": "manger 只比 manager（经理）少一个 a：经理一到饭点就把工作放下，只顾着吃。"
+  },
+  "fr-085": {
+    "kind": "playful",
+    "text": "boire 看着能扯到 beer（啤酒）：碰杯后做的那个动作，就是“喝”。"
+  },
   "fr-086": {
     "kind": "association",
     "text": "联想英语 dormitory（宿舍）：睡觉的地方。"
   },
-  "fr-087": null,
+  "fr-087": {
+    "kind": "playful",
+    "text": "travailler 开头像 travel（旅行）：想攒够旅游钱？先回来工作！"
+  },
   "fr-088": {
     "kind": "association",
     "text": "prendre 是“拿、抓住”；apprendre 把“抓住”用于知识上，记为“把知识掌握住”，就是学习、学会。"
@@ -374,10 +461,22 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "comprehend"
   },
-  "fr-090": null,
-  "fr-091": null,
-  "fr-092": null,
-  "fr-093": null,
+  "fr-090": {
+    "kind": "playful",
+    "text": "acheter 借个中文梗：“啊，切！又买贵了。”一边懊恼，一边还是下了单。"
+  },
+  "fr-091": {
+    "kind": "playful",
+    "text": "chercher 里 cher 出现两次：丢了东西，左边找一遍，右边还要再找一遍。"
+  },
+  "fr-092": {
+    "kind": "playful",
+    "text": "trouver 开头像 true（真的）：“真的假的，居然找到了！”从 true 抓住发现时的惊喜。"
+  },
+  "fr-093": {
+    "kind": "playful",
+    "text": "ouvrir 中间的 v 像被掰开的门缝：手一推，v 越张越大，门打开了。"
+  },
   "fr-094": {
     "kind": "english",
     "text": "firm（牢固的）可作字形线索；fermer 是把门、店等“关上”，重点是关的动作。"
@@ -387,8 +486,8 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "amiable 是“友善的”，保留的 ami- 可帮助抓住 aimer 的“喜欢、喜爱”。"
   },
   "fr-096": {
-    "kind": "association",
-    "text": "attendre 是 wait，不是英语 attend（出席）。"
+    "kind": "playful",
+    "text": "attendre 像 attend（参加）：活动明明已经开始，我却还在门口排队等待。"
   },
   "fr-097": {
     "kind": "english",
@@ -398,13 +497,22 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "petite（娇小的）"
   },
-  "fr-099": null,
-  "fr-100": null,
+  "fr-099": {
+    "kind": "playful",
+    "text": "chaud 借“烧”：锅里烧得滋滋响，热得你拿着锅铲都想退三步。"
+  },
+  "fr-100": {
+    "kind": "playful",
+    "text": "froid 的 fro 像 frozen（冻住的）开头：冰箱里冻得只剩一个 fro，冷得说不完话。"
+  },
   "fr-101": {
     "kind": "english",
     "text": "new；也可想到英语里的 nouveau riche"
   },
-  "fr-102": null,
+  "fr-102": {
+    "kind": "playful",
+    "text": "vieux 抓住 vie，借 vintage（复古）开头的 vi：一件旧到能被夸“复古”的老外套。"
+  },
   "fr-103": {
     "kind": "english",
     "text": "facilitate 是“使事情更容易”；从它开头的 facil- 认出 facile：容易的。"
@@ -417,8 +525,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "rapid"
   },
-  "fr-106": null,
-  "fr-107": null,
+  "fr-106": {
+    "kind": "playful",
+    "text": "lent 跟 lent（借出）的英语拼写一样：东西借出去，对方还得慢得要命。"
+  },
+  "fr-107": {
+    "kind": "playful",
+    "text": "heureux 借 hero（英雄）的近形：救场成功的小英雄，抱着奖杯幸福得合不拢嘴。"
+  },
   "fr-108": {
     "kind": "english",
     "text": "fatigue（疲劳）"
@@ -435,14 +549,26 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "bus"
   },
-  "fr-112": null,
-  "fr-113": null,
-  "fr-114": null,
+  "fr-112": {
+    "kind": "playful",
+    "text": "voiture 里的 voi 借 voice（声音）：还没见到车，先听到它轰轰驶来。"
+  },
+  "fr-113": {
+    "kind": "playful",
+    "text": "vélo 四个字母，两头当车轮，中间当车架：这是把 bicycle 压缩成了一辆迷你自行车。"
+  },
+  "fr-114": {
+    "kind": "playful",
+    "text": "billet 开头像 bill（账单）：付完这一笔 bill，手里才拿到进站的票。"
+  },
   "fr-115": {
     "kind": "english",
     "text": "passport"
   },
-  "fr-116": null,
+  "fr-116": {
+    "kind": "playful",
+    "text": "valise 抓住 vali，借 valley（山谷）：去山谷旅行前，先把衣服塞进行李箱。"
+  },
   "fr-117": {
     "kind": "english",
     "text": "voyage"
@@ -459,9 +585,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "airport；aéro- 提示航空"
   },
-  "fr-121": null,
-  "fr-122": null,
-  "fr-123": null,
+  "fr-121": {
+    "kind": "playful",
+    "text": "réussir 偷看中间的 us：“我们 us 一起上，最后成功了！”把这个词挂在团队庆功照上。"
+  },
+  "fr-122": {
+    "kind": "playful",
+    "text": "échouer 里藏着 chou，硬借“出糗”：上台想露一手，结果出糗失败了。"
+  },
+  "fr-123": {
+    "kind": "playful",
+    "text": "améliorer 抓住 méli，借“美丽”：把旧房越改越美丽，就是在改善它。"
+  },
   "fr-124": {
     "kind": "english",
     "text": "develop"
@@ -474,7 +609,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "permit"
   },
-  "fr-127": null,
+  "fr-127": {
+    "kind": "playful",
+    "text": "empêcher 中间 pê 像一道带帽子的路障：你刚想往前走，就被拦住了。"
+  },
   "fr-128": {
     "kind": "english",
     "text": "propose"
@@ -515,7 +653,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "remark；先注意到，才作评论"
   },
-  "fr-138": null,
+  "fr-138": {
+    "kind": "playful",
+    "text": "constater 抓住 stat，借 status（状态）：先检查实际状态，再说“确认，确实如此”。"
+  },
   "fr-139": {
     "kind": "association",
     "text": "联想英语 resemble（相像），再记 sembler 是“似乎”。"
@@ -525,8 +666,8 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "venir 是来；把 devenir 联想为“来到一种新状态”。"
   },
   "fr-141": {
-    "kind": "association",
-    "text": "rester 是留下，别直接等同英语 rest（休息）。"
+    "kind": "playful",
+    "text": "rester 抓住 rest（休息）：大家都走了，只有你想再 rest 一会儿，选择留下。"
   },
   "fr-142": {
     "kind": "association",
@@ -560,7 +701,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "receive"
   },
-  "fr-150": null,
+  "fr-150": {
+    "kind": "playful",
+    "text": "envoyer 借 envelope（信封）的 en 开头：把信塞好，让它 voyage（去旅行）——寄出！"
+  },
   "fr-151": {
     "kind": "association",
     "text": "porter 是携带；apporter 朝这里带来。"
@@ -577,9 +721,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "render；另外记 rendre un livre 是还书"
   },
-  "fr-155": null,
-  "fr-156": null,
-  "fr-157": null,
+  "fr-155": {
+    "kind": "playful",
+    "text": "emprunter 开头 em，硬当“嗯……朋友”：不好意思地问朋友，能不能借我用一下？"
+  },
+  "fr-156": {
+    "kind": "playful",
+    "text": "prêter 开头 pr，借 present（礼物）：像送礼一样递出去，但要补一句“这是借你的，要还”。"
+  },
+  "fr-157": {
+    "kind": "playful",
+    "text": "louer 借“漏”：房子一漏水，房东赶紧来修——这屋是租来的。"
+  },
   "fr-158": {
     "kind": "english",
     "text": "reserve"
@@ -636,7 +789,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "compare"
   },
-  "fr-172": null,
+  "fr-172": {
+    "kind": "playful",
+    "text": "ajouter 里的 j 像往杯里伸的小勺：嫌糖不够？再加一勺。"
+  },
   "fr-173": {
     "kind": "association",
     "text": "re-（回、离开原处）＋ tirer（拉）：把原处的东西拉出来，取走。"
@@ -666,10 +822,13 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "gain；gagner 也可指赢比赛"
   },
   "fr-180": {
-    "kind": "association",
-    "text": "perdre 对应 lose，既能失去物品，也能输掉比赛；结尾 -dre 的 r 仍要读。"
+    "kind": "playful",
+    "text": "perdre 看开头 per，借 person（人）：地铁门一关，同行的 person 不见了——把人跟丢了！"
   },
-  "fr-181": null,
+  "fr-181": {
+    "kind": "playful",
+    "text": "manquer 开头像 man：“全队只差这个 man！”人没到，名额就缺着，比赛也错过了。"
+  },
   "fr-182": {
     "kind": "english",
     "text": "merit"
@@ -702,7 +861,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "recognize"
   },
-  "fr-190": null,
+  "fr-190": {
+    "kind": "playful",
+    "text": "oublier 开头像“哦，不！”：“哦不，我又忘带钥匙了！”让 oubl 跟懊恼绑在一起。"
+  },
   "fr-191": {
     "kind": "association",
     "text": "re-（再、回）＋ appeler（叫、打电话）：叫回来、再打电话，也能引申为提醒。"
@@ -711,12 +873,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "英语 souvenir 是纪念品；纪念品让你 se souvenir。"
   },
-  "fr-193": null,
+  "fr-193": {
+    "kind": "playful",
+    "text": "inquiéter 里能看见 quiet（安静）的影子：前面挡个 in，心里安静不下来，满脑子担心。"
+  },
   "fr-194": {
     "kind": "english",
     "text": "occupy；s'occuper de 是忙着照料某事"
   },
-  "fr-195": null,
+  "fr-195": {
+    "kind": "playful",
+    "text": "rendre 借英语 surrender（投降）的后半截：白旗一举就投降；另一义“前往”则是把自己交到目的地。"
+  },
   "fr-196": {
     "kind": "association",
     "text": "se débrouiller 的 dé- 有解除的作用；这里是自己解决混乱、把事情应付过去，相当于英语 manage / get by。"
@@ -805,7 +973,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "result"
   },
-  "fr-218": null,
+  "fr-218": {
+    "kind": "playful",
+    "text": "réussite 中间藏着 us：奖杯刻着“US DID IT”，把这座奖杯记作我们的成功。"
+  },
   "fr-219": {
     "kind": "english",
     "text": "check 是国际象棋里的“将军”，échec 也有这一层意思；从棋局中的受阻，联系到一般的挫败、失败。"
@@ -822,7 +993,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "formation；法语求职场景里常指培训"
   },
-  "fr-223": null,
+  "fr-223": {
+    "kind": "playful",
+    "text": "entretien 中间的 tre 像三个并排的人：坐下来面谈；换成三个维修工，就是给机器做维护。"
+  },
   "fr-224": {
     "kind": "english",
     "text": "reunion；法语也指工作会议"
@@ -848,12 +1022,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
       ]
     }
   },
-  "fr-228": null,
+  "fr-228": {
+    "kind": "playful",
+    "text": "facture 抓住 fact（事实）：吃了什么可以争，账单上的金额是铁一般的事实。"
+  },
   "fr-229": {
     "kind": "english",
     "text": "expense（支出）与 dépense 字形接近；une dépense 表示花出去的一笔钱、一项开销。"
   },
-  "fr-230": null,
+  "fr-230": {
+    "kind": "playful",
+    "text": "épargne 中间的 par 借 park（停放）：让钱先“停”在银行，不急着花，这就是储蓄。"
+  },
   "fr-231": {
     "kind": "english",
     "text": "reimbursement"
@@ -866,7 +1046,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "marche（走路、一步）是基础线索；démarche 可以是步态，也可以是为办成事情采取的步骤。"
   },
-  "fr-234": null,
+  "fr-234": {
+    "kind": "playful",
+    "text": "renseignement 太长，抓住 sign（标志）的影子：站在问讯处看指示牌，终于问到要找的信息。"
+  },
   "fr-235": {
     "kind": "association",
     "text": "英语也借用了 rendezvous：约好见面的时间。"
@@ -887,7 +1070,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "habit"
   },
-  "fr-240": null,
+  "fr-240": {
+    "kind": "playful",
+    "text": "comportement 里抓 port（港口）：一个人怎么进港、停靠、离开，就像观察他怎样举止行事。"
+  },
   "fr-241": {
     "kind": "english",
     "text": "relation"
@@ -908,28 +1094,46 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "courage"
   },
-  "fr-246": null,
-  "fr-247": null,
+  "fr-246": {
+    "kind": "playful",
+    "text": "crainte 抓住 cr，借 cry（哭）：还没遇到危险，已经担心得快哭了。"
+  },
+  "fr-247": {
+    "kind": "playful",
+    "text": "colère 抓住 col，借 color（颜色）：气得脸色从正常色直接切成大红色。"
+  },
   "fr-248": {
     "kind": "english",
     "text": "joy"
   },
-  "fr-249": null,
-  "fr-250": {
-    "kind": "association",
-    "text": "长得像 deception，但 déception 是失望，不是欺骗。"
+  "fr-249": {
+    "kind": "playful",
+    "text": "honte 的 hon 像 honor（荣誉）：本想争荣誉，结果当众出丑，只剩羞愧。"
   },
-  "fr-251": null,
+  "fr-250": {
+    "kind": "playful",
+    "text": "déception 像 deception（欺骗）：知道自己被骗以后，脑袋一垂，满心失望。"
+  },
+  "fr-251": {
+    "kind": "playful",
+    "text": "soulagement 开头直接看见 soul（灵魂）：压在灵魂上的石头终于搬走，整个人松一口气。"
+  },
   "fr-252": {
     "kind": "english",
     "text": "souvenir；纪念品也承载回忆"
   },
-  "fr-253": null,
-  "fr-254": {
-    "kind": "association",
-    "text": "像英语 envy，但 envie 常指“想要”，如 envie de dormir。"
+  "fr-253": {
+    "kind": "playful",
+    "text": "把 besoin 临时拆成 be＋so＋in：be so in need，“我真的是太需要了！”这是自己拼的英语梗。"
   },
-  "fr-255": null,
+  "fr-254": {
+    "kind": "playful",
+    "text": "envie 像 envy（羡慕）：看到朋友的新相机，羡慕之后紧接一句“我也想要”。"
+  },
+  "fr-255": {
+    "kind": "playful",
+    "text": "souhait 借“所怀”：心里所怀的那个小目标，就是你的愿望。"
+  },
   "fr-256": {
     "kind": "english",
     "text": "counsel（建议）"
@@ -950,8 +1154,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "mal（不好）＋ entendu（听到）：听岔了，误会。"
   },
-  "fr-261": null,
-  "fr-262": null,
+  "fr-261": {
+    "kind": "playful",
+    "text": "logement 开头像 log（木头）：用几根 log 搭个小木屋，好歹有地方住了。"
+  },
+  "fr-262": {
+    "kind": "playful",
+    "text": "loyer 借 lawyer（律师）少个 a：房租迟迟不交，房东准备找 lawyer 了。"
+  },
   "fr-263": {
     "kind": "english",
     "text": "quarter（城区）"
@@ -968,7 +1178,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "bouteille（瓶子）在 embouteillage 里留下了 bouteill-；车流堵在狭窄处，和英语 bottleneck（瓶颈）可一起记。"
   },
-  "fr-267": null,
+  "fr-267": {
+    "kind": "playful",
+    "text": "panne 看着像 pan（平底锅）：汽车冒烟像在炒菜——坏了，抛锚了！"
+  },
   "fr-268": {
     "kind": "association",
     "text": "grève 的词源与巴黎旧日工人聚集找工作的河岸广场有关；后来用来指停工、罢工。",
@@ -998,8 +1211,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "resource"
   },
-  "fr-273": null,
-  "fr-274": null,
+  "fr-273": {
+    "kind": "playful",
+    "text": "déchet 借“得撤”：过期食品“得撤”出冰箱，统统扔进垃圾桶。"
+  },
+  "fr-274": {
+    "kind": "playful",
+    "text": "gaspillage 开头是 gas（燃气）：灶火忘关，气表飞转，眼看着钱被浪费掉。"
+  },
   "fr-275": {
     "kind": "english",
     "text": "risk"
@@ -1024,7 +1243,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "responsibility"
   },
-  "fr-281": null,
+  "fr-281": {
+    "kind": "playful",
+    "text": "disponible 中间抓 on：日历开关显示 ON，有空接单；OFF 就没空。"
+  },
   "fr-282": {
     "kind": "english",
     "text": "necessary"
@@ -1041,8 +1263,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "precise"
   },
-  "fr-286": null,
-  "fr-287": null,
+  "fr-286": {
+    "kind": "playful",
+    "text": "flou 看着像 flow（流动）：照片上的字一流动，边缘全糊了，怎么也看不清。"
+  },
+  "fr-287": {
+    "kind": "english",
+    "text": "reliable（可靠的）和 fiable 共享 iable 这一截；把这段词形挂在“靠得住”上。"
+  },
   "fr-288": {
     "kind": "english",
     "text": "durable"
@@ -1079,8 +1307,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "grave（严重的）；别只想到英语的坟墓义"
   },
-  "fr-297": null,
-  "fr-298": null,
+  "fr-297": {
+    "kind": "playful",
+    "text": "léger 里能认出 leg（腿）：背包轻得没感觉，腿一迈，轻轻松松就跑起来。"
+  },
+  "fr-298": {
+    "kind": "playful",
+    "text": "lourd 开头 lou 借“楼”：一整栋楼压在秤上，当然重得离谱。"
+  },
   "fr-299": {
     "kind": "english",
     "text": "profound"
@@ -1130,8 +1364,8 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "ancient；法语也可指以前的，如 ancien collègue"
   },
   "fr-311": {
-    "kind": "association",
-    "text": "不是英语 actual（实际的）；actuel 是 current（当前的）。"
+    "kind": "playful",
+    "text": "actuel 像 actual（实际）：手机弹出 actual 的现实提醒，“别想过去，看看当前在发生什么。”"
   },
   "fr-312": {
     "kind": "english",
@@ -1149,26 +1383,62 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "quiet（平静）作字形线索；inquiet 多了否定的 in-，意思是不安、担忧的。"
   },
-  "fr-316": null,
-  "fr-317": null,
-  "fr-318": null,
+  "fr-316": {
+    "kind": "playful",
+    "text": "déçu 借“跌”：期待拉得老高，结果跌到底，满脸失望。"
+  },
+  "fr-317": {
+    "kind": "playful",
+    "text": "fier 看着像 fire（火）换个顺序：拿了第一，胸前骄傲的小火苗立刻燃起来。"
+  },
+  "fr-318": {
+    "kind": "playful",
+    "text": "gêné 两个 e 都顶着小记号，像两滴冷汗：当众认错人，尴尬得直冒汗。"
+  },
   "fr-319": {
     "kind": "english",
     "text": "recognize（认可、承认）可作字形线索；reconnaissant 表示承认别人的帮助、心怀感激。"
   },
-  "fr-320": null,
-  "fr-321": null,
-  "fr-322": null,
-  "fr-323": null,
-  "fr-324": null,
-  "fr-325": null,
-  "fr-326": null,
-  "fr-327": null,
+  "fr-320": {
+    "kind": "playful",
+    "text": "exigeant 开头像 exam（考试）：一位出卷老师说“每题都要满分”，要求也太高了。"
+  },
+  "fr-321": {
+    "kind": "playful",
+    "text": "pourtant 里有 tant，借“但”：前面理由说了一大串，后面仍冒出一个大大的“但”。"
+  },
+  "fr-322": {
+    "kind": "playful",
+    "text": "cependant 尾巴同样挂着“但”：话说到中途停一下，准备补一句“不过……”。"
+  },
+  "fr-323": {
+    "kind": "playful",
+    "text": "néanmoins 拆个玩笑版“难，没事”：前面再困难，后面仍坚持做；把转折绑在这句嘴硬上。"
+  },
+  "fr-324": {
+    "kind": "playful",
+    "text": "donc 借“咚”：推理走到最后一锤定音，“咚！所以答案就是这个。”"
+  },
+  "fr-325": {
+    "kind": "playful",
+    "text": "ainsi 借英语 I see（懂了）：“I see，原来这样！”把“这样”挂在恍然大悟上。"
+  },
+  "fr-326": {
+    "kind": "playful",
+    "text": "d'ailleurs 比 ailleurs 多个 d'，硬把 d 当“再多一点”：已经说完，又另外补上一条。"
+  },
+  "fr-327": {
+    "kind": "playful",
+    "text": "ailleurs 开头 ail 像 aisle（过道）：这边没货，沿过道去别处看看。"
+  },
   "fr-328": {
     "kind": "association",
     "text": "autre（别的）＋ fois（次、时候）：从前的时光。"
   },
-  "fr-329": null,
+  "fr-329": {
+    "kind": "playful",
+    "text": "désormais 末尾 mais 借“买”：旧账清零，立下规矩——从今以后不乱买！"
+  },
   "fr-330": {
     "kind": "association",
     "text": "avant 有“前”的意思；联想往前看：今后。"
@@ -1189,19 +1459,34 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "rare（少见）＋ -ment：很少发生。"
   },
-  "fr-335": null,
-  "fr-336": null,
-  "fr-337": null,
+  "fr-335": {
+    "kind": "playful",
+    "text": "davantage 里几乎装着 advantage（优势）：优势还嫌不够，我还要更多。"
+  },
+  "fr-336": {
+    "kind": "playful",
+    "text": "environ 正好是 environment（环境）的前半：不钉死一个点，只圈出周围一片，大约就在那儿。"
+  },
+  "fr-337": {
+    "kind": "playful",
+    "text": "presque 开头像 press（按）：电梯门差一点合上，你赶紧 press！“几乎就赶不上了。”"
+  },
   "fr-338": {
-    "kind": "association",
-    "text": "plutôt（宁可）连写；plus tôt（更早）分开写。"
+    "kind": "playful",
+    "text": "plutôt 后半 tôt 是早：闹钟问“早点起，还是多睡会儿？”，你秒选“宁可多睡会儿”。"
   },
   "fr-339": {
     "kind": "association",
     "text": "sur（上）＋ tout（全部）：摆在其他一切之上。"
   },
-  "fr-340": null,
-  "fr-341": null,
+  "fr-340": {
+    "kind": "playful",
+    "text": "malgré 开头 mal 借 malfunction（故障）：尽管机器出故障，大家还是把活干完了。"
+  },
+  "fr-341": {
+    "kind": "playful",
+    "text": "beau 是“漂亮”：姿势摆得再漂亮也没用，结果还是没成功——尽管费了功夫，却仍然……"
+  },
   "fr-342": {
     "kind": "association",
     "text": "compte 是账；联想把账算明白，终于意识到。"
@@ -1262,12 +1547,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "revenge（报复、扳回）可帮助记 revanche；en revanche 引出可以补回来、与前一面相抵的另一面：不过、另一方面。"
   },
-  "fr-357": null,
+  "fr-357": {
+    "kind": "playful",
+    "text": "effet 借 effect（效果）：前面刚说有效，后面摆出实际效果作证，“确实如此”。"
+  },
   "fr-358": {
     "kind": "association",
     "text": "fait 是“事实”；en fait 就是回到事实本身，相当于“事实上”。"
   },
-  "fr-359": null,
+  "fr-359": {
+    "kind": "playful",
+    "text": "fur 借 fur（毛发），mesure 借 measure（测量）：毛一点点长，每次量都长一点——随着进展，逐步变化。"
+  },
   "fr-360": {
     "kind": "association",
     "text": "temps 到另一个 temps：隔一阵出现一次。"
@@ -1280,7 +1571,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "联想英语 pensive（沉思的），记 penser。"
   },
-  "fr-363": null,
+  "fr-363": {
+    "kind": "playful",
+    "text": "savoir 开头 sav 借 save（保存）：把知识存进脑子，轮到用时就知道怎么办。"
+  },
   "fr-364": {
     "kind": "english",
     "text": "recognize（认出来）里的 cogn- 提示认知；connaître 是“认识、了解”，可先抓住 con-/cogn- 这段相近的字形。"
@@ -1349,7 +1643,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "admit"
   },
-  "fr-381": null,
+  "fr-381": {
+    "kind": "playful",
+    "text": "avouer 借“啊，我……”：被追问到最后，终于开口“啊，我干的”，坦白了。"
+  },
   "fr-382": {
     "kind": "association",
     "text": "像 pretend，但 prétendre 常指声称，并不一定是假装。"
@@ -1402,7 +1699,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "recount（讲述）"
   },
-  "fr-395": null,
+  "fr-395": {
+    "kind": "playful",
+    "text": "traduire 抓住 tra，借 travel（旅行）：让一句话换个国家旅行，回来就成了另一种语言。"
+  },
   "fr-396": {
     "kind": "english",
     "text": "define"
@@ -1543,8 +1843,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "bas 是低；baisser 是让它变低。"
   },
-  "fr-431": null,
-  "fr-432": null,
+  "fr-431": {
+    "kind": "playful",
+    "text": "tirer 开头是 tire（轮胎）：轮胎卡住先使劲拉；射击也要拉一下扳机，两义都拴在“拉”上。"
+  },
+  "fr-432": {
+    "kind": "playful",
+    "text": "pousser 开头像 push（推）：推门往前走，小芽也把土往上推，长出来了。"
+  },
   "fr-433": {
     "kind": "association",
     "text": "联想英语 cut 的动作：用剪刀 couper。"
@@ -1557,7 +1863,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "measure"
   },
-  "fr-436": null,
+  "fr-436": {
+    "kind": "playful",
+    "text": "peser 借 peso（比索）的 pes：金币多得数不完，直接上秤称一称重量。"
+  },
   "fr-437": {
     "kind": "english",
     "text": "count"
@@ -1590,8 +1899,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "regret"
   },
-  "fr-445": null,
-  "fr-446": null,
+  "fr-445": {
+    "kind": "playful",
+    "text": "espérer 里的 sper 像 spare（剩下的）：只剩最后一次机会了，仍抱着希望。"
+  },
+  "fr-446": {
+    "kind": "playful",
+    "text": "souhaiter 借“所怀”：把心里所怀的好事说给朋友，祝愿它真的发生。"
+  },
   "fr-447": {
     "kind": "english",
     "text": "desire"
@@ -1628,12 +1943,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "merci 是谢谢；remercier 是感谢这个动作。"
   },
-  "fr-456": null,
+  "fr-456": {
+    "kind": "playful",
+    "text": "féliciter 借名字 Felix：Felix 得奖了，大家围过来祝贺他。"
+  },
   "fr-457": {
     "kind": "english",
     "text": "salute"
   },
-  "fr-458": null,
+  "fr-458": {
+    "kind": "playful",
+    "text": "accueillir 开头 accu 借“啊，客人！”：门铃一响，主人赶快出来迎接。"
+  },
   "fr-459": {
     "kind": "english",
     "text": "accompany"
@@ -1687,8 +2008,8 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "deceive（欺骗）与 décevoir 形近，但后者在日常法语里是“使失望”；落差是期待落空。"
   },
   "fr-472": {
-    "kind": "association",
-    "text": "像英语 bless，但 blesser 是弄伤，意思别记反。"
+    "kind": "playful",
+    "text": "blesser 看着像 bless（祝福）：牧师想拍头祝福，手劲太大，反而把人弄伤了。"
   },
   "fr-473": {
     "kind": "english",
@@ -1702,14 +2023,26 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "reconcile"
   },
-  "fr-476": null,
+  "fr-476": {
+    "kind": "playful",
+    "text": "méfier 里的 mé 借 me（我）：“我得留个心眼！”面对陌生链接，先警惕一下。"
+  },
   "fr-477": {
     "kind": "association",
     "text": "tendre 有绷紧之意；se détendre 是让自己松下来。"
   },
-  "fr-478": null,
-  "fr-479": null,
-  "fr-480": null,
+  "fr-478": {
+    "kind": "playful",
+    "text": "reposer 里有 pose（摆姿势）：不再摆工作姿势，换成瘫在沙发上的 pose，开始休息。"
+  },
+  "fr-479": {
+    "kind": "playful",
+    "text": "ennuyer 里能看见 annoy（使烦）的影子：无聊到连天花板都看烦了。"
+  },
+  "fr-480": {
+    "kind": "playful",
+    "text": "épanouir 抓住 pan，借 panorama（全景）：把一直缩着的自己展开，人生终于切到全景模式。"
+  },
   "fr-481": {
     "kind": "english",
     "text": "idea"
@@ -1878,7 +2211,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "society；法语也常指公司"
   },
-  "fr-523": null,
+  "fr-523": {
+    "kind": "playful",
+    "text": "équipe 像 equip（装备）多了个 e：装备凑齐还不够，要有一支队伍来用。"
+  },
   "fr-524": {
     "kind": "english",
     "text": "colleague"
@@ -1899,7 +2235,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "employment"
   },
-  "fr-529": null,
+  "fr-529": {
+    "kind": "playful",
+    "text": "métier 开头借“谋”：靠一门手艺谋生，名片上写的就是你的职业。"
+  },
   "fr-530": {
     "kind": "english",
     "text": "profession"
@@ -1925,8 +2264,8 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "recruitment"
   },
   "fr-536": {
-    "kind": "association",
-    "text": "不是英语 stage（舞台）；法语求职语境中是实习。"
+    "kind": "playful",
+    "text": "stage 就借英语舞台 stage：第一次站上职场舞台，挂着的工牌写“实习生”。"
   },
   "fr-537": {
     "kind": "english",
@@ -1936,7 +2275,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "qualification"
   },
-  "fr-539": null,
+  "fr-539": {
+    "kind": "playful",
+    "text": "tâche 借 task（任务）的 ta 开头：待办表只写了个 ta，老板又派来一项 task。"
+  },
   "fr-540": {
     "kind": "english",
     "text": "mission"
@@ -1945,12 +2287,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "project"
   },
-  "fr-542": null,
+  "fr-542": {
+    "kind": "playful",
+    "text": "étape 看见 tape（胶带）：跑道每隔一段贴一道胶带，跨过一道就完成一个阶段。"
+  },
   "fr-543": {
     "kind": "association",
     "text": "英语 planning 是规划；法语 un planning 常是一张日程表。"
   },
-  "fr-544": null,
+  "fr-544": {
+    "kind": "playful",
+    "text": "échéance 里藏着 chance（机会）的影子：截止日一过，最后的 chance 就没了。"
+  },
   "fr-545": {
     "kind": "english",
     "text": "priority"
@@ -2005,8 +2353,8 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "client"
   },
   "fr-555": {
-    "kind": "association",
-    "text": "像英语 command；购物时 une commande 是订单。"
+    "kind": "playful",
+    "text": "commande 借 command（命令）：在购物车按下 command，“给我送这件”，一张订单就生成了。"
   },
   "fr-556": {
     "kind": "english",
@@ -2016,7 +2364,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "stock"
   },
-  "fr-558": null,
+  "fr-558": {
+    "kind": "playful",
+    "text": "réseau 借“热搜”：一不小心上热搜，整张网络都知道你了。"
+  },
   "fr-559": {
     "kind": "english",
     "text": "contact"
@@ -2037,7 +2388,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "cost"
   },
-  "fr-564": null,
+  "fr-564": {
+    "kind": "playful",
+    "text": "montant 看着像 amount（金额）拆乱了：收银员把数字重新排好，告诉你总共多少钱。"
+  },
   "fr-565": {
     "kind": "english",
     "text": "sum"
@@ -2050,18 +2404,30 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "benefit；财务语境中常指利润"
   },
-  "fr-568": null,
+  "fr-568": {
+    "kind": "playful",
+    "text": "perte 开头 per 借 percent（百分比）：账户每次打开都少几个 percent，亏损在不断增加。"
+  },
   "fr-569": {
     "kind": "english",
     "text": "debt"
   },
-  "fr-570": null,
-  "fr-571": null,
+  "fr-570": {
+    "kind": "playful",
+    "text": "prêt 开头 pr 借 price（价格）：房子的 price 太高，钱不够，只能去银行借贷款。"
+  },
+  "fr-571": {
+    "kind": "playful",
+    "text": "taux 的 x 当成计算器里的乘号：本金乘它，才知道利息多少——它是利率。"
+  },
   "fr-572": {
     "kind": "english",
     "text": "interest；兴趣和利息两义都能联想"
   },
-  "fr-573": null,
+  "fr-573": {
+    "kind": "playful",
+    "text": "impôt 像 import（进口）少了 r：海关收税，连 import 的一个字母都被扣走了。"
+  },
   "fr-574": {
     "kind": "english",
     "text": "tax"
@@ -2074,13 +2440,22 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "reduction"
   },
-  "fr-577": null,
-  "fr-578": null,
+  "fr-577": {
+    "kind": "playful",
+    "text": "remise 中间抓 miss（少了）：原价里少掉一块钱，顾客笑了，这叫折扣。"
+  },
+  "fr-578": {
+    "kind": "playful",
+    "text": "abonnement 里有 bon，借 bonus（奖励）：订一年送一个月，点完后每月都来扣款。"
+  },
   "fr-579": {
     "kind": "english",
     "text": "payment"
   },
-  "fr-580": null,
+  "fr-580": {
+    "kind": "playful",
+    "text": "virement 借 wire（电线；电汇）的影子：让钱沿着一根看不见的线，从我的银行跑到你的银行。"
+  },
   "fr-581": {
     "kind": "association",
     "text": "pré-（先）＋ lever（提起、拿起）：先从总额里拿走一部分，银行里就是扣款。"
@@ -2093,7 +2468,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "retreat（撤回、撤退）与 retrait 形近；在银行，把钱从账户撤出来，就是取款。"
   },
-  "fr-584": null,
+  "fr-584": {
+    "kind": "playful",
+    "text": "solde 抓住 sold（卖掉）：东西都 sold 了，账户里还剩多少钱？看看余额。"
+  },
   "fr-585": {
     "kind": "english",
     "text": "account"
@@ -2106,7 +2484,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "money；monnaie 也常指零钱"
   },
-  "fr-588": null,
+  "fr-588": {
+    "kind": "playful",
+    "text": "espèces 把中间 pèce 看成 piece（一片）的影子：一片片纸币从钱包掏出来，这回付现金。"
+  },
   "fr-589": {
     "kind": "english",
     "text": "cheque / check"
@@ -2119,8 +2500,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "case（箱、盒）可帮助记 caisse 的容器含义；商店里还指收钱的收银处。"
   },
-  "fr-592": null,
-  "fr-593": null,
+  "fr-592": {
+    "kind": "playful",
+    "text": "achat 借“啊，差”：本来只想凑单，“啊，还差十块！”于是又买了一件。"
+  },
+  "fr-593": {
+    "kind": "playful",
+    "text": "vente 开头像 vending（自动售货）：机器张嘴吐出商品，这边付钱，那边出售。"
+  },
   "fr-594": {
     "kind": "english",
     "text": "exchange"
@@ -2142,10 +2529,13 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "market（市场）的 mark- 与 marché 的 march- 很接近；用常见的 market 记 marché。"
   },
   "fr-599": {
-    "kind": "association",
-    "text": "像 concurrence，但法语商业中常指竞争。"
+    "kind": "playful",
+    "text": "concurrence 借 concurrent（同时发生的）：好几家公司同时冲向同一位顾客，竞争开始了。"
   },
-  "fr-600": null,
+  "fr-600": {
+    "kind": "playful",
+    "text": "pénurie 抓住 pen（笔）：“全班只剩一支 pen？”东西不够分，就是短缺。"
+  },
   "fr-601": {
     "kind": "english",
     "text": "state；État 大写时指国家"
@@ -2206,7 +2596,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "vote"
   },
-  "fr-616": null,
+  "fr-616": {
+    "kind": "playful",
+    "text": "loi 很短，像把 law（法律）换了件衣服：三个字母就能立一条规矩。"
+  },
   "fr-617": {
     "kind": "association",
     "text": "英语 right 也能表示“右”和“权利”，和 droit 一起记。"
@@ -2231,7 +2624,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "complaint（投诉）去掉 com-，剩下 plaint；法语 plainte 是投诉、控诉。"
   },
-  "fr-623": null,
+  "fr-623": {
+    "kind": "playful",
+    "text": "amende 里看见 amend（修改）：违停后想改正？先把这张罚款单付了。"
+  },
   "fr-624": {
     "kind": "english",
     "text": "pain（痛苦）可帮助记 peine；这个词还覆盖辛劳、刑罚，核心是承受的苦。"
@@ -2292,7 +2688,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "authorization"
   },
-  "fr-639": null,
+  "fr-639": {
+    "kind": "playful",
+    "text": "interdiction 中间抓 dict（字典的开头）：字典里这个词被盖了红色禁用章，不准说！"
+  },
   "fr-640": {
     "kind": "english",
     "text": "obligation"
@@ -2317,7 +2716,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "parameter"
   },
-  "fr-646": null,
+  "fr-646": {
+    "kind": "playful",
+    "text": "échantillon 里的 chant 像唱歌：店员唱着小曲递你一小杯，“先尝样品，再决定买不买。”"
+  },
   "fr-647": {
     "kind": "association",
     "text": "donner 是给；donnée 可联想为“给定的数据”。"
@@ -2390,7 +2792,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "energy"
   },
-  "fr-665": null,
+  "fr-665": {
+    "kind": "playful",
+    "text": "puissance 开头 pu 借 push（推）：同一台马达，使劲一推就能感觉出它功率有多大。"
+  },
   "fr-666": {
     "kind": "english",
     "text": "current；电流和水流都能联想"
@@ -2419,7 +2824,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "component"
   },
-  "fr-673": null,
+  "fr-673": {
+    "kind": "playful",
+    "text": "appareil 开头直接是 app：手机里装 app，桌上摆能运行它的设备；软的 app，硬的 appareil。"
+  },
   "fr-674": {
     "kind": "english",
     "text": "utility（用途）的 util- 可帮助记 outil；outil 是用来完成某件工作的工具。"
@@ -2460,20 +2868,38 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "precipitation"
   },
-  "fr-684": null,
-  "fr-685": null,
+  "fr-684": {
+    "kind": "playful",
+    "text": "averse 看见 verse（诗的一节）：雨只够下一小节诗的工夫，来得快停得也快。"
+  },
+  "fr-685": {
+    "kind": "playful",
+    "text": "neige 开头 nei 借“内”：窗外下雪冷得很，所有人都往屋内挤。"
+  },
   "fr-686": {
     "kind": "association",
     "text": "联想英语 ventilation（通风）；vent 是风。"
   },
-  "fr-687": null,
+  "fr-687": {
+    "kind": "playful",
+    "text": "orage 像 orange（橙子）少个 n：天上砸下来一场“橙子暴风雨”，谁也不敢出门。"
+  },
   "fr-688": {
     "kind": "association",
     "text": "clair 是“明亮的”；éclair 是突然出现的一道亮光，也就是闪电。"
   },
-  "fr-689": null,
-  "fr-690": null,
-  "fr-691": null,
+  "fr-689": {
+    "kind": "playful",
+    "text": "tonnerre 开头像 tonne（吨）：好像一吨铁砸在天上，轰隆一声雷。"
+  },
+  "fr-690": {
+    "kind": "playful",
+    "text": "brouillard 开头 brou 借 blur（模糊）：雾把整条街开成了 blur 滤镜。"
+  },
+  "fr-691": {
+    "kind": "playful",
+    "text": "nuage 借“怒”：一团怒气飘到天上，鼓成一朵乌云，马上要下雨。"
+  },
   "fr-692": {
     "kind": "association",
     "text": "canicule 的名字和古人所说的“小狗星”有关；把盛夏酷暑对应英语 dog days 来记。",
@@ -2487,7 +2913,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
       ]
     }
   },
-  "fr-693": null,
+  "fr-693": {
+    "kind": "playful",
+    "text": "gel 就借英语 hair gel（发胶）：水像抹了定型胶，冻住以后不肯再流。"
+  },
   "fr-694": {
     "kind": "association",
     "text": "sec 是干的；sécheresse 是干旱。"
@@ -2528,7 +2957,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "lake"
   },
-  "fr-704": null,
+  "fr-704": {
+    "kind": "playful",
+    "text": "littoral 开头 litt 像 little（小）：地图上一条细细的小边，把陆地和大海接起来。"
+  },
   "fr-705": {
     "kind": "english",
     "text": "coast（海岸）作线索；côte 还可表示坡道或肋骨，需按海边、地形或身体的语境判断。"
@@ -2537,18 +2969,30 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "mer（海）是更简单的基础词；marée 表示海水周期性的涨落，也就是潮汐。"
   },
-  "fr-707": null,
+  "fr-707": {
+    "kind": "playful",
+    "text": "falaise 开头像 fall（掉落）：站到边上只想到 fall，赶紧退离悬崖。"
+  },
   "fr-708": {
     "kind": "english",
     "text": "valley"
   },
-  "fr-709": null,
+  "fr-709": {
+    "kind": "playful",
+    "text": "colline 里藏着 line（线）：把平地的一条 line 往上拱，就长出一座小山。"
+  },
   "fr-710": {
     "kind": "english",
     "text": "forest"
   },
-  "fr-711": null,
-  "fr-712": null,
+  "fr-711": {
+    "kind": "playful",
+    "text": "racine 的 rac 借 rack（支架）：树下面藏着一套地下支架，牢牢撑着它，那就是根。"
+  },
+  "fr-712": {
+    "kind": "playful",
+    "text": "feuille 里两个 l 像两张薄片：树上的绿薄片是叶子，桌上的白薄片是纸。"
+  },
   "fr-713": {
     "kind": "english",
     "text": "fauna"
@@ -2577,13 +3021,22 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "agriculture"
   },
-  "fr-720": null,
+  "fr-720": {
+    "kind": "playful",
+    "text": "récolte 抓住 col，借 collect（收集）：种了一季，终于能 collect 一筐筐粮食。"
+  },
   "fr-721": {
     "kind": "english",
     "text": "apartment"
   },
-  "fr-722": null,
-  "fr-723": null,
+  "fr-722": {
+    "kind": "playful",
+    "text": "immeuble 中间的 mm 像两栋挨着的高楼：窗户密密麻麻，住了好多户。"
+  },
+  "fr-723": {
+    "kind": "playful",
+    "text": "étage 长得像 stage（舞台）：把每一层楼都搭成一个 stage，上楼就是换场景。"
+  },
   "fr-724": {
     "kind": "association",
     "text": "联想英语 escalator（自动扶梯）；escalier 是楼梯。"
@@ -2592,7 +3045,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "ascend（上升）；ascenseur 是电梯"
   },
-  "fr-726": null,
+  "fr-726": {
+    "kind": "playful",
+    "text": "couloir 开头 cou 借 corridor（走廊）的 co：长长一串字母，像通往很多房门的长通道。"
+  },
   "fr-727": {
     "kind": "association",
     "text": "entrer 是进入；entrée 可指入口，也指开餐的前菜。"
@@ -2617,7 +3073,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "terrace"
   },
-  "fr-733": null,
+  "fr-733": {
+    "kind": "playful",
+    "text": "toit 里两个 t 像支柱，i 像烟囱：给这组字母盖个三角棚，就是屋顶。"
+  },
   "fr-734": {
     "kind": "association",
     "text": "联想英语 mural（壁画）：画在 mur 上。"
@@ -2626,7 +3085,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "soil；sol 也指脚下的地面"
   },
-  "fr-736": null,
+  "fr-736": {
+    "kind": "playful",
+    "text": "plafond 开头像 platform（平台）：把一块平台吊到头顶，它就成了天花板。"
+  },
   "fr-737": {
     "kind": "association",
     "text": "chaud 是热；chauffage 是让屋里变热的供暖。"
@@ -2661,7 +3123,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
       ]
     }
   },
-  "fr-741": null,
+  "fr-741": {
+    "kind": "playful",
+    "text": "douche 借“冲”：把 dou 当水龙头的豆大水滴，冲冲冲，头顶开始淋水。"
+  },
   "fr-742": {
     "kind": "association",
     "text": "bain 是洗澡；baignoire 是泡澡的大浴缸。"
@@ -2670,7 +3135,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "mirror"
   },
-  "fr-744": null,
+  "fr-744": {
+    "kind": "playful",
+    "text": "armoire 开头是 arm（胳膊）：伸开两只 arm 试衣服，试完统统挂回衣柜。"
+  },
   "fr-745": {
     "kind": "association",
     "text": "étage（楼层）是较基础的词；étagère 表示分成一层层、可以放物品的架子。"
@@ -2679,7 +3147,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "tirer 是拉；tiroir 是拉出来的抽屉。"
   },
-  "fr-747": null,
+  "fr-747": {
+    "kind": "playful",
+    "text": "rideau 看见 ride（骑行）：窗外有人骑车经过，赶紧拉上帘子，免得被看见。"
+  },
   "fr-748": {
     "kind": "association",
     "text": "联想英语 tapestry（挂毯），把 tapis 记作地毯。"
@@ -2696,8 +3167,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "drape（披盖）；drap 是铺床的床单"
   },
-  "fr-752": null,
-  "fr-753": null,
+  "fr-752": {
+    "kind": "playful",
+    "text": "serviette 开头像 serve（服务）：服务员先递一块擦手布，再来上菜。"
+  },
+  "fr-753": {
+    "kind": "playful",
+    "text": "vêtement 开头的 v 当 V 领：衣柜里一件件挂着的 V 领，就是一堆 vêtements。"
+  },
   "fr-754": {
     "kind": "english",
     "text": "tissue；布料和身体组织都能联想"
@@ -2706,7 +3183,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "tailor（裁缝）的 tail- 可作线索；taille 指衣服尺寸，也可指人的腰围或身材。"
   },
-  "fr-756": null,
+  "fr-756": {
+    "kind": "playful",
+    "text": "manche 开头 man：一个 man 只露出胳膊，剩下的人都被巨大的袖子藏住了。"
+  },
   "fr-757": {
     "kind": "english",
     "text": "collar"
@@ -2731,12 +3211,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "casserole；记有深度的锅，区别 poêle"
   },
-  "fr-763": null,
+  "fr-763": {
+    "kind": "playful",
+    "text": "poêle 中间的 o 就当圆锅，后面的 l 当长柄：一口平底锅已经写在单词里。"
+  },
   "fr-764": {
     "kind": "association",
     "text": "couvrir 是盖住；couvercle 是盖住锅的盖子。"
   },
-  "fr-765": null,
+  "fr-765": {
+    "kind": "playful",
+    "text": "four 和英语 four（四）同形：一次烤四个面包，烤箱门都快关不上。"
+  },
   "fr-766": {
     "kind": "association",
     "text": "bouillir 是沸腾；bouilloire 是把水烧开的壶。"
@@ -2770,12 +3256,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
       ]
     }
   },
-  "fr-772": null,
+  "fr-772": {
+    "kind": "playful",
+    "text": "assiette 看见 ass，借坐下时的屁股：全桌人屁股刚挨椅子，每个人面前就分到一个盘子。"
+  },
   "fr-773": {
     "kind": "english",
     "text": "bowl"
   },
-  "fr-774": null,
+  "fr-774": {
+    "kind": "playful",
+    "text": "verre 两个 r 像碰杯的两只手：一碰叮当响，记住这是玻璃杯。"
+  },
   "fr-775": {
     "kind": "association",
     "text": "tasse 来自阿拉伯语 ṭāsa（杯、碗），更早可追溯到波斯语 ṭast。每天用的小杯子，其名称也记录了一段跨语言的旅程。",
@@ -2797,7 +3289,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "recipe；另记 recettes 也常指进账收入"
   },
-  "fr-778": null,
+  "fr-778": {
+    "kind": "playful",
+    "text": "cuisson 中间的 ui 借“煨”：小火慢煨，生的渐渐变熟，整个过程就是烹煮。"
+  },
   "fr-779": {
     "kind": "association",
     "text": "联想英语 seasoning；给菜添味的调味。"
@@ -2814,9 +3309,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "sugar"
   },
-  "fr-783": null,
-  "fr-784": null,
-  "fr-785": null,
+  "fr-783": {
+    "kind": "playful",
+    "text": "farine 的 farin 借“发面”：面一发、粉一撒，整张桌子都白了。"
+  },
+  "fr-784": {
+    "kind": "playful",
+    "text": "huile 看着跟 oil（油）隔着一层滑溜溜的字母：一倒出来，纸上的字都滑走了。"
+  },
+  "fr-785": {
+    "kind": "playful",
+    "text": "beurre 开头 be、里面双 r，借 butter 的双 t：把黄油抹软，两个 t 也软塌成了两个 r。"
+  },
   "fr-786": {
     "kind": "english",
     "text": "cream"
@@ -2825,7 +3329,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "yogurt"
   },
-  "fr-788": null,
+  "fr-788": {
+    "kind": "playful",
+    "text": "viande 开头 vi 借 VIP：自助餐里这位 VIP 别的都不要，盘里只堆肉。"
+  },
   "fr-789": {
     "kind": "english",
     "text": "beef"
@@ -2855,14 +3362,17 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "onion"
   },
   "fr-796": {
-    "kind": "association",
-    "text": "ail 大蒜、aïoli 蒜味酱：用蒜和酱的联系记短短的 ail。"
+    "kind": "playful",
+    "text": "ail 看起来像把 garlic（大蒜）的字母散落后捡了几个：别的都掉了，手上蒜味还是洗不掉。"
   },
   "fr-797": {
-    "kind": "association",
-    "text": "champignon 是蘑菇，champion 才是冠军。"
+    "kind": "playful",
+    "text": "champignon 像多塞了几个字母的 champion（冠军）：蘑菇赢了比赛，头上那顶大伞就是冠军帽。"
   },
-  "fr-798": null,
+  "fr-798": {
+    "kind": "playful",
+    "text": "haricot 借 Harry 的 hari：Harry 挥魔杖，帽子里没飞出兔子，却长出一大把豆角。"
+  },
   "fr-799": {
     "kind": "english",
     "text": "dessert；两个 s，别和 desert 混",
@@ -2892,7 +3402,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "symptom"
   },
-  "fr-804": null,
+  "fr-804": {
+    "kind": "playful",
+    "text": "douleur 借“都流”：疼得眼泪都流下来了，把 dou 和这句委屈绑在一起。"
+  },
   "fr-805": {
     "kind": "english",
     "text": "fever"
@@ -2905,7 +3418,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "bless（祝福）容易误导：blessure 是伤口、伤势，记住法语这组字形表达的是受伤。"
   },
-  "fr-808": null,
+  "fr-808": {
+    "kind": "playful",
+    "text": "cicatrice 看重复的 ci：第一次划一道 ci，愈合后再看，皮肤上仍留着一道印。"
+  },
   "fr-809": {
     "kind": "english",
     "text": "allergy"
@@ -2938,7 +3454,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "prise 是取，sang 是血：取血检查。"
   },
-  "fr-817": null,
+  "fr-817": {
+    "kind": "playful",
+    "text": "soin 借“守”：病人睡着了，有人守在床边，按时递水盖被，就是照料。"
+  },
   "fr-818": {
     "kind": "english",
     "text": "urgency；医院 les urgences 是急诊科"
@@ -2971,7 +3490,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "联想英语 corps（团体）：一个整体；le corps 是身体。"
   },
-  "fr-826": null,
+  "fr-826": {
+    "kind": "playful",
+    "text": "peau 借 peel（剥皮）的 pe：水果也有一层能 peel 的外衣，人身上这层叫皮肤。"
+  },
   "fr-827": {
     "kind": "english",
     "text": "muscle"
@@ -2985,8 +3507,8 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "articulation；骨头连接转动的位置"
   },
   "fr-830": {
-    "kind": "association",
-    "text": "cœur 心脏、courage 勇气：把心里的勇气作为词形联想。"
+    "kind": "playful",
+    "text": "cœur 借 core（核心）的近形：身体里那个不停跳的核心，就是心脏。"
   },
   "fr-831": {
     "kind": "association",
@@ -3000,7 +3522,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "联想英语 cerebral（大脑的）。"
   },
-  "fr-834": null,
+  "fr-834": {
+    "kind": "playful",
+    "text": "sang 正好像英语 sang（唱过）：吸血鬼唱了一首歌，台下递来的饮料全是血。"
+  },
   "fr-835": {
     "kind": "english",
     "text": "respiration"
@@ -3017,7 +3542,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "fatigue"
   },
-  "fr-839": null,
+  "fr-839": {
+    "kind": "playful",
+    "text": "guérison 借“给力”：前几天起床都难，今天又能举铁，给力，终于痊愈了！"
+  },
   "fr-840": {
     "kind": "english",
     "text": "convalescence"
@@ -3030,7 +3558,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "arrival"
   },
-  "fr-843": null,
+  "fr-843": {
+    "kind": "playful",
+    "text": "séjour 看见 jour（一天）：旅行时把一天留在某个地方，那就是一段停留。"
+  },
   "fr-844": {
     "kind": "english",
     "text": "destination"
@@ -3039,7 +3570,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "itinerary"
   },
-  "fr-846": null,
+  "fr-846": {
+    "kind": "playful",
+    "text": "escale 里抓 scale（刻度）：把航线画成带刻度的尺，每停一站就落在一个刻度上。"
+  },
   "fr-847": {
     "kind": "english",
     "text": "correspondence；车站里也指换乘连接"
@@ -3056,7 +3590,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "terre 是土地；回到地面就是 atterrissage。"
   },
-  "fr-851": null,
+  "fr-851": {
+    "kind": "playful",
+    "text": "vol 三个字母像登机牌上的缩写：让 v 当机翼，o 当舷窗，l 当跑道，飞机准备起飞。"
+  },
   "fr-852": {
     "kind": "association",
     "text": "équipe 是团队；équipage 是飞机或船上的团队。"
@@ -3094,18 +3631,30 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "reservation"
   },
-  "fr-859": null,
-  "fr-860": null,
+  "fr-859": {
+    "kind": "playful",
+    "text": "hébergement 开头 hé 借“嘿”：拖着箱子敲门，“嘿，今晚能让我住下吗？”"
+  },
+  "fr-860": {
+    "kind": "playful",
+    "text": "auberge 里有 ber，借 bed（床）：迷路旅人找不到豪华酒店，有张 bed 的小客栈也行。"
+  },
   "fr-861": {
     "kind": "english",
     "text": "reception"
   },
-  "fr-862": null,
+  "fr-862": {
+    "kind": "playful",
+    "text": "consigne 看见 sign（标牌）：照着“行李寄存”那块 sign 走；标牌写的规则也是 consigne。"
+  },
   "fr-863": {
     "kind": "english",
     "text": "quay（码头）；火车站也叫 quai"
   },
-  "fr-864": null,
+  "fr-864": {
+    "kind": "playful",
+    "text": "voie 看着像 way（路）换身衣服：地图上挑一条 way，火车也要挑一条轨道。"
+  },
   "fr-865": {
     "kind": "english",
     "text": "rail"
@@ -3115,18 +3664,21 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "tunnel"
   },
   "fr-867": {
-    "kind": "association",
-    "text": "联想英语 pontoon（浮筒）：可用来搭浮桥。"
+    "kind": "playful",
+    "text": "pont 借“碰”：两岸本来碰不到，一座桥把它们接起来，终于能过河碰面。"
   },
   "fr-868": {
-    "kind": "association",
-    "text": "把十字路口看作四条路线汇合的地方。"
+    "kind": "playful",
+    "text": "carrefour 中间直接有 four（四）：四条路会合，汽车们在十字路口碰头。"
   },
   "fr-869": {
     "kind": "association",
     "text": "rond 是圆；圆形路口就是环岛。"
   },
-  "fr-870": null,
+  "fr-870": {
+    "kind": "playful",
+    "text": "trottoir 开头是 trot（小跑）：有人小跑经过，你让到一旁——这里是人走的道。"
+  },
   "fr-871": {
     "kind": "association",
     "text": "piéton 是行人；供行人通过的 passage。"
@@ -3152,18 +3704,21 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "联想英语 carbon（碳）：汽车燃料常含碳。"
   },
   "fr-877": {
-    "kind": "association",
-    "text": "不是只指英语 essence；加油时 essence 就是汽油。"
+    "kind": "playful",
+    "text": "essence 借 essential（必需）的 ess：车子没吃到它就不肯动，这瓶汽油真是必需品。"
   },
   "fr-878": {
     "kind": "english",
     "text": "service station"
   },
   "fr-879": {
-    "kind": "association",
-    "text": "不是英语 location（位置）；法语 location 是租赁。"
+    "kind": "playful",
+    "text": "location 就借英语 location（位置）：看中这个位置却买不起，只好租下来。"
   },
-  "fr-880": null,
+  "fr-880": {
+    "kind": "playful",
+    "text": "randonnée 开头像 random（随机）：随机选条山路走一天，这场徒步没按攻略来。"
+  },
   "fr-881": {
     "kind": "english",
     "text": "culture"
@@ -3188,12 +3743,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "epoch"
   },
-  "fr-887": null,
+  "fr-887": {
+    "kind": "playful",
+    "text": "siècle 借 cycle（循环）的影子：把年轮转满一百圈，才过完一个世纪。"
+  },
   "fr-888": {
     "kind": "english",
     "text": "generation"
   },
-  "fr-889": null,
+  "fr-889": {
+    "kind": "playful",
+    "text": "œuvre 的 œ 当画家的调色盘：颜料搅在一起，最后摆出来的是一件作品。"
+  },
   "fr-890": {
     "kind": "english",
     "text": "author"
@@ -3206,7 +3767,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "poem"
   },
-  "fr-893": null,
+  "fr-893": {
+    "kind": "playful",
+    "text": "conte 看着像 content（内容）缩短了：删掉长篇废话，只留一个睡前小故事。"
+  },
   "fr-894": {
     "kind": "english",
     "text": "intrigue"
@@ -3247,14 +3811,17 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "review；如文学评论期刊"
   },
-  "fr-904": null,
+  "fr-904": {
+    "kind": "playful",
+    "text": "lecteur 开头 lect 借 lecture（讲课）：讲师讲之前先读书，台下读书的那个人就是读者。"
+  },
   "fr-905": {
     "kind": "association",
     "text": "biblio- 提示书；bibliothèque 借书，librairie 买书。"
   },
   "fr-906": {
-    "kind": "association",
-    "text": "像 library 却是书店；图书馆要用 bibliothèque。"
+    "kind": "playful",
+    "text": "librairie 像 library（图书馆）：你抱书想直接走，店员拦住“这是书店，先付款！”"
   },
   "fr-907": {
     "kind": "english",
@@ -3472,12 +4039,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "autonomous"
   },
-  "fr-961": null,
+  "fr-961": {
+    "kind": "playful",
+    "text": "toutefois 拆个玩笑“全都……反转！”：前面以为全说定了，后面突然来个“不过”。"
+  },
   "fr-962": {
     "kind": "association",
     "text": "conséquence 是结果；par conséquent 引出结果。"
   },
-  "fr-963": null,
+  "fr-963": {
+    "kind": "playful",
+    "text": "outre 跟 extra（额外）隔空招手：清单已经写完，旁边又多挤进一条，“此外还有……”"
+  },
   "fr-964": {
     "kind": "association",
     "text": "ailleurs 是别处；par ailleurs 转向另一个方面。"
@@ -3550,22 +4123,46 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "entre（之间）＋ temps（时间）：两件事之间的时间。"
   },
-  "fr-982": null,
-  "fr-983": null,
-  "fr-984": null,
-  "fr-985": null,
-  "fr-986": null,
+  "fr-982": {
+    "kind": "playful",
+    "text": "dès que 借“逮住就”：逮住那个时机就马上做，记成“一……就……”。"
+  },
+  "fr-983": {
+    "kind": "playful",
+    "text": "tant que 抓住 tant，借 tank（油箱）：只要油箱还有油，这趟车就一直跑。"
+  },
+  "fr-984": {
+    "kind": "playful",
+    "text": "tandis 里的 and 是现成抓手：你做你的 AND 我做我的，两件事同时摆在眼前。"
+  },
+  "fr-985": {
+    "kind": "playful",
+    "text": "alors 看见 al，借 alarm（闹钟）：我正做着这件事，另一边闹钟突然响了。"
+  },
+  "fr-986": {
+    "kind": "playful",
+    "text": "bien 是好，后面偏要 que 一下：“虽然挺好，我还是不买。”把好事后面的转折记住。"
+  },
   "fr-987": {
     "kind": "association",
     "text": "même（甚至）＋ si（如果）：即使。"
   },
-  "fr-988": null,
-  "fr-989": null,
+  "fr-988": {
+    "kind": "playful",
+    "text": "pourvu 抓住 vu，借 view（视野）：“只要能看到终点，我就继续跑。”"
+  },
+  "fr-989": {
+    "kind": "playful",
+    "text": "moins 是少，脑补少一道门槛才让你过：“除非把这条件拿走，不然不行。”"
+  },
   "fr-990": {
     "kind": "association",
     "text": "cas 是情况；为万一出现的情况提前准备。"
   },
-  "fr-991": null,
+  "fr-991": {
+    "kind": "playful",
+    "text": "quant 看着像 quantity（数量）：老板前面谈质量，忽然换题——“至于数量嘛……”"
+  },
   "fr-992": {
     "kind": "association",
     "text": "rapport 是关系；把两件事放到同一参照下比较。"
@@ -3574,12 +4171,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "as a function of；随某因素而定"
   },
-  "fr-994": null,
+  "fr-994": {
+    "kind": "playful",
+    "text": "propos 借 proposal（提议）的开头：手指点着这份提案，“关于这个，我想说两句。”"
+  },
   "fr-995": {
     "kind": "association",
     "text": "delà 指那边；越过界限到那边，就是超过。"
   },
-  "fr-996": null,
+  "fr-996": {
+    "kind": "playful",
+    "text": "deçà 中间 ç 像带弯钩的界桩：站在钩子这一侧，还没跨过界限，仍在以内。"
+  },
   "fr-997": {
     "kind": "association",
     "text": "联想英语 traverse（穿越）。"
@@ -3604,21 +4207,42 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "voluntary（自愿的）可作“意愿”的线索；vouloir 是日常表达想要的动词。"
   },
-  "fr-1003": null,
-  "fr-1004": null,
-  "fr-1005": null,
-  "fr-1006": null,
+  "fr-1003": {
+    "kind": "playful",
+    "text": "devoir 的 de 借 debt（债务）：欠了钱就必须还，把“欠”和“必须”拴在一张欠条上。"
+  },
+  "fr-1004": {
+    "kind": "playful",
+    "text": "falloir 开头像 fall（跌倒）：地面全是冰，“必须扶着栏杆，不然就 fall！”"
+  },
+  "fr-1005": {
+    "kind": "playful",
+    "text": "prendre 里抓 pr，借 prize（奖品）：伸手把 prize 拿过来，先记住“拿”这个核心动作。"
+  },
+  "fr-1006": {
+    "kind": "playful",
+    "text": "mettre 看见 met，借 metal（金属）：把一枚 metal 徽章放到桌上，再戴到衣服上。"
+  },
   "fr-1007": {
     "kind": "association",
     "text": "联想英语 donate（捐赠）；donner 是给。"
   },
-  "fr-1008": null,
-  "fr-1009": null,
+  "fr-1008": {
+    "kind": "playful",
+    "text": "voir 抓住 vi，借 video（视频）：视频终于加载出来，“啊，看见了！”"
+  },
+  "fr-1009": {
+    "kind": "playful",
+    "text": "entendre 中间藏 tend，借 antenna（天线）的影子：耳朵像天线，声音一到就接收到了。"
+  },
   "fr-1010": {
     "kind": "association",
     "text": "像 demand，但 demander 也可以只是礼貌询问。"
   },
-  "fr-1011": null,
+  "fr-1011": {
+    "kind": "playful",
+    "text": "appeler 开头是 app：点开通话 app，按下那个小电话，给朋友打过去。"
+  },
   "fr-1012": {
     "kind": "english",
     "text": "arrive；也可指事情发生"
@@ -3628,10 +4252,13 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "pass"
   },
   "fr-1014": {
-    "kind": "association",
-    "text": "联想英语 laissez-faire（放任）；laisser 是让、留下。"
+    "kind": "playful",
+    "text": "laisser 开头 lai 借“赖”：朋友还想赖一会儿，你说“行，让他留下吧”。"
   },
-  "fr-1015": null,
+  "fr-1015": {
+    "kind": "playful",
+    "text": "suivre 开头 sui 借“随”：前面的人往哪走，你就随到哪，一路跟着。"
+  },
   "fr-1016": {
     "kind": "association",
     "text": "sortie 是出口；sortir 是出去。"
@@ -3672,7 +4299,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "guard；看管好，也就保留下来"
   },
-  "fr-1026": null,
+  "fr-1026": {
+    "kind": "playful",
+    "text": "montrer 抓住 montr，借 monitor（显示器）：把照片投到 monitor 上，展示给大家看。"
+  },
   "fr-1027": {
     "kind": "association",
     "text": "联想英语 portable（便携的），记 porter 携带。"
@@ -3689,8 +4319,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "finish"
   },
-  "fr-1031": null,
-  "fr-1032": null,
+  "fr-1031": {
+    "kind": "playful",
+    "text": "jouer 开头 jou 借 joy（快乐）：玩游戏也好、弹乐器也好，都是给自己制造 joy。"
+  },
+  "fr-1032": {
+    "kind": "playful",
+    "text": "asseoir 开头直接藏着 ass（屁股）：屁股先落到椅子上，坐下这件事就完成了。"
+  },
   "fr-1033": {
     "kind": "association",
     "text": "lever 是举起；se lever 是把自己立起来。"
@@ -3699,22 +4335,34 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "coucher 是放倒；se coucher 是自己躺下睡觉。"
   },
-  "fr-1035": null,
+  "fr-1035": {
+    "kind": "playful",
+    "text": "réveiller 抓住 réve，借 revive（恢复活力）：早上眼睛一睁，像关机的人重新 revive 了。"
+  },
   "fr-1036": {
     "kind": "association",
     "text": "laver 是洗；se laver 是洗自己。"
   },
-  "fr-1037": null,
+  "fr-1037": {
+    "kind": "playful",
+    "text": "habiller 中间有 bill（账单）：新衣服账单刚到，先穿上给自己找个“买得值”的理由。"
+  },
   "fr-1038": {
     "kind": "association",
     "text": "联想英语 promenade（散步）。"
   },
-  "fr-1039": null,
+  "fr-1039": {
+    "kind": "playful",
+    "text": "dépêcher 借“得撇”：快迟到了，手头闲事得撇下，赶快出门！"
+  },
   "fr-1040": {
     "kind": "english",
     "text": "prepare；se 表示让自己准备好"
   },
-  "fr-1041": null,
+  "fr-1041": {
+    "kind": "playful",
+    "text": "tromper 开头像 Trump：打桥牌把 trump（王牌）当普通牌扔掉，“糟了，弄错了！”"
+  },
   "fr-1042": {
     "kind": "english",
     "text": "excuse；s'excuser 是为自己道歉"
@@ -3731,7 +4379,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "sentir 是感觉；se sentir bien 是自己感觉好。"
   },
-  "fr-1046": null,
+  "fr-1046": {
+    "kind": "playful",
+    "text": "brosser 抓住 bros，借 brush（刷子）：刷子兄弟 bro 一上场，牙齿和头发都要被刷一遍。"
+  },
   "fr-1047": {
     "kind": "association",
     "text": "rencontrer 遇见别人；se rencontrer 是彼此相遇。"
@@ -3756,17 +4407,26 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "descend"
   },
-  "fr-1053": null,
+  "fr-1053": {
+    "kind": "playful",
+    "text": "tomber 把 Tom 请出来：Tom 追着 Jerry 一路跑，脚一滑，又摔下去了。"
+  },
   "fr-1054": {
     "kind": "english",
     "text": "course（赛程、路线）可作线索；courir 表示跑，注意它只有一个 r 在中间。"
   },
-  "fr-1055": null,
+  "fr-1055": {
+    "kind": "playful",
+    "text": "nager 借“哪儿”：游泳教练问“游哪儿去？”，你指着对岸继续划水。"
+  },
   "fr-1056": {
     "kind": "association",
     "text": "联想英语 conduct（带领）；也指驾驶。"
   },
-  "fr-1057": null,
+  "fr-1057": {
+    "kind": "playful",
+    "text": "voler 的 vol 借 volleyball（排球）：排球一飞上天，被一只鸟偷走了，把“飞”和“偷”串成同一出闹剧。"
+  },
   "fr-1058": {
     "kind": "english",
     "text": "voyage；加 -er 变成旅行这个动作"
@@ -3807,9 +4467,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "chant"
   },
-  "fr-1068": null,
-  "fr-1069": null,
-  "fr-1070": null,
+  "fr-1068": {
+    "kind": "playful",
+    "text": "rire 像把英语 rare（少见）换个字母：难得听到这么离谱的笑话，忍不住大笑。"
+  },
+  "fr-1069": {
+    "kind": "playful",
+    "text": "sourire 把 sou 借作“收”：把大笑 rire 收小一点，变成嘴角轻轻一扬的微笑。"
+  },
+  "fr-1070": {
+    "kind": "playful",
+    "text": "pleurer 开头 ple 借 please（求你）：一边哭一边说“please，别走”，眼泪都快流到单词上了。"
+  },
   "fr-1071": {
     "kind": "english",
     "text": "cry；法语 crier 主要是喊叫，哭用 pleurer"
@@ -3818,15 +4487,21 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "respire"
   },
-  "fr-1073": null,
-  "fr-1074": null,
+  "fr-1073": {
+    "kind": "playful",
+    "text": "tousser 两个 s 当两下喘气：“咳、咳”，咳嗽没完，连字母也咳成双份。"
+  },
+  "fr-1074": {
+    "kind": "playful",
+    "text": "éternuer 里抓 étern，借 eternal（永恒）：打一个喷嚏还不停，简直像要永恒地“阿嚏”下去。"
+  },
   "fr-1075": {
     "kind": "english",
     "text": "fume"
   },
   "fr-1076": {
-    "kind": "association",
-    "text": "词源线索是“关节窝”：这个词的历史与骨头相接的位置有关，后来形成“跛行、一瘸一拐地走”的含义。",
+    "kind": "playful",
+    "text": "boiter 借“跛一点”：鞋里塞颗小石子，走两步就一跛一跛；把 bo 和“跛”黏在一起。",
     "origin": {
       "text": "boiter 经较早的 boiteux 追溯到表示“骨头的窝、关节窝”的词义。这解释了它为何与跛行有关；这里介绍的是语言历史，并不把所有跛行都归因于关节。",
       "sources": [
@@ -3841,7 +4516,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
       ]
     }
   },
-  "fr-1077": null,
+  "fr-1077": {
+    "kind": "playful",
+    "text": "naître 借“奶”：刚出生就开始找奶，新生儿的人生第一项任务竟然是干饭。"
+  },
   "fr-1078": {
     "kind": "association",
     "text": "grand 是大；grandir 是变大、长大。"
@@ -3858,8 +4536,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "联想英语 illuminate（照亮）；allumer 开灯、点火。"
   },
-  "fr-1082": null,
-  "fr-1083": null,
+  "fr-1082": {
+    "kind": "playful",
+    "text": "éteindre 抓住 ein，借 end（结束）：一按开关，灯光的工作结束，房间暗下来。"
+  },
+  "fr-1083": {
+    "kind": "playful",
+    "text": "brancher 看见 branch（树枝）：插线板像树干，电线像分枝，一根根接上去。"
+  },
   "fr-1084": {
     "kind": "association",
     "text": "dé- 撤掉＋ brancher 连接：拔掉插头。"
@@ -3920,14 +4604,26 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "utilize"
   },
-  "fr-1099": null,
+  "fr-1099": {
+    "kind": "playful",
+    "text": "appuyer 开头又是 app：这个 app 没反应，手指忍不住再按一下屏幕。"
+  },
   "fr-1100": {
     "kind": "english",
     "text": "tap；敲键盘也是 taper"
   },
-  "fr-1101": null,
-  "fr-1102": null,
-  "fr-1103": null,
+  "fr-1101": {
+    "kind": "playful",
+    "text": "plaire 开头像 play（玩）：谁陪我 play，谁就讨我喜欢。"
+  },
+  "fr-1102": {
+    "kind": "playful",
+    "text": "emmener 两个 m 像两个人肩并肩：我挽着朋友，一起离开这里，带他去别处。"
+  },
+  "fr-1103": {
+    "kind": "playful",
+    "text": "amener 开头的 a 当朝向我的箭头：我站在终点招手，“把朋友带来这边！”"
+  },
   "fr-1104": {
     "kind": "english",
     "text": "touch"
@@ -3956,7 +4652,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "英语 cache 是隐藏的缓存；cacher 是藏起来。"
   },
-  "fr-1111": null,
+  "fr-1111": {
+    "kind": "playful",
+    "text": "agir 抓住 ag，借 agent（行动者）：特工 agent 接到指令，立刻开始行动。"
+  },
   "fr-1112": {
     "kind": "english",
     "text": "adore"
@@ -3969,13 +4668,22 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "promise"
   },
-  "fr-1115": null,
+  "fr-1115": {
+    "kind": "playful",
+    "text": "mentir 抓住 ment，借 mental（脑内）：事实不够，就在脑子里现编一段，开始撒谎。"
+  },
   "fr-1116": {
     "kind": "english",
     "text": "offer"
   },
-  "fr-1117": null,
-  "fr-1118": null,
+  "fr-1117": {
+    "kind": "playful",
+    "text": "enlever 里藏着 lever（杠杆）：拿杠杆把盖子撬走，挡路的东西就被移开了。"
+  },
+  "fr-1118": {
+    "kind": "playful",
+    "text": "lâcher 借“拉扯”：一直拉扯多累，干脆一松手，绳子掉下去了。"
+  },
   "fr-1119": {
     "kind": "english",
     "text": "calm"
@@ -3984,13 +4692,22 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "dis- 消失的方向＋ apparaître 出现：不见了。"
   },
-  "fr-1121": null,
-  "fr-1122": null,
+  "fr-1121": {
+    "kind": "playful",
+    "text": "casser 像 case（壳）多了一个 s：壳已经裂开，还硬塞东西，多挤一个字母就撑破了。"
+  },
+  "fr-1122": {
+    "kind": "playful",
+    "text": "frapper 抓住 rap（说唱）：rapper 打着拍子，咚咚敲桌面，桌子快被敲坏了。"
+  },
   "fr-1123": {
     "kind": "association",
     "text": "像 ignore；法语 ignorer 还可以是“不知道”。"
   },
-  "fr-1124": null,
+  "fr-1124": {
+    "kind": "playful",
+    "text": "taire 借“台”：台上突然断麦，主持人只能闭嘴，整个场子安静下来。"
+  },
   "fr-1125": {
     "kind": "english",
     "text": "resemble"
@@ -4027,13 +4744,22 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "ranger 是整理；déranger 像打乱安排：打扰。"
   },
-  "fr-1134": null,
-  "fr-1135": null,
+  "fr-1134": {
+    "kind": "playful",
+    "text": "rêver 中间 ê 戴顶小尖帽，像睡帽：帽子一戴，闭眼进入梦境。"
+  },
+  "fr-1135": {
+    "kind": "playful",
+    "text": "paraître 开头 para 借 parade（游行）：盛装一亮相，显得格外隆重；新书亮相就是出版。"
+  },
   "fr-1136": {
     "kind": "english",
     "text": "approach"
   },
-  "fr-1137": null,
+  "fr-1137": {
+    "kind": "playful",
+    "text": "craindre 开头 cra 借 crash（撞毁）：坐车听到奇怪响声，第一反应就是害怕出事。"
+  },
   "fr-1138": {
     "kind": "english",
     "text": "arrange"
@@ -4046,7 +4772,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "abandon"
   },
-  "fr-1141": null,
+  "fr-1141": {
+    "kind": "playful",
+    "text": "brûler 抓住 brû，借 burn（烧）：字母 u 都被烫出一顶小帽子，赶紧把手拿开。"
+  },
   "fr-1142": {
     "kind": "english",
     "text": "assure / insure"
@@ -4071,7 +4800,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "oblige"
   },
-  "fr-1148": null,
+  "fr-1148": {
+    "kind": "playful",
+    "text": "oser 看起来像 loser（失败者）丢了头尾：敢试一次，先把“怕当 loser”的包袱甩掉。"
+  },
   "fr-1149": {
     "kind": "english",
     "text": "pleasant（愉快的）作字形线索；plaisanter 指轻松地开玩笑。"
@@ -4096,7 +4828,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "cost"
   },
-  "fr-1155": null,
+  "fr-1155": {
+    "kind": "playful",
+    "text": "rater 就拿英语 rate（评分）开玩笑：车没赶上、作业没做好，评分 rater 给你一个零分。"
+  },
   "fr-1156": {
     "kind": "association",
     "text": "联想英语 attempt / tempt：尝试，也可吸引。"
@@ -4117,7 +4852,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "duration；durer 是持续多久"
   },
-  "fr-1161": null,
+  "fr-1161": {
+    "kind": "playful",
+    "text": "deviner 看见 dev，借 detective（侦探）的影子：侦探只拿到半条线索，也要猜出答案。"
+  },
   "fr-1162": {
     "kind": "association",
     "text": "tenir（握住）是更基础的词；re- 加到前面，retenir 表示留住，包括把信息记住。"
@@ -4158,7 +4896,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "direct"
   },
-  "fr-1172": null,
+  "fr-1172": {
+    "kind": "playful",
+    "text": "interdire 的 dire 借“敌”：系统拦住敌人，大门弹出红字——禁止进入。"
+  },
   "fr-1173": {
     "kind": "english",
     "text": "command；餐厅里 commander 是下单点菜"
@@ -4187,7 +4928,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "re-（再）＋ faire（做）：重做。"
   },
-  "fr-1180": null,
+  "fr-1180": {
+    "kind": "playful",
+    "text": "gêner 借“给你”：你正赶稿，我不停给你塞零食递手机，结果越帮越碍事。"
+  },
   "fr-1181": {
     "kind": "association",
     "text": "porter 是带；rapporter 是带回，也能带回消息。"
@@ -4196,10 +4940,13 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "invent"
   },
-  "fr-1183": null,
+  "fr-1183": {
+    "kind": "playful",
+    "text": "énerver 里明晃晃藏着 nerve（神经）：一直戳我的 nerve，难怪我越来越烦。"
+  },
   "fr-1184": {
     "kind": "english",
-    "text": "astonish（使吃惊）作字形线索；étonner 表示使人意外，两个 n 留在拼写里。"
+    "text": "astonish（使吃惊）和 étonner 可以借形义一起记；看到意外消息，整个人愣住。"
   },
   "fr-1185": {
     "kind": "english",
@@ -4209,10 +4956,22 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "nourish（滋养）与 nourrir 共享明显的 nour-；法语表示喂养、供给营养。"
   },
-  "fr-1187": null,
-  "fr-1188": null,
-  "fr-1189": null,
-  "fr-1190": null,
+  "fr-1187": {
+    "kind": "playful",
+    "text": "accrocher 看见 croch，借 crochet（钩针）：拿一根小钩，把钥匙牢牢挂上。"
+  },
+  "fr-1188": {
+    "kind": "playful",
+    "text": "serrer 两个 r 挤在中间：螺丝松了？把它们再往一起拧紧一点。"
+  },
+  "fr-1189": {
+    "kind": "playful",
+    "text": "soigner 开头 soi 借“守”：守着病人端水送药，照顾到他能自己起床。"
+  },
+  "fr-1190": {
+    "kind": "playful",
+    "text": "guérir 借“给力”：前几天虚得走不动，今天终于恢复力气——身体给力，康复了！"
+  },
   "fr-1191": {
     "kind": "english",
     "text": "attach"
@@ -4229,7 +4988,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "mark"
   },
-  "fr-1195": null,
+  "fr-1195": {
+    "kind": "playful",
+    "text": "ramasser 里有 mass（大量）：地上一个个捡起来，最后收集成一大堆。"
+  },
   "fr-1196": {
     "kind": "association",
     "text": "passer 是经过；dépasser 是越过去。"
@@ -4250,59 +5012,110 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "contact"
   },
-  "fr-1201": null,
-  "fr-1202": null,
-  "fr-1203": null,
-  "fr-1204": {
-    "kind": "association",
-    "text": "nous / vous：我们 / 你们，只换首字母 n 和 v。"
+  "fr-1201": {
+    "kind": "playful",
+    "text": "je 的 j 当自拍杆，e 当自己的脸：镜头一举，拍的是“我”。"
   },
-  "fr-1205": null,
+  "fr-1202": {
+    "kind": "playful",
+    "text": "tu 借 two（二）：我是第一人称，轮到第二位说话的“你”了。"
+  },
+  "fr-1203": {
+    "kind": "playful",
+    "text": "il 像一个戴帽子直站着的他；elle 里藏着名字 Ella，把“她”绑在熟悉的女生名上。"
+  },
+  "fr-1204": {
+    "kind": "playful",
+    "text": "nous 开头 n 借“咱”：一群人合照，摄影师喊“你们”，照片里的人则说“咱们、我们”。"
+  },
+  "fr-1205": {
+    "kind": "playful",
+    "text": "vous 的 v 当 VIP：面对一位贵宾说“您”，面对一群贵宾说“你们”。"
+  },
   "fr-1206": {
     "kind": "association",
     "text": "il、elle 加 s 变复数；ils 可用于混合性别的一组人。"
   },
-  "fr-1207": null,
-  "fr-1208": null,
+  "fr-1207": {
+    "kind": "playful",
+    "text": "on 就借电源 ON：开关一开，“大家、我们”全上线，一群人开始一起干活。"
+  },
+  "fr-1208": {
+    "kind": "playful",
+    "text": "moi 跟 me 都先亮出 m：有人问“谁想要？”，我指着自己大喊“ME！我！”"
+  },
   "fr-1209": {
-    "kind": "association",
-    "text": "tu 是主语形式，toi 是重读形式；像英语 I 和 me 那样分角色记。"
+    "kind": "playful",
+    "text": "toi 借 toy（玩具）：争玩具时指着对方说“给你，归你”，让这个强调的“你”站出来。"
   },
-  "fr-1210": null,
-  "fr-1211": null,
+  "fr-1210": {
+    "kind": "playful",
+    "text": "lui 借 Louis（路易）的开头：点名“他，就是路易”，递礼物时也递给他。"
+  },
+  "fr-1211": {
+    "kind": "playful",
+    "text": "eux 把 x 当复数的人群交叉站位：远处好几个人挤在一起，手一指——他们！"
+  },
   "fr-1212": {
-    "kind": "association",
-    "text": "跟着人称记：je me、tu te、il/elle se。"
+    "kind": "playful",
+    "text": "me 先借英语 me（我）；换成 t 就朝向 tu（你），换成 s 则像 self（自己）回到本人。"
   },
-  "fr-1213": null,
+  "fr-1213": {
+    "kind": "playful",
+    "text": "le 借 LEGO：一桌积木里，我只点名“那块”；换成 la、les，也是给眼前指定的对象贴标签。"
+  },
   "fr-1214": {
-    "kind": "association",
-    "text": "un 阳性，une 阴性，des 复数；一起记成三格。"
+    "kind": "playful",
+    "text": "un、une 的 u 当一只购物篮，一次放一个；des 拖着 s，购物篮里开始装好几件。"
   },
-  "fr-1215": null,
-  "fr-1216": null,
-  "fr-1217": null,
-  "fr-1218": null,
+  "fr-1215": {
+    "kind": "playful",
+    "text": "du 的 u 当小碗：面对一锅汤，只舀一些装进 u。de la、de l' 也带着这只“只取一部分”的碗。"
+  },
+  "fr-1216": {
+    "kind": "playful",
+    "text": "mon、ma、mes 都举着 m，跟 my 的 m 排一队：每样东西先盖一个“我的”章。"
+  },
+  "fr-1217": {
+    "kind": "playful",
+    "text": "ton、ta、tes 全拿 t 开头，跟 tu（你）站一边：把你的东西统一贴 T 标签。"
+  },
+  "fr-1218": {
+    "kind": "playful",
+    "text": "son、sa、ses 全挂 s；借 someone（某个人）的 s：先记“那个人的”，再看东西是什么。"
+  },
   "fr-1219": {
-    "kind": "association",
-    "text": "notre 配单数物品，nos 配复数物品。"
+    "kind": "playful",
+    "text": "notre、nos 抓住 n，跟 nous（我们）同队：这堆东西统一贴“我们队的”标签。"
   },
   "fr-1220": {
-    "kind": "association",
-    "text": "votre 配单数，vos 配复数；主人是您或你们。"
+    "kind": "playful",
+    "text": "votre、vos 的 v 当 VIP：把贵宾的东西贴 V 标签，意思是“您或你们的”。"
   },
-  "fr-1221": null,
-  "fr-1222": null,
+  "fr-1221": {
+    "kind": "playful",
+    "text": "leur 借“溜”：那群人抱起自己的东西就溜了——那些是他们的，要还也还给他们。"
+  },
+  "fr-1222": {
+    "kind": "playful",
+    "text": "ce 的 c 当弯起来的手指：手指一点“这一个”；指一片时，ces 后面的 s 就跟着人多起来。"
+  },
   "fr-1223": {
     "kind": "association",
     "text": "-ci 提示这里；ceci 可联想 this。"
   },
   "fr-1224": {
-    "kind": "association",
-    "text": "ça 是 cela 的口语形式；Ça va ? 里的 ça 就是它。"
+    "kind": "playful",
+    "text": "ça 的 ç 当弯曲的手指：懒得把名字念一遍，往远处一指——那个。"
   },
-  "fr-1225": null,
-  "fr-1226": null,
+  "fr-1225": {
+    "kind": "playful",
+    "text": "celui 里有 lui（他）：人群里不喊名字，只指着“那一个”。把指人的手势换到物品上也行。"
+  },
+  "fr-1226": {
+    "kind": "playful",
+    "text": "quel 开头像 question（问题）：拿着两顶帽子犹豫，“哪一顶？什么颜色？”"
+  },
   "fr-1227": {
     "kind": "association",
     "text": "quelque＋un：不具体点名的某一个人。"
@@ -4311,14 +5124,26 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "chose 是东西；quelque chose 就是某样东西。"
   },
-  "fr-1229": null,
-  "fr-1230": null,
-  "fr-1231": null,
+  "fr-1229": {
+    "kind": "playful",
+    "text": "chacun 尾巴有 un（一个）：一个一个点到名，谁也不能漏，就是每个人。"
+  },
+  "fr-1230": {
+    "kind": "playful",
+    "text": "chaque 借“查”：老师挨个查作业，每张桌子都走一遍，每个都要查。"
+  },
+  "fr-1231": {
+    "kind": "playful",
+    "text": "tout 借 total（总共）的开头 to：把全部东西一把圈进来，一个也不留在外面。"
+  },
   "fr-1232": {
     "kind": "association",
     "text": "联想 plus（更多）：不止一两个，好几个。"
   },
-  "fr-1233": null,
+  "fr-1233": {
+    "kind": "playful",
+    "text": "quelques 比 quel（哪一个）多拖了一截：不只挑一个，再随手抓几个，数量仍不多。"
+  },
   "fr-1234": {
     "kind": "association",
     "text": "un 是一个；aucun 配否定就是连一个也没有。"
@@ -4327,75 +5152,174 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "other"
   },
-  "fr-1236": null,
+  "fr-1236": {
+    "kind": "playful",
+    "text": "même 像 meme（表情梗图）：群里十个人发的竟然是同一张 meme，完全相同。"
+  },
   "fr-1237": {
-    "kind": "association",
-    "text": "qui 是谁；n'importe qui 不限定是谁。"
+    "kind": "playful",
+    "text": "n'importe qui 里的 qui 是谁：门口这位保安一点也不挑，“随便谁，都能进”。"
   },
   "fr-1238": {
-    "kind": "association",
-    "text": "quoi 是什么；n'importe quoi 不限定什么，也可斥为胡话。"
+    "kind": "playful",
+    "text": "n'importe quoi 里的 quoi 是什么：点菜时什么都说行，厨师端来牙膏蛋糕，“你这也太胡来了！”"
   },
-  "fr-1239": null,
-  "fr-1240": null,
-  "fr-1241": null,
-  "fr-1242": null,
-  "fr-1243": null,
-  "fr-1244": null,
-  "fr-1245": null,
-  "fr-1246": null,
-  "fr-1247": null,
-  "fr-1248": null,
+  "fr-1239": {
+    "kind": "playful",
+    "text": "personne 里明明有 person（人），否定时却全场空座：人呢？一个也没有。"
+  },
+  "fr-1240": {
+    "kind": "playful",
+    "text": "rien 抓住 ri，借 ring（戒指）：盒子一开，ring 不见了，里面什么也没有。"
+  },
+  "fr-1241": {
+    "kind": "playful",
+    "text": "y 就是一根分岔路标：问目的地在哪，手指往路标那边一指——在那里。"
+  },
+  "fr-1242": {
+    "kind": "playful",
+    "text": "en 里的 n 当 number（数量）：前面已经说过苹果，后面只拎着 n 报数，“我要三个”。"
+  },
+  "fr-1243": {
+    "kind": "playful",
+    "text": "dont 的 d 借中文“的”：它像一只钩子，把后面“某人的、关于它的”内容钩回前面那个人或物。"
+  },
+  "fr-1244": {
+    "kind": "playful",
+    "text": "qui 是 quiz（问答）的开头：问答第一题，“谁干的？”抢答时先找人。"
+  },
+  "fr-1245": {
+    "kind": "playful",
+    "text": "que 正好是 question（问题）的前三个字母：问“什么”，或把后面的内容接进来。"
+  },
+  "fr-1246": {
+    "kind": "playful",
+    "text": "quoi 的 q 当 question，o 当惊得张圆的嘴：“什——么？”整个词就是一个吃惊的问号。"
+  },
+  "fr-1247": {
+    "kind": "playful",
+    "text": "lequel 像给 quel（哪一个）加了个指示牌 le：不用再说物品名，直接指着问“哪一个？”"
+  },
+  "fr-1248": {
+    "kind": "playful",
+    "text": "soi 借 self 的 s：谁照镜子，镜子就照谁自己，不固定是哪一个人。"
+  },
   "fr-1249": {
-    "kind": "association",
-    "text": "mon livre → le mien：省掉名词后的“我的那个”。"
+    "kind": "playful",
+    "text": "mien 跟 mine（我的东西）几乎只换位置：名词不说了，直接抱过来喊“Mine！”"
   },
   "fr-1250": {
-    "kind": "association",
-    "text": "ton livre → le tien：省掉名词后的“你的那个”。"
+    "kind": "playful",
+    "text": "tien 看 t，跟 toi（你）站一队：分礼物时这份朝你推过去，“你的那份”。"
   },
-  "fr-1251": null,
-  "fr-1252": null,
-  "fr-1253": null,
-  "fr-1254": null,
-  "fr-1255": null,
-  "fr-1256": null,
-  "fr-1257": null,
+  "fr-1251": {
+    "kind": "playful",
+    "text": "à 头顶那一撇当导航箭头：指到哪里，人就朝哪里去。"
+  },
+  "fr-1252": {
+    "kind": "playful",
+    "text": "de 和中文“的”撞了个梗：“我 de 书、你 de 包”，先让这个小钩子把两样东西连起来。"
+  },
+  "fr-1253": {
+    "kind": "playful",
+    "text": "en tant que 里的 tant 借 talent（才能）：拿着某种才能上场，以这个身份说话——作为老师、作为队长。"
+  },
+  "fr-1254": {
+    "kind": "playful",
+    "text": "dans 看着像 dance（跳舞）：外面下雨，今晚只能在屋里面 dance。"
+  },
+  "fr-1255": {
+    "kind": "playful",
+    "text": "sur 借 super 的开头：Superman 飞到屋顶上方，位置一定在上面。"
+  },
+  "fr-1256": {
+    "kind": "playful",
+    "text": "sous 借 soup（汤）：小勺一沉，消失在汤面下面了。"
+  },
+  "fr-1257": {
+    "kind": "playful",
+    "text": "avec 开头是 AV：audio 和 video 一起开，声音和画面结伴出现。"
+  },
   "fr-1258": {
     "kind": "association",
     "text": "英语也借用 sans 表示没有，如 sans-serif 无衬线。"
   },
-  "fr-1259": null,
-  "fr-1260": null,
+  "fr-1259": {
+    "kind": "playful",
+    "text": "pour 借英语 pour（倒水）：这杯水是为了谁倒的？给你。"
+  },
+  "fr-1260": {
+    "kind": "playful",
+    "text": "par 借 park（公园）的前三个字母：不绕远路，直接通过公园去车站。"
+  },
   "fr-1261": {
-    "kind": "association",
-    "text": "chez 后跟人或店家：chez moi 我家，chez le médecin 医生处。"
+    "kind": "playful",
+    "text": "chez 借“谁家”的“谁”：有人问派对在哪，答案先找主人——在谁家、在谁的店里。"
   },
-  "fr-1262": null,
+  "fr-1262": {
+    "kind": "playful",
+    "text": "entre 借 entry（入口）：走进入口时，身体恰好夹在左右两扇门之间。"
+  },
   "fr-1263": {
-    "kind": "association",
-    "text": "devant 指空间前面；avant 常指时间之前。"
+    "kind": "playful",
+    "text": "devant 把 devant 的 vant 借 van（货车）：挡在你眼前的那辆 van，位置就在前面。"
   },
-  "fr-1264": null,
-  "fr-1265": null,
-  "fr-1266": null,
-  "fr-1267": null,
-  "fr-1268": null,
-  "fr-1269": null,
-  "fr-1270": null,
-  "fr-1271": null,
+  "fr-1264": {
+    "kind": "playful",
+    "text": "derrière 末尾 rière 像 rear（后部）：找前门找不到，绕到 rear，从后面进去。"
+  },
+  "fr-1265": {
+    "kind": "playful",
+    "text": "avant 看着像 advance（提前）的前半：把闹钟 advance 十分钟，在别人之前出门。"
+  },
+  "fr-1266": {
+    "kind": "playful",
+    "text": "après 借 after-party（续摊）的 a、p：主活动结束之后，才轮到 after-party。"
+  },
+  "fr-1267": {
+    "kind": "playful",
+    "text": "depuis 的 de 借 date（日期）：在日历上圈一个 date，从那天拉一条线直到现在。"
+  },
+  "fr-1268": {
+    "kind": "playful",
+    "text": "pendant 借英语 pendant（吊坠）：整场婚礼期间，吊坠一直挂在胸前，没有摘下来过。"
+  },
+  "fr-1269": {
+    "kind": "playful",
+    "text": "jusqu'à 开头 jus 借 juice（果汁）：一路喝到杯底，直到最后一滴才停。"
+  },
+  "fr-1270": {
+    "kind": "playful",
+    "text": "dès 借“得”：门一开，“得，出发！”起点一出现，动作马上接上。"
+  },
+  "fr-1271": {
+    "kind": "playful",
+    "text": "vers 借 version（版本）的前半：软件正朝着新 version 前进，箭头指着那个方向。"
+  },
   "fr-1272": {
     "kind": "association",
     "text": "联想英语 contra-（反对）；也可指靠着表面。"
   },
-  "fr-1273": null,
-  "fr-1274": null,
+  "fr-1273": {
+    "kind": "playful",
+    "text": "selon 开头 sel 借 select（选择）：按照你 select 的选项，系统给出相应结果。"
+  },
+  "fr-1274": {
+    "kind": "playful",
+    "text": "parmi 里藏 arm（胳膊）：人群里举起一条 arm，看看你能不能从其中找到我。"
+  },
   "fr-1275": {
     "kind": "association",
     "text": "tour 是一圈；autour de 是在周围一圈。"
   },
-  "fr-1276": null,
-  "fr-1277": null,
+  "fr-1276": {
+    "kind": "playful",
+    "text": "près 借 press（贴紧、压）：两个地方在地图上挤得快贴在一起，说明离得很近。"
+  },
+  "fr-1277": {
+    "kind": "playful",
+    "text": "loin 看着像 long（长）：中间隔着一条 long long road，离得可远了。"
+  },
   "fr-1278": {
     "kind": "association",
     "text": "côté 是侧边；à côté de 就在旁边。"
@@ -4408,52 +5332,118 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "mi 联想 middle：在中间。"
   },
-  "fr-1281": null,
-  "fr-1282": null,
-  "fr-1283": null,
-  "fr-1284": null,
-  "fr-1285": null,
-  "fr-1286": null,
-  "fr-1287": null,
-  "fr-1288": {
-    "kind": "association",
-    "text": "pourquoi 为什么？parce que 因为：一问一答。"
+  "fr-1281": {
+    "kind": "playful",
+    "text": "dessus 先借 sur（上面）抓 s：把 us（我们）举过头顶，我们就在它上方。"
   },
-  "fr-1289": null,
-  "fr-1290": null,
+  "fr-1282": {
+    "kind": "playful",
+    "text": "dessous 比 dessus 多个圆 o：把 o 当掉进地下室的小球，记住位置在下方。"
+  },
+  "fr-1283": {
+    "kind": "playful",
+    "text": "hors 借 horse（马）：马把围栏撞开，跑到圈外，范围已经超出了。"
+  },
+  "fr-1284": {
+    "kind": "playful",
+    "text": "et 借电影 E.T.：小男孩“和”外星人一起骑车，两位主角被一个“和”连起来。"
+  },
+  "fr-1285": {
+    "kind": "playful",
+    "text": "ou 的 u 当岔路：只能往左或者往右选一条，不能把两条都当直路走。"
+  },
+  "fr-1286": {
+    "kind": "playful",
+    "text": "mais 里的 m 借“慢着”：话刚说完，有人抬手“慢着！但是……”"
+  },
+  "fr-1287": {
+    "kind": "playful",
+    "text": "car 就借英语 car（车）编借口：“为什么迟到？因为 car 又坏了。”"
+  },
+  "fr-1288": {
+    "kind": "playful",
+    "text": "parce 借“怕迟”：问为什么一路狂奔，“因为怕迟到！”把原因绑在这句借口上。"
+  },
+  "fr-1289": {
+    "kind": "playful",
+    "text": "puisque 看见 puis（然后）的影子：既然前面的事实已经确定，后面的结论就顺着出来。"
+  },
+  "fr-1290": {
+    "kind": "playful",
+    "text": "si 借 if 的两字母小身板：像一扇条件开关，如果按下去，后面的事情才启动。"
+  },
   "fr-1291": {
     "kind": "association",
     "text": "si＋non 的联想：如果不是这样，就“否则”。"
   },
-  "fr-1292": null,
-  "fr-1293": null,
-  "fr-1294": null,
+  "fr-1292": {
+    "kind": "playful",
+    "text": "quand 的 q 当 question，后面绑一只钟：这次问的不是谁，而是“什么时候？”"
+  },
+  "fr-1293": {
+    "kind": "playful",
+    "text": "lorsque 抓住 lor，借“落”：秒针落到约好的刻度，当那一刻到来，电影开始。"
+  },
+  "fr-1294": {
+    "kind": "playful",
+    "text": "comment 就借英语 comment（评论）：不会做就在评论区问“这究竟怎么弄？”"
+  },
   "fr-1295": {
     "kind": "association",
     "text": "pour（为了）＋ quoi（什么）：为什么？"
   },
-  "fr-1296": null,
-  "fr-1297": null,
+  "fr-1296": {
+    "kind": "playful",
+    "text": "où 的重音符号当地图定位针：小小一针扎下来，问“在哪里？”"
+  },
+  "fr-1297": {
+    "kind": "playful",
+    "text": "combien 开头 comb 借 combine（合在一起）：把购物车里的金额全加起来，一共多少？"
+  },
   "fr-1298": {
     "kind": "association",
     "text": "ni…ni… 对应 neither…nor…。"
   },
-  "fr-1299": null,
-  "fr-1300": null,
+  "fr-1299": {
+    "kind": "playful",
+    "text": "soit… soit… 两个一样的牌子各守一扇门：要么进左边，要么进右边，选一扇。"
+  },
+  "fr-1300": {
+    "kind": "playful",
+    "text": "afin 里藏 fin（终点）：把终点画在前面，现在做这些，是为了到达那里。"
+  },
   "fr-1301": {
-    "kind": "association",
-    "text": "ne 和 pas 把动词夹起来：je ne sais pas。"
+    "kind": "playful",
+    "text": "ne… pas 把动词两边堵住，像两扇拒绝通行的门：“不许过去，这事不发生。”"
   },
   "fr-1302": {
-    "kind": "association",
-    "text": "把 pas 换成 plus：从“不”变成“不再”。"
+    "kind": "playful",
+    "text": "ne… plus 把 plus 当游戏加号：加号被关掉，计数停止，不再继续增加。"
   },
-  "fr-1303": null,
-  "fr-1304": null,
-  "fr-1305": null,
-  "fr-1306": null,
-  "fr-1307": null,
-  "fr-1308": null,
+  "fr-1303": {
+    "kind": "playful",
+    "text": "ne… que 像一道越收越窄的门：其他人全拦住，仅仅放 que 后面的那一位通过。"
+  },
+  "fr-1304": {
+    "kind": "playful",
+    "text": "très 借“特”：特别好、特别大、特别累，这个“特”就是很、非常。"
+  },
+  "fr-1305": {
+    "kind": "playful",
+    "text": "trop 借 too 的两个 t、o：往里又挤了 r、p，挤得太多太满，已经过头了。"
+  },
+  "fr-1306": {
+    "kind": "playful",
+    "text": "assez 借“啊，塞”：箱子再塞就爆了，“啊，塞够了，别加了！”"
+  },
+  "fr-1307": {
+    "kind": "playful",
+    "text": "beaucoup 抓住 beau，借 beautiful 的前半：“漂亮衣服太多了，每件都想要！”"
+  },
+  "fr-1308": {
+    "kind": "playful",
+    "text": "peu 只有短短三个字母，借“呸”的小口气：费这么大劲，才给这么一点点？"
+  },
   "fr-1309": {
     "kind": "english",
     "text": "plus；像数学加号，表示更多"
@@ -4462,8 +5452,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "minus；像减号，表示更少"
   },
-  "fr-1311": null,
-  "fr-1312": null,
+  "fr-1311": {
+    "kind": "playful",
+    "text": "aussi 开头像 also：别人有一份，我 also 要一份——我也一样。"
+  },
+  "fr-1312": {
+    "kind": "playful",
+    "text": "autant 里的 tant 借 tank（油箱）：两辆车油箱刻度齐平，装得同样多。"
+  },
   "fr-1313": {
     "kind": "association",
     "text": "英语喊 encore 是再来一次；法语也有还、仍然之义。"
@@ -4472,7 +5468,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "英语 déjà vu 是似曾相识：déjà 表示已经。"
   },
-  "fr-1315": null,
+  "fr-1315": {
+    "kind": "playful",
+    "text": "souvent 开头 sou 借“搜”：那家店地址不用搜，我经常去，闭眼都认识路。"
+  },
   "fr-1316": {
     "kind": "association",
     "text": "fois 是次；parfois 是有些时候。"
@@ -4481,22 +5480,34 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "bien＋tôt（早）的联想：不用等很久。"
   },
-  "fr-1318": null,
+  "fr-1318": {
+    "kind": "playful",
+    "text": "tôt 中间 ô 戴着小尖帽，像日出时露头的太阳：天才亮，来得真早。"
+  },
   "fr-1319": {
     "kind": "association",
     "text": "联想英语 tardy（迟到的）。"
   },
-  "fr-1320": null,
+  "fr-1320": {
+    "kind": "playful",
+    "text": "vite 借 vitamin（维生素）的 vit：游戏里吃颗“速度维生素”，跑得飞快。"
+  },
   "fr-1321": {
     "kind": "association",
     "text": "lent（慢）＋ -ment：慢慢地。"
   },
-  "fr-1322": null,
+  "fr-1322": {
+    "kind": "playful",
+    "text": "bien 开头 bi 借 bingo（答对了）：答对时拍桌喊“Bingo！”，做得好！"
+  },
   "fr-1323": {
     "kind": "association",
     "text": "联想英语 mal- 的负面感觉，如 malfunction。"
   },
-  "fr-1324": null,
+  "fr-1324": {
+    "kind": "playful",
+    "text": "mieux 借“妙”：原来的主意不错，新主意更妙，效果自然更好。"
+  },
   "fr-1325": {
     "kind": "association",
     "text": "vrai 是真的；vraiment 是确实、真的。"
@@ -4521,8 +5532,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "英语 ensemble 是合奏组合；成员一起演奏。"
   },
-  "fr-1331": null,
-  "fr-1332": null,
+  "fr-1331": {
+    "kind": "playful",
+    "text": "ici 两个 i 站在两边，像双脚，中间 c 当我：我脚下这块地方，就是这里。"
+  },
+  "fr-1332": {
+    "kind": "playful",
+    "text": "là 头顶那撇像手指朝外一指：“喏，在那里。”与脚下的这里分开。"
+  },
   "fr-1333": {
     "kind": "association",
     "text": "là（那里）是更简单的基础词；加上 -bas 后，là-bas 指离说话人更远的那边。"
@@ -4531,12 +5548,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "par（经过、遍及）＋ tout（全部）：遍及所有地方，就是到处。"
   },
-  "fr-1335": null,
+  "fr-1335": {
+    "kind": "playful",
+    "text": "dehors 中间 hors 借 horse（马）：马待不住屋子，已经跑到外面去了。"
+  },
   "fr-1336": {
     "kind": "association",
     "text": "dans 在里面，dedans 在里头；dedans 可独立说，不必再接容器。"
   },
-  "fr-1337": null,
+  "fr-1337": {
+    "kind": "playful",
+    "text": "dessus 把末尾 us 当“我们”：把我们举高高，us 就在上面了。"
+  },
   "fr-1338": {
     "kind": "association",
     "text": "sous 在下面，dessous 在下方；dessous 可独立，不必再接物体。"
@@ -4545,18 +5568,30 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "suite 是后续；ensuite 接着说下一步。"
   },
-  "fr-1340": null,
-  "fr-1341": null,
+  "fr-1340": {
+    "kind": "playful",
+    "text": "puis 借“扑一次”：先站上跳台，随后扑通跳水。把这一下“扑”当下一步的信号。"
+  },
+  "fr-1341": {
+    "kind": "playful",
+    "text": "d'abord 的 bord 借 board（登机）：出发第一步，先登上那架飞机；后面的事上去再说。"
+  },
   "fr-1342": {
     "kind": "association",
     "text": "fin 是结束；enfin 到最后终于完成。"
   },
-  "fr-1343": null,
+  "fr-1343": {
+    "kind": "playful",
+    "text": "alors 借 alarm（闹钟）的 al：“闹钟已经响了，那么，我们出发吧。”"
+  },
   "fr-1344": {
     "kind": "association",
     "text": "long（长）＋ temps（时间）：很久。"
   },
-  "fr-1345": null,
+  "fr-1345": {
+    "kind": "playful",
+    "text": "tellement 开头 tell：忍不住 tell everyone（告诉所有人），“它居然这么好吃！”"
+  },
   "fr-1346": {
     "kind": "english",
     "text": "completely"
@@ -4597,16 +5632,34 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "联想英语 quartet（四重奏）：quatre 是四。"
   },
-  "fr-1356": null,
+  "fr-1356": {
+    "kind": "playful",
+    "text": "cinq 借 sink（水槽）：洗五个杯子，数到第五个就宣布下班，水槽今晚只接待五位。"
+  },
   "fr-1357": {
     "kind": "english",
     "text": "six：两种语言对数字六的拼写相同，可以直接用熟悉的英语词形。"
   },
-  "fr-1358": null,
-  "fr-1359": null,
-  "fr-1360": null,
-  "fr-1361": null,
-  "fr-1362": null,
+  "fr-1358": {
+    "kind": "playful",
+    "text": "sept 借 Seven 的 se：把 seven 压缩到四个字母，七个人还是一个也没少。"
+  },
+  "fr-1359": {
+    "kind": "playful",
+    "text": "huit 借“会”：八爪鱼的八只手样样都会，一只炒菜、一只刷碗，八只都忙不过来。"
+  },
+  "fr-1360": {
+    "kind": "playful",
+    "text": "neuf 借“牛”：九头牛挤进电梯，刚好九，别再往里加。"
+  },
+  "fr-1361": {
+    "kind": "playful",
+    "text": "dix 抓住末尾 x：罗马数字 X 就是十，答案直接藏在词尾。"
+  },
+  "fr-1362": {
+    "kind": "playful",
+    "text": "onze 就像 one（一个）里面塞了 z：十已经数完，再加 one，就是十一。"
+  },
   "fr-1363": {
     "kind": "association",
     "text": "联想英语 dozen（一打）：douze 是十二。"
@@ -4639,7 +5692,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "dix＋neuf＝10＋9。"
   },
-  "fr-1371": null,
+  "fr-1371": {
+    "kind": "playful",
+    "text": "vingt 借“赢”：游戏规定赢一局拿 20 分，计分板每次都跳一个大大的 20。"
+  },
   "fr-1372": {
     "kind": "association",
     "text": "trente 与 trois 配对：三十 / 三。"
@@ -4786,7 +5842,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "July；比 juin 多出一截，月份也晚一个"
   },
-  "fr-1395": null,
+  "fr-1395": {
+    "kind": "playful",
+    "text": "août 开头 ao 借“熬”：八月天热，空调坏了，熬到晚上才凉快一点。"
+  },
   "fr-1396": {
     "kind": "english",
     "text": "September"
@@ -4807,25 +5866,58 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "million"
   },
-  "fr-1401": null,
-  "fr-1402": null,
-  "fr-1403": null,
-  "fr-1404": null,
-  "fr-1405": null,
-  "fr-1406": null,
-  "fr-1407": null,
-  "fr-1408": null,
+  "fr-1401": {
+    "kind": "playful",
+    "text": "chose 就借 choose（选择）少个 o：挑来挑去，最后选中“这件东西”。"
+  },
+  "fr-1402": {
+    "kind": "playful",
+    "text": "temps 像 temp（温度）多了 s：手机一抬头，一边显示温度天气，一边显示时间。"
+  },
+  "fr-1403": {
+    "kind": "playful",
+    "text": "vie 借 video 的 vi：从出生一直播放到今天，你这段超长 video 就是人生。"
+  },
+  "fr-1404": {
+    "kind": "playful",
+    "text": "fois 借“回”：游戏输了不服，“再来一回！”按一下重开，就多一次。"
+  },
+  "fr-1405": {
+    "kind": "playful",
+    "text": "an 就抓 annual（一年一度）的开头：日历从一月撕到十二月，才走完一个 an。"
+  },
+  "fr-1406": {
+    "kind": "playful",
+    "text": "fille 借 fill（装满）：小女孩的口袋被零食 fill 满了，还说“爸爸，我还要”。"
+  },
+  "fr-1407": {
+    "kind": "playful",
+    "text": "monde 抓住 mon，借 moon（月亮）：站上 moon 回头望，整个世界都装进视野里。"
+  },
+  "fr-1408": {
+    "kind": "playful",
+    "text": "monsieur 后半借英语 sir（先生）的影子：门口礼宾一弯腰，开口就是“先生”。"
+  },
   "fr-1409": {
     "kind": "english",
     "text": "hour"
   },
-  "fr-1410": null,
-  "fr-1411": null,
+  "fr-1410": {
+    "kind": "playful",
+    "text": "gens 看见 gen，借 generation（一代人）：几代人挤进合照，照片上满满都是人。"
+  },
+  "fr-1411": {
+    "kind": "playful",
+    "text": "nuit 抓住 ni、t，借 night（夜晚）的头尾：中间天黑得看不清，夜晚已经来了。"
+  },
   "fr-1412": {
     "kind": "english",
     "text": "name；填表 nom 常要填姓氏"
   },
-  "fr-1413": null,
+  "fr-1413": {
+    "kind": "playful",
+    "text": "peur 看着像 poor（可怜）：可怜的小人被鬼屋吓住，眼里只剩恐惧。"
+  },
   "fr-1414": {
     "kind": "english",
     "text": "mama"
@@ -4842,8 +5934,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "联想英语 manual（手动的），记 main 是手。"
   },
-  "fr-1418": null,
-  "fr-1419": null,
+  "fr-1418": {
+    "kind": "playful",
+    "text": "fils 抓住 fil，借 film（影片）：老 film 里爸爸小时候的表情，现在儿子一模一样地重演。"
+  },
+  "fr-1419": {
+    "kind": "playful",
+    "text": "tête 中间 ê 戴着帽子：帽子下面装着一个头，脑子就在里面。"
+  },
   "fr-1420": {
     "kind": "english",
     "text": "coup 在英语里常指政变；法语基本义是“一击”，政变只是由此形成的一种特定表达。"
@@ -4852,12 +5950,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "mortality（死亡）；mort 是死亡本身"
   },
-  "fr-1422": null,
+  "fr-1422": {
+    "kind": "playful",
+    "text": "amour 里明摆着 our（我们的）：一个人的心事变成“我们的故事”，爱情登场。"
+  },
   "fr-1423": {
     "kind": "english",
     "text": "moment"
   },
-  "fr-1424": null,
+  "fr-1424": {
+    "kind": "playful",
+    "text": "œil 的 œ 当挨着的两只眼，il 当眼泪往下落；复数 yeux 把 y 当鼻梁，两边各安一只眼。"
+  },
   "fr-1425": {
     "kind": "english",
     "text": "question"
@@ -4866,8 +5970,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "affair；mes affaires 常指我的随身东西"
   },
-  "fr-1427": null,
-  "fr-1428": null,
+  "fr-1427": {
+    "kind": "playful",
+    "text": "travail 开头像 travel（旅行）：想去 travel，先攒钱；眼前这一摞活就是工作。"
+  },
+  "fr-1428": {
+    "kind": "playful",
+    "text": "truc 抓住 trick（小技巧）的 tr：修东西卡住了？朋友掏出一个小玩意，使出一个 trick。"
+  },
   "fr-1429": {
     "kind": "english",
     "text": "chance；bonne chance 就是祝好运"
@@ -4880,7 +5990,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "type；口语 ce type 也可以是这个家伙"
   },
-  "fr-1432": null,
+  "fr-1432": {
+    "kind": "playful",
+    "text": "mec 跟 Mac 只差一个字母：咖啡馆里抱着 Mac 的那个家伙，又坐了一下午。"
+  },
   "fr-1433": {
     "kind": "association",
     "text": "英语 madam 与 madame 联想；缩写 Mme。"
@@ -4897,13 +6010,22 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "联想英语 terrestrial（陆地的），记 terre。"
   },
-  "fr-1437": null,
-  "fr-1438": null,
+  "fr-1437": {
+    "kind": "playful",
+    "text": "gars 和 guys 都是 g 开头、s 收尾：喊一声“Hey, guys！”，那群小伙子一起回头。"
+  },
+  "fr-1438": {
+    "kind": "playful",
+    "text": "côté 借 coat（外套）的影子：外套翻过来，先看这一侧，再看另一侧。"
+  },
   "fr-1439": {
     "kind": "english",
     "text": "case"
   },
-  "fr-1440": null,
+  "fr-1440": {
+    "kind": "playful",
+    "text": "mot 是 motto（座右铭）的前三个字母：一句座右铭，也是由一个个词拼出来的。"
+  },
   "fr-1441": {
     "kind": "association",
     "text": "联想英语 salute；熟人见面或告别都可以 salut。"
@@ -4924,8 +6046,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "papa"
   },
-  "fr-1446": null,
-  "fr-1447": null,
+  "fr-1446": {
+    "kind": "playful",
+    "text": "garçon 末尾 çon 借 son（儿子）：家长指着小男孩说“My son！”，重点先抓住这个男孩。"
+  },
+  "fr-1447": {
+    "kind": "playful",
+    "text": "feu 借“飞”：锅一着火，火苗往上飞，消防车也飞快赶来。"
+  },
   "fr-1448": {
     "kind": "english",
     "text": "doctor"
@@ -4946,7 +6074,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "debut"
   },
-  "fr-1453": null,
+  "fr-1453": {
+    "kind": "playful",
+    "text": "journée 开头像 journal（日记）：从早写到晚，写满一天，才合上这页日记。"
+  },
   "fr-1454": {
     "kind": "association",
     "text": "soir 是晚上，-ée 把它变成一段持续的时间：soirée 是度过的整个晚上，也可指晚间聚会。"
@@ -5005,7 +6136,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
       ]
     }
   },
-  "fr-1464": null,
+  "fr-1464": {
+    "kind": "playful",
+    "text": "été 两个 é 像两把撑开的遮阳伞：太阳太毒，夏天出门每人一把。"
+  },
   "fr-1465": {
     "kind": "english",
     "text": "autumn"
@@ -5088,8 +6222,8 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "couple"
   },
   "fr-1483": {
-    "kind": "association",
-    "text": "copain/copine 是熟悉的朋友；语境也能表示恋人。",
+    "kind": "playful",
+    "text": "copain 抓住 co，借 co-op（合作）：一起开黑、一起吃饭的搭子，是朋友，也可能慢慢成了恋人。",
     "origin": {
       "text": "copain 来自古法语 compain，与 compagnon 同源。更早的构词包含“共同”和“面包”，指一起分享面包的人：朋友的名字里，藏着同桌吃饭的亲近。",
       "sources": [
@@ -5124,7 +6258,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "divorce"
   },
-  "fr-1489": null,
+  "fr-1489": {
+    "kind": "playful",
+    "text": "naissance 开头 nai 借“奶”：产房传来第一声哭，家人赶紧准备奶瓶，新生命出生了。"
+  },
   "fr-1490": {
     "kind": "association",
     "text": "enfant 是孩子；enfance 是孩子时期。"
@@ -5133,8 +6270,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "ami 是朋友；amitié 是朋友之间的友谊。"
   },
-  "fr-1492": null,
-  "fr-1493": null,
+  "fr-1492": {
+    "kind": "playful",
+    "text": "fête 中间 ê 戴着派对帽：帽子一戴，蛋糕端上来，今天要庆祝！"
+  },
+  "fr-1493": {
+    "kind": "playful",
+    "text": "cadeau 开头 cad 借 card（卡片）：礼物盒上别忘了夹一张贺卡，惊喜才算完整。"
+  },
   "fr-1494": {
     "kind": "english",
     "text": "surprise"
@@ -5147,7 +6290,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "visit"
   },
-  "fr-1497": null,
+  "fr-1497": {
+    "kind": "playful",
+    "text": "rencontre 中间 contre 像 counter（柜台）：转到同一个柜台，两个多年没见的朋友撞个正着。"
+  },
   "fr-1498": {
     "kind": "english",
     "text": "invitation"
@@ -5157,13 +6303,25 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "pré- 在前＋ nom 名：区分 prénom 名字与 nom 姓。"
   },
   "fr-1500": {
-    "kind": "association",
-    "text": "像英语 surname，但 surnom 是绰号，不是姓氏。"
+    "kind": "playful",
+    "text": "surnom 像 surname（姓）：班里同姓太多，于是给每人再起个绰号，终于能分清了。"
   },
-  "fr-1501": null,
-  "fr-1502": null,
-  "fr-1503": null,
-  "fr-1504": null,
+  "fr-1501": {
+    "kind": "playful",
+    "text": "visage 开头直接是 visa（签证）：办 visa 时必须露出脸拍照，别把脸挡住。"
+  },
+  "fr-1502": {
+    "kind": "playful",
+    "text": "bouche 看着像 bush（灌木）：吃完菠菜不擦嘴，嘴边绿得像长了一圈 bush。"
+  },
+  "fr-1503": {
+    "kind": "playful",
+    "text": "nez 跟 nose 都先伸出 n：把中间 z 当折起来的鼻梁，脸上最往前突的就是它。"
+  },
+  "fr-1504": {
+    "kind": "playful",
+    "text": "oreille 开头 ore 像 Oreo：把两块奥利奥夹在脑袋两边，竟然当耳朵听起歌来。"
+  },
   "fr-1505": {
     "kind": "english",
     "text": "dental（牙齿的）"
@@ -5172,7 +6330,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "language；舌头帮助发声，langue 兼指语言"
   },
-  "fr-1507": null,
+  "fr-1507": {
+    "kind": "playful",
+    "text": "cou 借 collar（领子）的 co：领子围一圈，圈住的那截就是脖子。"
+  },
   "fr-1508": {
     "kind": "association",
     "text": "英语 gorge 是峡谷；联想像喉咙一样狭窄的通道。"
@@ -5181,53 +6342,89 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "联想英语 bracelet（手链），戴在手臂末端。"
   },
-  "fr-1510": null,
-  "fr-1511": {
-    "kind": "english",
-    "text": "jamb（门侧的竖框）可作字形线索；jambe 是人体的腿，末尾 e 不另读。"
+  "fr-1510": {
+    "kind": "playful",
+    "text": "épaule 里住着一个 Paul：Paul 不想走路，非要骑在爸爸肩膀上看烟花。"
   },
-  "fr-1512": null,
+  "fr-1511": {
+    "kind": "playful",
+    "text": "jambe 开头 jam 借 jam（果酱）：裤腿不小心沾满果酱，走一步黏一下，这双腿今天太惨了。"
+  },
+  "fr-1512": {
+    "kind": "playful",
+    "text": "genou 的 n 当弯起的腿，o 当关节：走楼梯时，这个 o 一直折来折去，就是膝盖。"
+  },
   "fr-1513": {
     "kind": "association",
     "text": "联想英语 pedestrian（行人）：用脚走路。"
   },
-  "fr-1514": null,
+  "fr-1514": {
+    "kind": "playful",
+    "text": "dos 就借老电脑 DOS：主机前面是屏幕，背面密密麻麻全是线——看它的背。"
+  },
   "fr-1515": {
     "kind": "association",
     "text": "联想英语 ventral（腹部的），记 ventre。"
   },
-  "fr-1516": null,
-  "fr-1517": null,
+  "fr-1516": {
+    "kind": "playful",
+    "text": "doigt 的 doi 借 digit（手指；数字）的影子：计算器坏了，只能掰着手指数。"
+  },
+  "fr-1517": {
+    "kind": "playful",
+    "text": "cheveu 开头 che 借 chef（厨师）：chef 摘下高帽，露出一根怎么也压不平的头发。"
+  },
   "fr-1518": {
     "kind": "association",
     "text": "联想英语 lip；双唇常用 les lèvres。"
   },
-  "fr-1519": null,
+  "fr-1519": {
+    "kind": "playful",
+    "text": "joue 借 joy（快乐）的开头：笑得太开心，两边脸颊都鼓起来了。"
+  },
   "fr-1520": {
     "kind": "english",
     "text": "front；头部正前方是额头"
   },
-  "fr-1521": null,
+  "fr-1521": {
+    "kind": "playful",
+    "text": "ongle 像 angle（角度）换了开头：指甲留得太尖，转个 angle 就刮到衣服。"
+  },
   "fr-1522": {
     "kind": "english",
     "text": "barber；理发师也修胡须"
   },
-  "fr-1523": null,
-  "fr-1524": null,
-  "fr-1525": null,
-  "fr-1526": null,
+  "fr-1523": {
+    "kind": "playful",
+    "text": "poitrine 像 point（指）被打散：问“你说我吗？”，手指 point 的正是自己胸口。"
+  },
+  "fr-1524": {
+    "kind": "playful",
+    "text": "cheville 借鞋口的“鞋”：新鞋鞋口太硬，走两步就磨脚踝，脚踝来投诉了。"
+  },
+  "fr-1525": {
+    "kind": "playful",
+    "text": "poignet 抓住 po，借 point（指）：指针不停转，手表绑住的这一圈是手腕。"
+  },
+  "fr-1526": {
+    "kind": "playful",
+    "text": "chaussure 尾巴是 sure（确定）：新鞋穿好跺两脚，“Sure，合脚，这双能走远路！”"
+  },
   "fr-1527": {
     "kind": "english",
     "text": "robe；法语通常指连衣裙"
   },
-  "fr-1528": null,
+  "fr-1528": {
+    "kind": "playful",
+    "text": "chemise 像 chemistry（化学）的前半：上化学课忘穿白大褂，把衬衫溅成了花衬衫。"
+  },
   "fr-1529": {
     "kind": "english",
     "text": "pantaloons / pants"
   },
   "fr-1530": {
-    "kind": "association",
-    "text": "像英语 vest，但 veste 常是夹克，不是背心。"
+    "kind": "playful",
+    "text": "veste 看着像 vest（背心）：给 vest 加个 e，好像顺手也加了两条袖子，变成夹克。"
   },
   "fr-1531": {
     "kind": "association",
@@ -5237,7 +6434,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "pull 缩自 pull-over：从头套下去的毛衣。"
   },
-  "fr-1533": null,
+  "fr-1533": {
+    "kind": "playful",
+    "text": "jupe 借 jump（跳）的 ju：转着圈轻轻 jump，半身裙一下子飞起来。"
+  },
   "fr-1534": {
     "kind": "english",
     "text": "T-shirt"
@@ -5250,7 +6450,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "shorts；法语一条短裤用单数 un short"
   },
-  "fr-1537": null,
+  "fr-1537": {
+    "kind": "playful",
+    "text": "chaussette 尾巴两个 t 当左右两只袜子：洗衣机转一圈，总有一只 t 神秘失踪。"
+  },
   "fr-1538": {
     "kind": "association",
     "text": "sous（下面）＋ vêtement（衣物）：穿里面的衣物。"
@@ -5267,14 +6470,26 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "联想 basketball 穿的鞋；basket 在此指运动鞋。"
   },
-  "fr-1542": null,
+  "fr-1542": {
+    "kind": "playful",
+    "text": "chapeau 抓住 chap，借 cap（帽子）：给 cap 添几个字母，帽檐也跟着变宽了。"
+  },
   "fr-1543": {
     "kind": "english",
     "text": "bonnet"
   },
-  "fr-1544": null,
-  "fr-1545": null,
-  "fr-1546": null,
+  "fr-1544": {
+    "kind": "playful",
+    "text": "écharpe 中间藏着 harp（竖琴）：天气太冷，竟给竖琴也围了一条长围巾。"
+  },
+  "fr-1545": {
+    "kind": "playful",
+    "text": "gant 开头 ga 借“敢”：天冷不敢摸铁门，戴上手套就敢了。"
+  },
+  "fr-1546": {
+    "kind": "playful",
+    "text": "ceinture 借 center（中间）的近形：在身体正中间勒一圈，裤子就靠这条带子撑住。"
+  },
   "fr-1547": {
     "kind": "association",
     "text": "联想英语 pouch（小袋），记口袋。"
@@ -5296,16 +6511,34 @@ export const memoryHints: Record<string, MemoryHint | null> = {
       ]
     }
   },
-  "fr-1550": null,
-  "fr-1551": null,
-  "fr-1552": null,
-  "fr-1553": null,
+  "fr-1550": {
+    "kind": "playful",
+    "text": "montre 借 monitor（监视器）的 mon：把看时间的小屏幕绑上手腕，就是手表。"
+  },
+  "fr-1551": {
+    "kind": "playful",
+    "text": "repas 开头像 repeat（重复）：早上吃过，中午 repeat，晚上又 repeat，一顿接一顿。"
+  },
+  "fr-1552": {
+    "kind": "playful",
+    "text": "petit（小）＋ déjeuner（午餐）：把午餐缩成小一份，提前到起床后吃，变成早餐。"
+  },
+  "fr-1553": {
+    "kind": "playful",
+    "text": "déjeuner 抓住 je，借“借”：同事到中午问“借你饭卡刷一下”，午餐时间到了。"
+  },
   "fr-1554": {
     "kind": "english",
     "text": "dinner"
   },
-  "fr-1555": null,
-  "fr-1556": null,
+  "fr-1555": {
+    "kind": "playful",
+    "text": "faim 像 famine（饥荒）被压短了：肚子里已经闹起小小的 famine，饿得咕咕叫。"
+  },
+  "fr-1556": {
+    "kind": "playful",
+    "text": "soif 抓住 soi，借 soda（汽水）：口干得只盯着冰柜里的 soda，先喝一大口。"
+  },
   "fr-1557": {
     "kind": "english",
     "text": "nourish（滋养）作线索；nourriture 保留 nourri-，表示供人吃的食物。"
@@ -5342,9 +6575,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "cucumber"
   },
-  "fr-1566": null,
-  "fr-1567": null,
-  "fr-1568": null,
+  "fr-1566": {
+    "kind": "playful",
+    "text": "poivron 开头 poi 借 point（尖端）：一盘红黄绿的小尖帽子，原来是彩椒切成的帽子。"
+  },
+  "fr-1567": {
+    "kind": "playful",
+    "text": "courgette 开头 cour 借 court（球场）：西葫芦长得像绿色球棒，硬要来球场参加比赛。"
+  },
+  "fr-1568": {
+    "kind": "playful",
+    "text": "aubergine 抓住 berg，借 iceberg（冰山）：紫色茄子坐在冰山上，假装自己是一只胖企鹅。"
+  },
   "fr-1569": {
     "kind": "english",
     "text": "spinach"
@@ -5353,7 +6595,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "petits（小）＋ pois（豆）：小圆豌豆。"
   },
-  "fr-1571": null,
+  "fr-1571": {
+    "kind": "playful",
+    "text": "chou 借“球”：一颗卷心菜像个大绿球，叶子一层层包得紧紧的。"
+  },
   "fr-1572": {
     "kind": "english",
     "text": "broccoli"
@@ -5387,7 +6632,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "peach；法语 pêche 也指捕鱼，靠场景区分"
   },
-  "fr-1578": null,
+  "fr-1578": {
+    "kind": "playful",
+    "text": "fraise 借 phrase（短语）的近形：老师的 phrase 是“草莓草莓我爱你”，全班听饿了。"
+  },
   "fr-1579": {
     "kind": "association",
     "text": "英语 raisin 是葡萄干，法语 raisin 是葡萄；干的加 sec。"
@@ -5400,13 +6648,22 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "melon"
   },
-  "fr-1582": null,
+  "fr-1582": {
+    "kind": "playful",
+    "text": "pastèque 开头 pas 借 pass（传球）：夏天传的不是篮球，是一只沉甸甸的西瓜。"
+  },
   "fr-1583": {
     "kind": "english",
     "text": "apricot"
   },
-  "fr-1584": null,
-  "fr-1585": null,
+  "fr-1584": {
+    "kind": "playful",
+    "text": "ananas 看着像 bananas（香蕉）改了开头：水果摊挂错牌，香蕉摘下面具，竟是一颗菠萝。"
+  },
+  "fr-1585": {
+    "kind": "playful",
+    "text": "noix 把末尾 x 当胡桃夹：硬壳一夹咔嚓裂开，露出里面的坚果仁。"
+  },
   "fr-1586": {
     "kind": "english",
     "text": "almond；amende 是罚款，别把 a 写成 e"
@@ -5424,7 +6681,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
       ]
     }
   },
-  "fr-1588": null,
+  "fr-1588": {
+    "kind": "playful",
+    "text": "gâteau 借 gate（大门）：生日蛋糕大得夸张，进不了 gate，只好在门口切。"
+  },
   "fr-1589": {
     "kind": "english",
     "text": "biscuit",
@@ -5446,9 +6706,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "bon 是好；bonbon 像连说两次“好吃”。"
   },
-  "fr-1592": null,
-  "fr-1593": null,
-  "fr-1594": null,
+  "fr-1592": {
+    "kind": "playful",
+    "text": "confiture 里的 fit 借 fit（装得下）：整颗草莓装不进瓶口，煮成果酱终于 fit 了。"
+  },
+  "fr-1593": {
+    "kind": "playful",
+    "text": "miel 借 meal（一餐）的影子：小熊的 meal 不要饭，只要一罐蜂蜜。"
+  },
+  "fr-1594": {
+    "kind": "playful",
+    "text": "compote 把 pot（锅）圈出来：水果进 pot 一煮，软成一碗甜甜的水果泥。"
+  },
   "fr-1595": {
     "kind": "english",
     "text": "pasta；法语常用复数 pâtes"
@@ -5457,12 +6726,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "小扁豆和隐形眼镜都扁圆，用 lentilles 联想形状。"
   },
-  "fr-1597": null,
+  "fr-1597": {
+    "kind": "playful",
+    "text": "jambon 把 jam 当果酱，bon 当好：小熊给火腿抹果酱，吃完还夸“bon，好吃！”"
+  },
   "fr-1598": {
     "kind": "english",
     "text": "sausage"
   },
-  "fr-1599": null,
+  "fr-1599": {
+    "kind": "playful",
+    "text": "crevette 看开头 cre，借 crescent（弯月）：虾一煮就弯成小月牙，个个都蜷着腰。"
+  },
   "fr-1600": {
     "kind": "english",
     "text": "salmon"
@@ -5475,7 +6750,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "bottle"
   },
-  "fr-1603": null,
+  "fr-1603": {
+    "kind": "playful",
+    "text": "boîte 看 bo，借 box（盒子）：把 x 撑开塞进更多字母，小盒子变大箱子。"
+  },
   "fr-1604": {
     "kind": "english",
     "text": "packet"
@@ -5501,7 +6779,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "vase"
   },
-  "fr-1608": null,
+  "fr-1608": {
+    "kind": "playful",
+    "text": "bocal 开头 bo 借 bottle（瓶子）：把 bottle 的瓶口放大，大到能伸手，就是玻璃罐。"
+  },
   "fr-1609": {
     "kind": "association",
     "text": "poubelle 原本是巴黎行政官 Poubelle 的姓；他推行垃圾容器，姓氏后来变成了“垃圾桶”的名称。",
@@ -5516,10 +6797,13 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     }
   },
   "fr-1610": {
-    "kind": "association",
-    "text": "英语 canapé 是小点心；法语日常 un canapé 常是沙发。"
+    "kind": "playful",
+    "text": "canapé 借英语 canapé（小点心）：贵族的小点心太娇气，非要端坐在一张小沙发上。"
   },
-  "fr-1611": null,
+  "fr-1611": {
+    "kind": "playful",
+    "text": "fauteuil 把两边的 f、l 当扶手：坐进去之后左右手都有地方放，舒服得不想起来。"
+  },
   "fr-1612": {
     "kind": "english",
     "text": "mobile（可移动的）可作线索；meuble 是能够搬动、摆放的家具。"
@@ -5540,20 +6824,29 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "micro 小＋ ondes 波：微波炉。"
   },
-  "fr-1617": null,
+  "fr-1617": {
+    "kind": "playful",
+    "text": "aspirateur 里有 aspir 的长长吸气感，借“啊，吸！”：碎屑一出现，机器张嘴全吸进去。"
+  },
   "fr-1618": {
     "kind": "association",
     "text": "fer 铁＋ repasser 熨平：熨衣服的铁器。"
   },
-  "fr-1619": null,
+  "fr-1619": {
+    "kind": "playful",
+    "text": "balai 借 ballet（芭蕾）的 bala：拿着扫帚跳芭蕾，转一圈顺便把地扫干净。"
+  },
   "fr-1620": {
     "kind": "english",
     "text": "sponge"
   },
-  "fr-1621": null,
+  "fr-1621": {
+    "kind": "playful",
+    "text": "torchon 开头像 torch（火把）：厨房不能拿火把清洁，赶紧换块湿抹布擦灶台。"
+  },
   "fr-1622": {
-    "kind": "association",
-    "text": "肥皂 savon 的古老名称曾指洗头、染发用的制剂，后来成为一般清洁用品的名字；可以从这段真实用途来记。",
+    "kind": "playful",
+    "text": "savon 借 save on（省下）：小肥皂拍胸口打广告，“用我洗，save on 洗衣钱！”",
     "origin": {
       "text": "savon 经拉丁语 sapo 追溯到日耳曼语。法兰西学院词典说，这个古老名称起先用于洗头、染发的制剂。今天它指日常洗手、洗身的肥皂。",
       "sources": [
@@ -5576,7 +6869,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "brosse 刷子＋ dents 牙齿：牙刷。"
   },
-  "fr-1626": null,
+  "fr-1626": {
+    "kind": "playful",
+    "text": "peigne 抓住 pe，借 pen（笔）：给笔杆安一排齿，拿它给头发排队，就是梳子。"
+  },
   "fr-1627": {
     "kind": "english",
     "text": "paper；复数 papiers 还可指证件"
@@ -5589,7 +6885,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "英语 crayon 是蜡笔；法语 crayon 通常指铅笔。"
   },
-  "fr-1630": null,
+  "fr-1630": {
+    "kind": "playful",
+    "text": "ciseaux 中间的 x 就是一把张开的剪刀：两片刀刃交叉，咔嚓一声剪断线。"
+  },
   "fr-1631": {
     "kind": "english",
     "text": "collage（拼贴画）的 coll- 就是粘贴；用拼贴画要用的胶，记 colle。"
@@ -5611,8 +6910,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
       ]
     }
   },
-  "fr-1633": null,
-  "fr-1634": null,
+  "fr-1633": {
+    "kind": "playful",
+    "text": "aiguille 开头 ai 借“哎”：针尖刚碰到手，“哎！”立刻缩回来。"
+  },
+  "fr-1634": {
+    "kind": "playful",
+    "text": "ficelle 开头 fi 借 fishing（钓鱼）：把一根细绳甩出去，假装自己在钓大鱼。"
+  },
   "fr-1635": {
     "kind": "association",
     "text": "联想英语 filament（细丝）：fil 是线。"
@@ -5621,9 +6926,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "cord"
   },
-  "fr-1637": null,
-  "fr-1638": null,
-  "fr-1639": null,
+  "fr-1637": {
+    "kind": "playful",
+    "text": "clou 借 claw（爪子）的近形：钢铁小爪子被锤进木板，一口咬住就不松开。"
+  },
+  "fr-1638": {
+    "kind": "playful",
+    "text": "vis 借 video game 里常用的 V：一颗螺丝戴着 V 形螺丝刀帽子，转着圈钻进木头。"
+  },
+  "fr-1639": {
+    "kind": "playful",
+    "text": "marteau 开头是 Mart，借 Mars（火星）：火星人不用手敲门，举一把大锤咚咚砸。"
+  },
   "fr-1640": {
     "kind": "english",
     "text": "take / grip 的“接住、握住”含义可帮助理解 prise；电气语境里指接住插头的插座。"
@@ -5640,7 +6954,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "pile；一摞东西，也可指电池"
   },
-  "fr-1644": null,
+  "fr-1644": {
+    "kind": "playful",
+    "text": "ampoule 开头 amp 借 ampere（安培）的电流感：电一通，小玻璃泡就亮起来。"
+  },
   "fr-1645": {
     "kind": "association",
     "text": "télé- 远程＋ commande 操控：遥控器。"
@@ -5666,19 +6983,34 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "allumer 是点燃；allumette 是用来点火的火柴。"
   },
-  "fr-1649": null,
-  "fr-1650": null,
-  "fr-1651": null,
+  "fr-1649": {
+    "kind": "playful",
+    "text": "étui 的 tui 借“推”：把眼镜折好，轻轻推回细长的小盒里。"
+  },
+  "fr-1650": {
+    "kind": "playful",
+    "text": "mouchoir 开头 mou 借“抹”：眼泪鼻涕一来，掏出手帕一抹，终于能见人了。"
+  },
+  "fr-1651": {
+    "kind": "playful",
+    "text": "endroit 开头 end 是终点：导航一路走，到 end 停下来，“就是这个地方！”"
+  },
   "fr-1652": {
     "kind": "english",
     "text": "in lieu of（代替）中的 lieu 可作线索；法语 lieu 本身表示地点、位置。"
   },
-  "fr-1653": null,
+  "fr-1653": {
+    "kind": "playful",
+    "text": "pays 跟英语 pays（付款）撞形：每到一个国家，付款 pays 时都要先看用什么钱。"
+  },
   "fr-1654": {
     "kind": "english",
     "text": "route"
   },
-  "fr-1655": null,
+  "fr-1655": {
+    "kind": "playful",
+    "text": "chemin 借“车迷”：大马路堵住，车迷偷偷发现一条弯弯的小路。"
+  },
   "fr-1656": {
     "kind": "english",
     "text": "metro"
@@ -5691,17 +7023,26 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "taxi"
   },
-  "fr-1659": null,
+  "fr-1659": {
+    "kind": "playful",
+    "text": "camion 开头 cam 借 camera（相机）：大到得退十步才能拍全，原来是一辆大卡车。"
+  },
   "fr-1660": {
     "kind": "association",
     "text": "moto 是 motocyclette 的短叫法，联想 motorcycle。"
   },
-  "fr-1661": null,
+  "fr-1661": {
+    "kind": "playful",
+    "text": "bateau 开头 bat 像 bat（球棒）：拿球棒当船桨，划着小船慢慢过河。"
+  },
   "fr-1662": {
     "kind": "association",
     "text": "arrêter 停止 → arrêt 停靠的站点。"
   },
-  "fr-1663": null,
+  "fr-1663": {
+    "kind": "playful",
+    "text": "sortie 开头 sort 借 sort out（整理出去）：把人群从屋里往外疏散，大家都朝出口走。"
+  },
   "fr-1664": {
     "kind": "english",
     "text": "station"
@@ -5723,8 +7064,8 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "village"
   },
   "fr-1669": {
-    "kind": "association",
-    "text": "像英语 campaign；法语也指乡下，à la campagne。"
+    "kind": "playful",
+    "text": "campagne 像 campaign（活动）：这次环保 campaign 不去市中心，专门跑到乡下种树。"
   },
   "fr-1670": {
     "kind": "english",
@@ -5734,7 +7075,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "garden"
   },
-  "fr-1672": null,
+  "fr-1672": {
+    "kind": "playful",
+    "text": "plage 借 play（玩）的 pla：带着沙桶来玩，一脚踩进去全是沙，原来到了海滩。"
+  },
   "fr-1673": {
     "kind": "english",
     "text": "mountain"
@@ -5787,15 +7131,21 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "stadium；另有阶段之义"
   },
-  "fr-1686": null,
-  "fr-1687": null,
+  "fr-1686": {
+    "kind": "playful",
+    "text": "église 借 glass（玻璃）的近形：阳光穿过彩色 glass，落在安静的教堂座椅上。"
+  },
+  "fr-1687": {
+    "kind": "playful",
+    "text": "château 看 ch，借 chess（国际象棋）：棋盘上那座小城堡突然变大，真能住进国王了。"
+  },
   "fr-1688": {
     "kind": "english",
     "text": "post；la poste 是邮政，un poste 是岗位"
   },
   "fr-1689": {
-    "kind": "english",
-    "text": "commission（委任、委员会）的 commiss- 是字形线索；commissariat 指相关办事机构，日常常特指警察局。",
+    "kind": "playful",
+    "text": "commissariat 抓住 commiss，借 commission（委托）：委托找失物的窗口后面坐着警察，原来走进了警察局。",
     "origin": {
       "text": "这个机构名称在 18 世纪已有记载。更早的词根与“受委派去执行任务的人”有关，后来可指其职务、服务机构或办公场所；日常独立使用时常指警察局。",
       "sources": [
@@ -5818,16 +7168,25 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "boutique"
   },
-  "fr-1692": null,
-  "fr-1693": null,
+  "fr-1692": {
+    "kind": "playful",
+    "text": "bâtiment 中间有 tim，借 timber（木材）：一根根 timber 拼起来，慢慢盖成一栋建筑。"
+  },
+  "fr-1693": {
+    "kind": "playful",
+    "text": "usine 像 using（正在用）换了尾巴：流水线不停 using 机器，整座工厂都在运转。"
+  },
   "fr-1694": {
     "kind": "english",
     "text": "university"
   },
-  "fr-1695": null,
+  "fr-1695": {
+    "kind": "playful",
+    "text": "lycée 借“理科”：高中选文科还是理科？先把这段选课烦恼钉在高中上。"
+  },
   "fr-1696": {
-    "kind": "association",
-    "text": "不是英语 college 的大学；法国 collège 是初中。"
+    "kind": "playful",
+    "text": "collège 像 college（大学）：学生背着大书包说要去 college，结果校门写“初中”，上大学还早呢。"
   },
   "fr-1697": {
     "kind": "english",
@@ -5850,12 +7209,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
       ]
     }
   },
-  "fr-1698": null,
+  "fr-1698": {
+    "kind": "playful",
+    "text": "roue 抓住 round（圆）的 rou：圆圆一圈装到车上，才转得起来。"
+  },
   "fr-1699": {
     "kind": "association",
     "text": "联想英语 pneumatic（充气的）：轮胎里充气。"
   },
-  "fr-1700": null,
+  "fr-1700": {
+    "kind": "playful",
+    "text": "frein 借 freeze（冻结）的 fre：红灯一亮，车像 freeze 一样停住，靠的就是刹车。"
+  },
   "fr-1701": {
     "kind": "english",
     "text": "film"
@@ -5868,7 +7233,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "chant（吟唱）和 chanson 都保留 chan-；唱出来的东西就是歌曲。"
   },
-  "fr-1704": null,
+  "fr-1704": {
+    "kind": "playful",
+    "text": "jeu 借“局”：再开一局、最后一局——一听就知道在玩游戏。"
+  },
   "fr-1705": {
     "kind": "association",
     "text": "jeu 游戏＋小物件的联想：jouet 是玩具。"
@@ -5927,7 +7295,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
       ]
     }
   },
-  "fr-1714": null,
+  "fr-1714": {
+    "kind": "playful",
+    "text": "écran 里的 cran 像 screen 剩下的骨架：把 screen 的字母搬一搬，小屏幕就藏进来了。"
+  },
   "fr-1715": {
     "kind": "english",
     "text": "television；télé 是日常缩写"
@@ -5984,7 +7355,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "envelope"
   },
-  "fr-1729": null,
+  "fr-1729": {
+    "kind": "playful",
+    "text": "timbre 抓住 tim，借 tiny（小小的）：一张 tiny 小纸片贴上信封，这封信才有“车票”。"
+  },
   "fr-1730": {
     "kind": "english",
     "text": "postcard；法语把 postale 放 carte 后面"
@@ -5994,8 +7368,8 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "number"
   },
   "fr-1732": {
-    "kind": "english",
-    "text": "call：appel 是一次呼叫、电话，也能表示呼吁；结尾 l 要读。"
+    "kind": "playful",
+    "text": "appel 开头像 app：闹钟 app 被静音，电话却响了——原来有人呼叫你。"
   },
   "fr-1733": {
     "kind": "english",
@@ -6017,7 +7391,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "battery；法语还可指架子鼓"
   },
-  "fr-1738": null,
+  "fr-1738": {
+    "kind": "playful",
+    "text": "réglage 开头 rég 借 regulate（调节）：旋钮左右一拧，音量亮度调到刚刚好。"
+  },
   "fr-1739": {
     "kind": "english",
     "text": "page"
@@ -6038,7 +7415,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "exercise"
   },
-  "fr-1744": null,
+  "fr-1744": {
+    "kind": "playful",
+    "text": "élève 借 elevate（升高）的前半：学生一年升一级，书包越背越大。"
+  },
   "fr-1745": {
     "kind": "english",
     "text": "class"
@@ -6051,7 +7431,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "note；还可表示考试分数"
   },
-  "fr-1748": null,
+  "fr-1748": {
+    "kind": "playful",
+    "text": "tableau 先认 table：把 table（桌子）竖起来写字，桌面成黑板；画上格子，又成表格。"
+  },
   "fr-1749": {
     "kind": "association",
     "text": "cahier 的名称来自“四张纸为一组”；把纸张成组装订成册，记住笔记本。",
@@ -6081,8 +7464,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "solar（太阳的），联想 soleil"
   },
-  "fr-1754": null,
-  "fr-1755": null,
+  "fr-1754": {
+    "kind": "playful",
+    "text": "pluie 开头 plu 借 plug（塞子）：天空的塞子被拔掉，水哗啦漏下来，下雨了！"
+  },
+  "fr-1755": {
+    "kind": "playful",
+    "text": "étoile 里藏着少个 t 的 toilet：给厕所天花板贴满夜光星星，关灯也能看星空。"
+  },
   "fr-1756": {
     "kind": "english",
     "text": "lunar（月亮的）"
@@ -6095,7 +7484,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "flower"
   },
-  "fr-1759": null,
+  "fr-1759": {
+    "kind": "playful",
+    "text": "arbre 把两个 r 当分叉的树枝，b 当鼓鼓的树冠：一棵小树直接长在字母里。"
+  },
   "fr-1760": {
     "kind": "english",
     "text": "plant"
@@ -6104,14 +7496,26 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "herb"
   },
-  "fr-1762": null,
-  "fr-1763": null,
-  "fr-1764": null,
+  "fr-1762": {
+    "kind": "playful",
+    "text": "bois 看着像 boys：小木偶男孩们排成一排，身上全是木头，连鼻子也能长出木枝。"
+  },
+  "fr-1763": {
+    "kind": "playful",
+    "text": "pierre 里有 pier（码头）：一块块石头垒起来，才把这个小码头筑牢。"
+  },
+  "fr-1764": {
+    "kind": "playful",
+    "text": "sable 像 table 把 t 换成 s：桌上撒满 sand（沙子），连 table 的开头都被 s 占领了。"
+  },
   "fr-1765": {
     "kind": "english",
     "text": "source"
   },
-  "fr-1766": null,
+  "fr-1766": {
+    "kind": "playful",
+    "text": "champ 就借 champion（冠军）的前半：农民种出“冠军玉米”，整块田里它长得最高。"
+  },
   "fr-1767": {
     "kind": "english",
     "text": "terrain"
@@ -6120,7 +7524,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "space"
   },
-  "fr-1769": null,
+  "fr-1769": {
+    "kind": "playful",
+    "text": "ombre 开头像 umbrella（伞）：太阳太大，钻进伞下那块影子里才凉快。"
+  },
   "fr-1770": {
     "kind": "association",
     "text": "chaud 是热的；chaleur 是热量。"
@@ -6137,7 +7544,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "animal"
   },
-  "fr-1774": null,
+  "fr-1774": {
+    "kind": "playful",
+    "text": "chien 像 chain（链子）换个字母：给小狗扣好牵引链，再带它出门。"
+  },
   "fr-1775": {
     "kind": "english",
     "text": "cat 与 chat 只多一个 h，都是猫；用熟悉的英语 cat 直接认词形。"
@@ -6146,9 +7556,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "cavalry（骑兵）可作“马”的线索；cheval 是日常表示马的词。"
   },
-  "fr-1777": null,
-  "fr-1778": null,
-  "fr-1779": null,
+  "fr-1777": {
+    "kind": "playful",
+    "text": "oiseau 里抓 oise，借 noise（吵声）：窗外一早全是 noise，原来一群鸟在开会。"
+  },
+  "fr-1778": {
+    "kind": "playful",
+    "text": "vache 开头 vac 借 vacation（假期）：奶牛也要度假，今天举牌“休假，暂停挤奶”。"
+  },
+  "fr-1779": {
+    "kind": "playful",
+    "text": "cochon 开头 co 借 cocoa（可可）：小猪掉进可可粉袋，滚成一只巧克力猪。"
+  },
   "fr-1780": {
     "kind": "english",
     "text": "poultry（家禽）的 poul- 是好认的线索；poule 专指母鸡。"
@@ -6157,13 +7576,22 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "cock（公鸡）"
   },
-  "fr-1782": null,
-  "fr-1783": null,
+  "fr-1782": {
+    "kind": "playful",
+    "text": "canard 开头就是 can（罐头）：打开罐头不是食物，而是蹦出一只嘎嘎叫的鸭子。"
+  },
+  "fr-1783": {
+    "kind": "playful",
+    "text": "lapin 里装着 lap（大腿）：小兔子一蹦，正好落在你的 lap 上，窝着不走了。"
+  },
   "fr-1784": {
     "kind": "english",
     "text": "mutton（羊肉）；法语 mouton 是绵羊"
   },
-  "fr-1785": null,
+  "fr-1785": {
+    "kind": "playful",
+    "text": "chèvre 开头借 Chevy（雪佛兰）：车顶站着一只山羊，一边嚼车标一边看风景。"
+  },
   "fr-1786": {
     "kind": "association",
     "text": "电脑鼠标像小老鼠，法语也用同一个词 souris。"
@@ -6172,8 +7600,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "rat"
   },
-  "fr-1788": null,
-  "fr-1789": null,
+  "fr-1788": {
+    "kind": "playful",
+    "text": "mouche 看着像 mouth（嘴）：吃饭别把 mouth 张太久，苍蝇正打算飞进去。"
+  },
+  "fr-1789": {
+    "kind": "playful",
+    "text": "abeille 抓住 be，借 bee（蜜蜂）：一只 bee 飞进单词，嗡嗡嗡把剩下字母挤到两边。"
+  },
   "fr-1790": {
     "kind": "english",
     "text": "mosquito"
@@ -6190,12 +7624,30 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "serpent"
   },
-  "fr-1794": null,
-  "fr-1795": null,
-  "fr-1796": null,
-  "fr-1797": null,
-  "fr-1798": null,
-  "fr-1799": null,
+  "fr-1794": {
+    "kind": "playful",
+    "text": "ours 在英语里是“我们的”：孩子抱着玩具熊不撒手，“这只熊是 ours！”"
+  },
+  "fr-1795": {
+    "kind": "playful",
+    "text": "loup 看着像 loop（循环）：狼对着月亮嚎，一声接一声，开了循环播放。"
+  },
+  "fr-1796": {
+    "kind": "playful",
+    "text": "singe 就是 sing（唱歌）后面多个 e：猴子拿起麦克风，竟然开始 sing。"
+  },
+  "fr-1797": {
+    "kind": "playful",
+    "text": "papillon 开头 pap 借 paper（纸）：两片纸一折一扇，变成会飞的纸蝴蝶。"
+  },
+  "fr-1798": {
+    "kind": "playful",
+    "text": "patte 开头是 pat（轻拍）：小猫不服你一直拍它，反过来伸出爪子 pat 你的脸。"
+  },
+  "fr-1799": {
+    "kind": "playful",
+    "text": "aile 看着像 aisle（过道）少个 s：飞机过道两旁再向外伸，机身两侧就是机翼。"
+  },
   "fr-1800": {
     "kind": "english",
     "text": "queue；排队像一条长尾巴"
@@ -6204,7 +7656,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "bon 好的，bien 做得好；bonjour 里也有 bon。"
   },
-  "fr-1802": null,
+  "fr-1802": {
+    "kind": "playful",
+    "text": "mauvais 开头 mau 借“毛病”：一个东西毛病太多，忍不住给它一个差评——坏的。"
+  },
   "fr-1803": {
     "kind": "english",
     "text": "beautiful；法语 beau 的阴性是 belle"
@@ -6213,13 +7668,22 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "jolly（愉快的）与 joli 字形接近，但法语 joli 重点是外观漂亮，而不是心情愉快。"
   },
-  "fr-1805": null,
+  "fr-1805": {
+    "kind": "playful",
+    "text": "jeune 开头 jeu 借“追剧”：年轻人熬夜追剧，第二天还能活蹦乱跳。"
+  },
   "fr-1806": {
     "kind": "association",
     "text": "联想英语 solo（独奏）：一个人独自。"
   },
-  "fr-1807": null,
-  "fr-1808": null,
+  "fr-1807": {
+    "kind": "playful",
+    "text": "prêt 抓住 pr，借 prepare（准备）：把 prepare 压短，动作也干脆，准备好了就出发。"
+  },
+  "fr-1808": {
+    "kind": "playful",
+    "text": "vrai 抓住 vr，借 VR（虚拟现实）：摘下 VR 头显，这次眼前是真的。"
+  },
   "fr-1809": {
     "kind": "association",
     "text": "英语 faux leather 是人造皮革：faux 是假的。"
@@ -6236,7 +7700,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "important"
   },
-  "fr-1813": null,
+  "fr-1813": {
+    "kind": "playful",
+    "text": "cher 借 cherish（珍爱）的前半：价格昂贵的舍不得买，亲爱的人又舍不得放手，都是心头宝。"
+  },
   "fr-1814": {
     "kind": "english",
     "text": "gratis；gratuit 是免费的"
@@ -6257,10 +7724,13 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "void（空的、空缺）与 vide 字形接近；vide 表示里面没有东西。"
   },
-  "fr-1819": null,
+  "fr-1819": {
+    "kind": "playful",
+    "text": "propre 像 proper（妥当的）换个顺序：自己的桌子收拾得整整齐齐，才够 proper。"
+  },
   "fr-1820": {
-    "kind": "association",
-    "text": "不是英语 sale（促销）；法语 sale 是脏的。"
+    "kind": "playful",
+    "text": "sale 就借英语 sale（促销）：抢购的人刚走，地上全是包装纸，商场脏得不成样子。"
   },
   "fr-1821": {
     "kind": "association",
@@ -6275,8 +7745,8 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "content（满意的）；不要按“内容”的名词义记"
   },
   "fr-1824": {
-    "kind": "association",
-    "text": "triste 的 s、t 都要读，e 不另读；对应 sad，表示悲伤、难过。"
+    "kind": "playful",
+    "text": "triste 借 tears（眼泪）里的 t、r、s：三个字母小人围坐着掉眼泪，谁看了都知道很难过。"
   },
   "fr-1825": {
     "kind": "english",
@@ -6286,12 +7756,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "gentle；gentil 侧重友善、乖巧"
   },
-  "fr-1827": null,
+  "fr-1827": {
+    "kind": "playful",
+    "text": "méchant 看见 chant（唱）：大坏蛋一边唱歌一边欺负人，歌声再好听也掩不住凶。"
+  },
   "fr-1828": {
     "kind": "association",
     "text": "sympa 是 sympathique 的短形式；不是同情某人。"
   },
-  "fr-1829": null,
+  "fr-1829": {
+    "kind": "playful",
+    "text": "drôle 借 role（角色）：演员接了个奇怪角色，刚一出场大家就笑了。"
+  },
   "fr-1830": {
     "kind": "english",
     "text": "amusing"
@@ -6300,7 +7776,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "interesting"
   },
-  "fr-1832": null,
+  "fr-1832": {
+    "kind": "playful",
+    "text": "ennuyeux 开头像 annoy（使烦）：一部片子无聊到让人烦，连结尾都懒得看。"
+  },
   "fr-1833": {
     "kind": "english",
     "text": "calm"
@@ -6337,40 +7816,70 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "feeble（虚弱的）"
   },
-  "fr-1842": null,
+  "fr-1842": {
+    "kind": "playful",
+    "text": "doux 借 dough（面团）的 dou：摸一团软软的面，声音和脾气也可以这样温柔。"
+  },
   "fr-1843": {
     "kind": "english",
     "text": "durable（耐用的）可帮助认 dur-；dur 表示硬、坚实，也能引申为事情难。"
   },
-  "fr-1844": null,
-  "fr-1845": null,
+  "fr-1844": {
+    "kind": "playful",
+    "text": "sec 看着像 second（秒）缩写：吹风机只吹几秒，头发就干了，速度离谱。"
+  },
+  "fr-1845": {
+    "kind": "playful",
+    "text": "mouillé 开头 mou 借“摸”：晾的衣服一摸还滴水，“摸一下就知道，湿的！”"
+  },
   "fr-1846": {
     "kind": "english",
     "text": "fresh"
   },
-  "fr-1847": null,
+  "fr-1847": {
+    "kind": "playful",
+    "text": "tiède 开头 ti 借 tea（茶）：茶放了十分钟，既不烫也不冰，刚好温温的。"
+  },
   "fr-1848": {
     "kind": "english",
     "text": "first / premier；英语 premier 也有首位之义"
   },
-  "fr-1849": null,
-  "fr-1850": null,
+  "fr-1849": {
+    "kind": "playful",
+    "text": "dernier 的 der 借“底儿”：盒子翻到底儿，拿出来的是最后一个。"
+  },
+  "fr-1850": {
+    "kind": "playful",
+    "text": "prochain 里藏着 chain（链条）：顺着链条往前数，下一个环节马上就到。"
+  },
   "fr-1851": {
     "kind": "english",
     "text": "long"
   },
-  "fr-1852": null,
+  "fr-1852": {
+    "kind": "playful",
+    "text": "court 就借 court（球场）：把球场砍掉一半，跑道突然变短了。"
+  },
   "fr-1853": {
     "kind": "association",
     "text": "英语 large 常是大；法语 large 重点是宽。"
   },
-  "fr-1854": null,
-  "fr-1855": null,
+  "fr-1854": {
+    "kind": "playful",
+    "text": "étroit 看着像 Detroit（底特律）挤掉了前头：城市堵得太挤，连字母都挤不下，道路太窄。"
+  },
+  "fr-1855": {
+    "kind": "playful",
+    "text": "haut 借 height（高度）的 h：爬到最高处，连那个 h 都像伸长了脖子。"
+  },
   "fr-1856": {
     "kind": "association",
     "text": "联想英语 bass（低音），记 bas 低。"
   },
-  "fr-1857": null,
+  "fr-1857": {
+    "kind": "playful",
+    "text": "épais 借“胚”：馅饼的面胚擀得太厚，一口咬下去全是皮。"
+  },
   "fr-1858": {
     "kind": "english",
     "text": "fine；细薄的，与 épais 厚的对照"
@@ -6379,7 +7888,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "round"
   },
-  "fr-1860": null,
+  "fr-1860": {
+    "kind": "playful",
+    "text": "carré 先看 car（车）：把车身压成一个四四方方的盒子，连轮子也变方了。"
+  },
   "fr-1861": {
     "kind": "english",
     "text": "plate（平盘）保留 plat；从盘子平展的形状，记 plat 的“平”。"
@@ -6388,7 +7900,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "英语 right 也指右；droit 还可以是直的。"
   },
-  "fr-1863": null,
+  "fr-1863": {
+    "kind": "playful",
+    "text": "gauche 开头 gau 借“高”：左手举得高，右手放下来，只把左边标得高高的。"
+  },
   "fr-1864": {
     "kind": "association",
     "text": "联想英语 blank（空白），记 blanc 白。"
@@ -6405,8 +7920,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "blue"
   },
-  "fr-1868": null,
-  "fr-1869": null,
+  "fr-1868": {
+    "kind": "playful",
+    "text": "vert 看 ver，借 vegetable（蔬菜）的 ve：打开菜篮，全是一片绿色。"
+  },
+  "fr-1869": {
+    "kind": "playful",
+    "text": "jaune 借“蕉”：剥一根黄香蕉，把黄澄澄的颜色牢牢挂在“蕉”上。"
+  },
   "fr-1870": {
     "kind": "english",
     "text": "rose；玫瑰让人联想粉红色"
@@ -6431,12 +7952,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "brunette；brun 指棕发或深棕色"
   },
-  "fr-1876": null,
+  "fr-1876": {
+    "kind": "playful",
+    "text": "roux 中间 rou 借 rust（铁锈）的影子：头发像刷上一层温暖的铁锈色，红褐红褐的。"
+  },
   "fr-1877": {
     "kind": "english",
     "text": "clear；颜色浅也用 clair"
   },
-  "fr-1878": null,
+  "fr-1878": {
+    "kind": "playful",
+    "text": "foncé 开头 fon 借 font（字体）：同一句话把 font 加粗加黑，颜色一下深了。"
+  },
   "fr-1879": {
     "kind": "english",
     "text": "colored / colourful"
@@ -6449,7 +7976,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "bruit 是噪声；bruyant 是吵闹的。"
   },
-  "fr-1882": null,
+  "fr-1882": {
+    "kind": "playful",
+    "text": "lisse 借“溜丝”：一根丝滑过手指，溜得抓不住，表面光滑极了。"
+  },
   "fr-1883": {
     "kind": "association",
     "text": "sel 是盐；salé 是有盐、咸的。"
@@ -6458,14 +7988,26 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "sucre 是糖；sucré 是加糖、甜的。"
   },
-  "fr-1885": null,
+  "fr-1885": {
+    "kind": "playful",
+    "text": "amer 借 American coffee：不加糖的美式第一口，“啊，苦！”"
+  },
   "fr-1886": {
     "kind": "english",
     "text": "acid"
   },
-  "fr-1887": null,
-  "fr-1888": null,
-  "fr-1889": null,
+  "fr-1887": {
+    "kind": "playful",
+    "text": "piquant 开头 pi 借 pin（针）：辣椒像小针扎舌头，辛辣和刺人的感觉一起记。"
+  },
+  "fr-1888": {
+    "kind": "playful",
+    "text": "mûr 借“蜜”：把 û 当鼓鼓的果肚，果子熟透了，一口甜得像蜜。"
+  },
+  "fr-1889": {
+    "kind": "playful",
+    "text": "cru 借 crude（未经加工）的前三个字母：食材还没加工下锅，就是生的。"
+  },
   "fr-1890": {
     "kind": "association",
     "text": "cuire 做熟 → cuit 熟的。"
@@ -6559,8 +8101,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
       ]
     }
   },
-  "fr-1911": null,
-  "fr-1912": null,
+  "fr-1911": {
+    "kind": "playful",
+    "text": "rêve 中间 ê 戴着睡帽：一关灯，脑子开始放自己的小电影，梦来了。"
+  },
+  "fr-1912": {
+    "kind": "playful",
+    "text": "esprit 和 spirit（精神）很像：把开头挪一挪，那股看不见的精神仍在。"
+  },
   "fr-1913": {
     "kind": "english",
     "text": "plan"
@@ -6581,7 +8129,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "voice 与 voix 的 voi- 相同，都是声音；把熟悉的 voice 的词尾换成 x 就认出了 voix。"
   },
-  "fr-1918": null,
+  "fr-1918": {
+    "kind": "playful",
+    "text": "bout 就抓 about 的后半：整块单词掰下来一小块，手里这块就是 bout。"
+  },
   "fr-1919": {
     "kind": "english",
     "text": "subject"
@@ -6590,7 +8141,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "sense；法语还可表示行进方向"
   },
-  "fr-1921": null,
+  "fr-1921": {
+    "kind": "playful",
+    "text": "salle 借 sale（特卖）：特卖一开门，整个大厅都摆满货架，大家一拥而入。"
+  },
   "fr-1922": {
     "kind": "english",
     "text": "sort（种类）"
@@ -6624,14 +8178,17 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "parole 在英语里与“承诺、假释”有关；法语 parole 更基本地指说出的话、发言。"
   },
   "fr-1930": {
-    "kind": "association",
-    "text": "不是英语 coin（硬币）；法语 coin 是角落。"
+    "kind": "playful",
+    "text": "coin 就借英语 coin（硬币）：硬币从桌上滚下来，咕噜噜钻进墙角，怎么也够不着。"
   },
   "fr-1931": {
     "kind": "english",
     "text": "form"
   },
-  "fr-1932": null,
+  "fr-1932": {
+    "kind": "playful",
+    "text": "bruit 开头 br 当马达的“brbrbr”：隔壁机器响不停，吵得脑袋疼。"
+  },
   "fr-1933": {
     "kind": "english",
     "text": "impression；也能指打印出来的内容"
@@ -6640,7 +8197,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "view"
   },
-  "fr-1935": null,
+  "fr-1935": {
+    "kind": "playful",
+    "text": "moyen 开头 moy 借“摸”：不懂怎么修就慢慢摸索，摸出一个办法来。"
+  },
   "fr-1936": {
     "kind": "english",
     "text": "sign"
@@ -6657,23 +8217,38 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "bon（好）＋ heur 的好运联想：幸福。"
   },
-  "fr-1940": null,
+  "fr-1940": {
+    "kind": "playful",
+    "text": "but 借 boot（靴子）：球员用 boot 把球踢进球门，终于达成进球目标。"
+  },
   "fr-1941": {
     "kind": "english",
     "text": "system"
   },
-  "fr-1942": null,
+  "fr-1942": {
+    "kind": "playful",
+    "text": "ennui 开头 enn 借“嗯……”：问他在干什么，他只会拖长“嗯……”，无聊得说不出话。"
+  },
   "fr-1943": {
     "kind": "english",
     "text": "sentiment"
   },
-  "fr-1944": null,
-  "fr-1945": null,
+  "fr-1944": {
+    "kind": "playful",
+    "text": "moitié 抓住 moi（我）：蛋糕一切，“这半给 moi，另一半给你”，我只占一半。"
+  },
+  "fr-1945": {
+    "kind": "playful",
+    "text": "bain 就借 bath（泡澡）的 ba：把浴缸注满水，人泡进去，今天的疲惫全泡开。"
+  },
   "fr-1946": {
     "kind": "english",
     "text": "art"
   },
-  "fr-1947": null,
+  "fr-1947": {
+    "kind": "playful",
+    "text": "blague 看着像 blog（博客）换了尾巴：这个 blog 不写正事，每天只讲一个笑话。"
+  },
   "fr-1948": {
     "kind": "association",
     "text": "à venir 是即将到来；avenir 是未来。"
@@ -6686,7 +8261,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "manner"
   },
-  "fr-1951": null,
+  "fr-1951": {
+    "kind": "playful",
+    "text": "secours 中间 cour 借 course（路线）：迷路时救援队沿路线跑来，终于有人来救你。"
+  },
   "fr-1952": {
     "kind": "english",
     "text": "role"
@@ -6695,7 +8273,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "action"
   },
-  "fr-1954": null,
+  "fr-1954": {
+    "kind": "playful",
+    "text": "tort 只比英语 sort（分类）换个开头：把重要文件 sort 错文件夹，这个失误害大家找了半天。"
+  },
   "fr-1955": {
     "kind": "english",
     "text": "machine"
@@ -6704,12 +8285,18 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "cigarette"
   },
-  "fr-1957": null,
+  "fr-1957": {
+    "kind": "playful",
+    "text": "morceau 抓住 more（更多）的 mor：蛋糕先切给你一块，你吃完还喊“more！”"
+  },
   "fr-1958": {
     "kind": "english",
     "text": "demand；法语也可只是一般请求或申请"
   },
-  "fr-1959": null,
+  "fr-1959": {
+    "kind": "playful",
+    "text": "espoir 的 es 借 escape（逃出去）：困在黑屋里，看到门缝的光，重新有了逃出去的希望。"
+  },
   "fr-1960": {
     "kind": "english",
     "text": "information"
@@ -6734,18 +8321,30 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "regard；法语名词指目光、一瞥"
   },
-  "fr-1966": null,
+  "fr-1966": {
+    "kind": "playful",
+    "text": "mensonge 开头 men 是男人们，后面 songe 借 song：几个人把谎话编成一首歌，唱得还挺齐。"
+  },
   "fr-1967": {
     "kind": "english",
     "text": "memory"
   },
-  "fr-1968": null,
+  "fr-1968": {
+    "kind": "playful",
+    "text": "goût 借 good（好的）的 go：先尝一口才知道 good 不 good，这一口尝的是味道。"
+  },
   "fr-1969": {
     "kind": "english",
     "text": "importance"
   },
-  "fr-1970": null,
-  "fr-1971": null,
+  "fr-1970": {
+    "kind": "playful",
+    "text": "niveau 抓住 niv，借“逆”：原来连新手关都过不了，练完技术逆袭，水平升了一大截。"
+  },
+  "fr-1971": {
+    "kind": "playful",
+    "text": "souci 借“愁丝”：烦恼像脑袋里缠住的一团丝，越想越打结。"
+  },
   "fr-1972": {
     "kind": "english",
     "text": "odour / odor"
@@ -6762,7 +8361,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "value"
   },
-  "fr-1976": null,
+  "fr-1976": {
+    "kind": "playful",
+    "text": "poids 借 pounds（磅）的 po：上秤一看，数字又多了两磅，体重瞒不住。"
+  },
   "fr-1977": {
     "kind": "english",
     "text": "number"
@@ -6869,7 +8471,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "dentist"
   },
-  "fr-1998": null,
+  "fr-1998": {
+    "kind": "playful",
+    "text": "coiffeur 看 co，借 coffee（咖啡）：理发师一手端 coffee，一手拿剪刀，顾客紧张得不敢动。"
+  },
   "fr-1999": {
     "kind": "english",
     "text": "secretary"
@@ -6926,7 +8531,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "place"
   },
-  "fr-2013": null,
+  "fr-2013": {
+    "kind": "playful",
+    "text": "accorder 抓住 accord（意见一致）：大家点头同意；乐器也要调到音调一致，才肯一起演奏。"
+  },
   "fr-2014": {
     "kind": "english",
     "text": "elevate；抬高，也把孩子养大"
@@ -6939,7 +8547,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "pick（挑、刺）的字形可帮助固定 piquer；核心动作是刺一下，也可形容蚊虫叮咬。"
   },
-  "fr-2017": null,
+  "fr-2017": {
+    "kind": "playful",
+    "text": "gâcher 开头 gâ 借“嘎”：好好的蛋糕被一屁股坐扁，全场“嘎”地安静，彻底糟蹋了。"
+  },
   "fr-2018": {
     "kind": "english",
     "text": "concern"
@@ -6948,7 +8559,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "represent"
   },
-  "fr-2020": null,
+  "fr-2020": {
+    "kind": "playful",
+    "text": "rigoler 中间 gol 借 goal（进球）：本想帅气射门却踢飞鞋，全场笑成一团。"
+  },
   "fr-2021": {
     "kind": "english",
     "text": "obey"
@@ -6993,8 +8607,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "paint"
   },
-  "fr-2032": null,
-  "fr-2033": null,
+  "fr-2032": {
+    "kind": "playful",
+    "text": "avaler 里藏着 aval，借 avalanche（雪崩）：一大口食物像雪崩，咕噜一下全吞进去了。"
+  },
+  "fr-2033": {
+    "kind": "playful",
+    "text": "démarrer 中间 marr 借马达的“马”：钥匙一拧，马达吼起来，车启动了。"
+  },
   "fr-2034": {
     "kind": "english",
     "text": "confirm"
@@ -7003,7 +8623,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "ré- 反应＋ agir 行动：作出反应。"
   },
-  "fr-2036": null,
+  "fr-2036": {
+    "kind": "playful",
+    "text": "déménager 借“得没哪儿搁”：东西多得没哪儿搁，索性打包搬去新家。"
+  },
   "fr-2037": {
     "kind": "english",
     "text": "sign（记号）的 sign- 可作字形线索；enseigner 是把知识传授给人，也就是教。"
@@ -7012,7 +8635,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "note"
   },
-  "fr-2039": null,
+  "fr-2039": {
+    "kind": "playful",
+    "text": "verser 和 verse（诗的一节）撞脸：念一句诗，就往杯里倒一点酒，念完杯子也满了。"
+  },
   "fr-2040": {
     "kind": "english",
     "text": "authorize"
@@ -7029,7 +8655,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "express"
   },
-  "fr-2044": null,
+  "fr-2044": {
+    "kind": "playful",
+    "text": "dessiner 开头 des 借 design（设计）：设计师先拿铅笔，把脑中的东西画出来。"
+  },
   "fr-2045": {
     "kind": "english",
     "text": "cuisine（烹饪）与 cuire 的 cui- 相同；从烹饪这件事记住 cuire：把食物做熟。"
@@ -7038,8 +8667,14 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "boil（沸腾）：bouillir 保留相近的 bouill-，表示液体烧开、沸腾。"
   },
-  "fr-2047": null,
-  "fr-2048": null,
+  "fr-2047": {
+    "kind": "playful",
+    "text": "mélanger 开头 mel 借 melt（融化）：几块不同颜色的糖一融，搅成混合口味。"
+  },
+  "fr-2048": {
+    "kind": "playful",
+    "text": "éplucher 开头 épl 借 apple（苹果）的影子：刀沿苹果绕一圈，皮像长丝带一样掉下来。"
+  },
   "fr-2049": {
     "kind": "english",
     "text": "reimburse"
@@ -7056,7 +8691,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "association",
     "text": "ouais 是随意版 oui，像英语 yeah。"
   },
-  "fr-2053": null,
+  "fr-2053": {
+    "kind": "playful",
+    "text": "debout 尾巴 bout 借 boot（靴子）：靴子穿好，别再躺着了，起床站起来！"
+  },
   "fr-2054": {
     "kind": "english",
     "text": "absolutely"
@@ -7133,7 +8771,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "normally"
   },
-  "fr-2073": null,
+  "fr-2073": {
+    "kind": "playful",
+    "text": "volontiers 开头 vol 借 volunteer（志愿者）：还没点名，已经主动举手，“我很乐意！”"
+  },
   "fr-2074": {
     "kind": "english",
     "text": "clearly"
@@ -7155,8 +8796,8 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "text": "après（之后）＋ demain（明天）：后天。"
   },
   "fr-2079": {
-    "kind": "association",
-    "text": "不是 actually（实际上）；actuellement 是 currently（目前）。"
+    "kind": "playful",
+    "text": "actuellement 像 actually（实际上）：朋友还在聊过去，你指着实时画面打断，“我问的是目前！”"
   },
   "fr-2080": {
     "kind": "english",
@@ -7214,7 +8855,10 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "addition；把菜价相加得到餐馆账单"
   },
-  "fr-2094": null,
+  "fr-2094": {
+    "kind": "playful",
+    "text": "pointure 抓住 point（尖端）：脚趾顶到鞋尖这个 point 了，看来鞋码得换大一号。"
+  },
   "fr-2095": {
     "kind": "english",
     "text": "form；formulaire 是待填写的表格"
@@ -7223,14 +8867,17 @@ export const memoryHints: Record<string, MemoryHint | null> = {
     "kind": "english",
     "text": "signature"
   },
-  "fr-2097": null,
+  "fr-2097": {
+    "kind": "playful",
+    "text": "justificatif 抓住 justify（证明有道理）：光说自己对没用，把能 justify 的票据材料拿出来。"
+  },
   "fr-2098": {
     "kind": "association",
     "text": "pour（为了）＋ boire（喝）：给人买杯喝的，联想小费。"
   },
   "fr-2099": {
-    "kind": "association",
-    "text": "英语 etiquette 是礼仪；法语 étiquette 也常指物品标签。"
+    "kind": "playful",
+    "text": "étiquette 就借英语 etiquette（礼仪）：商店给商品也规定礼仪——出场先戴好自己的标签。"
   },
   "fr-2100": {
     "kind": "association",

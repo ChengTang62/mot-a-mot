@@ -23,12 +23,12 @@ try {
     for (const field of ["french", "meaning", "kind", "category"]) assert.ok(word[field]?.trim(), `${word.id}: ${field}`);
     assert.equal(word.examples.length, 2, word.french);
     assert.equal(word.memoryHint, memoryHints[word.id]);
-    assert.notEqual(word.memoryHint, undefined, `${word.french}: missing editorial record`);
-    if (word.memoryHint !== null) {
+    assert.ok(word.memoryHint, `${word.french}: every word needs a memory cue`);
+    {
       assert.ok(word.memoryHint.text.trim(), `${word.french}: empty memory hint`);
-      assert.ok(["english", "association"].includes(word.memoryHint.kind));
+      assert.ok(["english", "association", "playful"].includes(word.memoryHint.kind));
       assert.ok(!word.examples.some(e=>e.french===word.memoryHint.text||e.translation===word.memoryHint.text), `${word.french}: duplicated example instead of memory hint`);
-      assert.ok(!/发音|读音|音节|元音|辅音|鼻化|圆唇|音标|合读|连读|读成|读作|读为|[\u0250-\u02af]/u.test(word.memoryHint.text), `${word.french}: pronunciation filler`);
+      assert.ok(!/发音|读音|音节|元音|辅音|鼻化|圆唇|音标|合读|连读|读成|读作|读为|要读|另读|[\u0250-\u02af]/u.test(word.memoryHint.text), `${word.french}: pronunciation filler`);
     }
     assert.notEqual(word.examples[0].french, word.examples[1].french, word.french);
     for (const example of word.examples) {
