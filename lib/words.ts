@@ -3,7 +3,7 @@ import { expandedEntries } from "./expanded-words";
 import { examplesByFrench, type Example } from "./examples";
 import { dailyWords } from "./daily-words";
 import { memoryHints, type MemoryHint } from "./memory-hints";
-export type Word = { id: string; french: string; meaning: string; kind: string; category: string; example: string; translation: string; examples: Example[]; memoryHint: MemoryHint; level: "basic" | "intermediate" };
+export type Word = { id: string; french: string; meaning: string; kind: string; category: string; example: string; translation: string; examples: Example[]; memoryHint: MemoryHint | null; level: "basic" | "intermediate" };
 type WordEntry = Omit<Word, "examples" | "memoryHint"> & { examples?: Example[] };
 // Original beginner vocabulary and example sentences; articles teach noun gender.
 const entries = `bonjour|你好；日间问候|表达|日常表达|Bonjour, madame !|您好，女士！
