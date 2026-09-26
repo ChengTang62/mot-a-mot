@@ -1,5 +1,5 @@
 // Generated from data/memory-hints.tsv and sourced data/word-origins.json.
-// Associations are learning aids, not claims of shared etymology or pronunciation.
+// Similarity cues do not imply shared etymology; pronunciation notes are explicit.
 export type MemoryHint = { kind: "english" | "association"; text: string; origin?: { text: string; sources: { label: string; url: string }[] } };
 export const memoryHints: Record<string, MemoryHint> = {
   "fr-001": {
@@ -7,8 +7,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "bon（好）＋ jour（日）：见面祝对方有个好日子。"
   },
   "fr-002": {
-    "kind": "association",
-    "text": "merci 谢谢，remercier 感谢；同一个 merci 藏在动词里面。"
+    "kind": "english",
+    "text": "mercy（宽恕、怜悯）和 merci 字形很近；英语请求宽恕，法语表达感谢，别把两种意思混用。"
   },
   "fr-003": {
     "kind": "association",
@@ -28,7 +28,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-007": {
     "kind": "association",
-    "text": "把 oui / non 配成一对：是 / 否。"
+    "text": "oui 读 /wi/，接近英语 we；把这个短音直接和“是、好的”绑定，末尾 i 要读出来。"
   },
   "fr-008": {
     "kind": "english",
@@ -59,16 +59,16 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "family"
   },
   "fr-015": {
-    "kind": "association",
-    "text": "mère / père 配对记：母亲 / 父亲。"
+    "kind": "english",
+    "text": "maternal（母亲的）里的 mater- 可作线索；mère 是日常说的“母亲”。"
   },
   "fr-016": {
     "kind": "association",
     "text": "把 père 和英语 paternal（父亲的）联想在一起。"
   },
   "fr-017": {
-    "kind": "association",
-    "text": "sœur / frère 配对记：姐妹 / 兄弟。"
+    "kind": "english",
+    "text": "sister（姐妹）：sœur 保留开头 s，œu 合起来读一个元音 /œ/，不是 o、e 分开念。"
   },
   "fr-018": {
     "kind": "association",
@@ -87,16 +87,16 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "ami 加 e → amie；书写上区分女性朋友。"
   },
   "fr-022": {
-    "kind": "association",
-    "text": "voisin（邻居）→ voisinage（邻里）：先认住同一个 voisin。"
+    "kind": "english",
+    "text": "vicinity（附近）提供“住得近”的线索；voisin 指住在附近的邻居。"
   },
   "fr-023": {
     "kind": "association",
     "text": "联想英语 feminine（女性的）；ma femme 也可指我妻子。"
   },
   "fr-024": {
-    "kind": "association",
-    "text": "un homme / une femme 成对记：男人 / 女人。"
+    "kind": "english",
+    "text": "human（人）可作含义线索；homme 日常指男人，开头 h 不发音。"
   },
   "fr-025": {
     "kind": "association",
@@ -112,7 +112,16 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-028": {
     "kind": "association",
-    "text": "联想英语 defenestration（掷出窗外）：中间的 fenestr- 帮你记窗户。"
+    "text": "fenêtre 的 ê 提示旧拼写中曾有 s：这个“窗户”词以前写作 fenestre，读音重点是中间 /nɛtʁ/。",
+    "origin": {
+      "text": "12 世纪的写法是 fenestre，来自拉丁语中表示窗户的词。现代写成 fenêtre，帽子符号保留了旧拼写中 s 的线索。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9F0457"
+        }
+      ]
+    }
   },
   "fr-029": {
     "kind": "english",
@@ -124,7 +133,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-031": {
     "kind": "association",
-    "text": "lit 床、lire 读：想象躺在床上阅读，区分结尾 t 和 re。"
+    "text": "lit 读 /li/，结尾 t 不发音；英语 lit 是“点亮了的”，法语这个三字母名词是“床”。"
   },
   "fr-032": {
     "kind": "association",
@@ -148,11 +157,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-037": {
     "kind": "association",
-    "text": "eau 这三个字母常发一个 /o/ 音；看见水杯就念 eau。"
+    "text": "eau 三个字母合读 /o/，不是逐字母念；“水”这个最短常用词也帮你认其他法语词里的 eau。"
   },
   "fr-038": {
-    "kind": "association",
-    "text": "长得像英语 pain，但它是面包；想象买面包并不痛。"
+    "kind": "english",
+    "text": "pain 在英语是“疼痛”，在法语是“面包”；法语读 /pɛ̃/，与英语 /peɪn/ 不同。"
   },
   "fr-039": {
     "kind": "english",
@@ -181,18 +190,18 @@ export const memoryHints: Record<string, MemoryHint> = {
     }
   },
   "fr-041": {
-    "kind": "association",
-    "text": "lait 牛奶 → laitier 奶制品的；还可联想英语 latte 中的奶。"
+    "kind": "english",
+    "text": "latte（拿铁）中的“奶”可以帮助记 lait；lait 读 /lɛ/，末尾 t 不发音。"
   },
   "fr-042": {
     "kind": "association",
-    "text": "pomme 苹果；pommier 苹果树：把果实和树的名字一起记。"
+    "text": "pomme 读 /pɔm/；双 m 仍只读一个 /m/，末尾 e 不另成音节。记住这一个“苹果”词即可。"
   },
   "fr-043": {
     "kind": "association",
     "text": "fromage 里把 fro- 暂时调回 for-，就容易联想到 forme（形状、模具）。",
     "origin": {
-      "text": "fromage 在古法语中曾写作 formage，源头与“模具成形的奶酪”有关。想象把奶酪放进模具定形，就能把它与 forme（形状）联系起来。",
+      "text": "fromage 在古法语中曾写作 formage，源头与“模具成形的奶酪”有关。旧拼写中 form- 的次序，保留了奶酪用模具成形的线索。",
       "sources": [
         {
           "label": "法兰西学院词典",
@@ -203,15 +212,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-044": {
     "kind": "association",
-    "text": "œuf 单数、œufs 复数，拼写只加 s，读音却变化较大；把一颗蛋和一篮蛋对照记。"
+    "text": "一个鸡蛋 œuf 读 /œf/，结尾 f 要读；复数 œufs 通常读 /ø/。这是一组需要特别记的单复数读音。"
   },
   "fr-045": {
     "kind": "english",
     "text": "rice；法语写 riz"
   },
   "fr-046": {
-    "kind": "association",
-    "text": "poisson 两个 s 是鱼；poison 一个 s 是毒药。"
+    "kind": "english",
+    "text": "poison（毒药）作拼写参照：法语 poisson 多一个 s，双 s 读 /s/，意思变成鱼。"
   },
   "fr-047": {
     "kind": "association",
@@ -227,7 +236,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-050": {
     "kind": "association",
-    "text": "rue 街道 → ruelle 小巷；短短的 rue 延伸成一条小路。"
+    "text": "rue 只有一个音节 /ʁy/；u 要圆唇，不能读成英语 rue 的 /uː/。这个短词就是“街道”。"
   },
   "fr-051": {
     "kind": "association",
@@ -257,7 +266,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-053": {
     "kind": "association",
-    "text": "gare 管火车，aéroport 管飞机；别被英语 garage（车库）带跑。"
+    "text": "gare 读 /ɡaʁ/，开头 g 是硬音；交通指示上的 gare 主要指火车站。"
   },
   "fr-054": {
     "kind": "english",
@@ -307,23 +316,23 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-061": {
     "kind": "association",
-    "text": "把 aujourd'hui、demain、hier 排成今天、明天、昨天。"
+    "text": "aujourd'hui 可以分成 aujourd'＋hui 来读；今天是一个整体的时间词，撇号不要漏掉。"
   },
   "fr-062": {
     "kind": "association",
-    "text": "demain（明天）前加 après（之后）就是 après-demain（后天）。"
+    "text": "demain 读 /dəmɛ̃/，结尾 ain 是鼻化元音；“明天”这个词不读出一个独立的 n。"
   },
   "fr-063": {
     "kind": "association",
-    "text": "hier（昨天）前加 avant（之前）就是 avant-hier（前天）。"
+    "text": "hier 开头 h 不发音，整体读 /jɛʁ/，只有一个音节，意思是“昨天”。"
   },
   "fr-064": {
     "kind": "association",
-    "text": "maintenant（现在）对照 passé（过去）、futur（未来）：钉住时间轴中央。"
+    "text": "maintenant 的 main- 读鼻化音 /mɛ̃/，结尾 t 不发音；整词表示“现在”，不是英语 maintain。"
   },
   "fr-065": {
     "kind": "association",
-    "text": "jour 是日；把 toujours 联想成“天天如此”。"
+    "text": "jour（日、天）是基础词；toujours 把“每一天都如此”扩展成“总是、一直”。"
   },
   "fr-066": {
     "kind": "association",
@@ -335,11 +344,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-068": {
     "kind": "association",
-    "text": "semaine 一周，hebdomadaire 每周的：把日历上一整行七格作为联想。"
+    "text": "semaine 是七天组成的一周；读音 /səmɛn/ 的最后一个 n 要读出来，不是鼻化结尾。"
   },
   "fr-069": {
     "kind": "association",
-    "text": "mois（月）别和 moi（我）混；日历上找一个月。"
+    "text": "mois 读 /mwa/，结尾 s 不发音；单数、复数都写 mois，都是“月”。"
   },
   "fr-070": {
     "kind": "english",
@@ -351,11 +360,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-072": {
     "kind": "association",
-    "text": "soir / matin 配对记：晚上 / 早晨。"
+    "text": "soir 的 oi 合读 /wa/，所以读 /swaʁ/；表示一天接近结束的“晚上”。"
   },
   "fr-073": {
-    "kind": "association",
-    "text": "先绑定常见形式 je suis、tu es：都是 être 的变化。"
+    "kind": "english",
+    "text": "être 对应 be；最常见的 suis、es、est 分别相当于 am、are、is，是同一个动词的基础形式。"
   },
   "fr-074": {
     "kind": "association",
@@ -363,23 +372,23 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-075": {
     "kind": "association",
-    "text": "aller 的常用形式是 je vais；把“去”当作一个词族记。"
+    "text": "aller 的日常“我去”是 je vais；不规则变化要把原形与这个最常用形式直接对应起来。"
   },
   "fr-076": {
-    "kind": "association",
-    "text": "venir 来，aller 去：用朝向自己/离开自己的箭头记。"
+    "kind": "english",
+    "text": "come（来）可帮助固定方向：venir 表示来到说话者这边；不需要先背另一个法语动词。"
   },
   "fr-077": {
-    "kind": "association",
-    "text": "faire 像英语 do/make；fait 是做成的事，fais 是常见变位。"
+    "kind": "english",
+    "text": "do / make：faire 同时覆盖“做一件事”和“做出某物”这两类意思。"
   },
   "fr-078": {
-    "kind": "association",
-    "text": "dire 说 → redire 再说 → contredire 反驳：用 dire 串起三个动作。"
+    "kind": "english",
+    "text": "dictate（口述）里的 dict- 可作“说”的线索；dire 是最日常的“说、告诉”。"
   },
   "fr-079": {
-    "kind": "association",
-    "text": "联想英语 parley（会谈）；parler 是说话。"
+    "kind": "english",
+    "text": "parliament（议会）可作字形线索；parler 是日常的“说话”，两者都围绕言语交流。"
   },
   "fr-080": {
     "kind": "association",
@@ -391,11 +400,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-082": {
     "kind": "association",
-    "text": "lire（读）和 livre（书）只差一个 v。"
+    "text": "livre（书）比动词更具体：从 livre 去掉 v 得 lire（读）；读这本书。"
   },
   "fr-083": {
-    "kind": "association",
-    "text": "écrire 写、écrit 写下的、écrivain 作家：共同抓住 écri-。"
+    "kind": "english",
+    "text": "script（文字、脚本）提供“写”的线索；écrire 把这个动作表达为“写”。"
   },
   "fr-084": {
     "kind": "association",
@@ -403,7 +412,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-085": {
     "kind": "association",
-    "text": "boire 喝 → boisson 饮料；都从 boi- 开头记。"
+    "text": "boire 的 oi 读 /wa/，整词 /bwaʁ/；对应 drink，既可喝水，也可喝酒。"
   },
   "fr-086": {
     "kind": "association",
@@ -411,11 +420,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-087": {
     "kind": "association",
-    "text": "联想英语 travail（辛劳）；travailler 是工作。"
+    "text": "travailler 的 -aill- 读 /aj/，结尾 -er 读 /e/；表示工作、劳动，对照英语 work。"
   },
   "fr-088": {
     "kind": "association",
-    "text": "apprendre 学习，comprendre 理解：一起记两个 -prendre。"
+    "text": "apprendre 的两个 p 都写在开头；对应 learn，重点是获得原先不会的知识或技能。"
   },
   "fr-089": {
     "kind": "english",
@@ -423,7 +432,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-090": {
     "kind": "association",
-    "text": "acheter 买，vendre 卖：购物时一进一出。"
+    "text": "acheter 对应 buy；注意中间不是英语 ache 的发音，ch 读 /ʃ/。"
   },
   "fr-091": {
     "kind": "association",
@@ -431,15 +440,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-092": {
     "kind": "association",
-    "text": "trouver 找到 → retrouver 的 re- 表示再；先找到，再找回。"
+    "text": "trouver 对应 find，强调已有“找到”的结果；ou 合读 /u/，不是英语的 /aʊ/。"
   },
   "fr-093": {
     "kind": "association",
-    "text": "ouvrir / fermer：开 / 关，想象门的两个动作。"
+    "text": "ouvrir 读 /uvʁiʁ/，ou＝/u/；表示让原来关闭的东西打开，英语是 open。"
   },
   "fr-094": {
-    "kind": "association",
-    "text": "fermer 关、fermeture 闭合、fermé 关着的：都抓住 ferm-。"
+    "kind": "english",
+    "text": "firm（牢固的）可作字形线索；fermer 是把门、店等“关上”，重点是关的动作。"
   },
   "fr-095": {
     "kind": "association",
@@ -459,7 +468,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-099": {
     "kind": "association",
-    "text": "chaud 热、chaleur 热量、chauffer 加热；同一组 cha- 和温度上升一起记。"
+    "text": "chaud 读 /ʃo/：ch＝/ʃ/，au＝/o/，d 不发音；三块拼写合成一个“热”的音节。"
   },
   "fr-100": {
     "kind": "association",
@@ -471,7 +480,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-102": {
     "kind": "association",
-    "text": "vieux / nouveau：旧的 / 新的。"
+    "text": "vieux 读 /vjø/，结尾 x 不发音；常指有年头、年纪大的“老、旧”。"
   },
   "fr-103": {
     "kind": "english",
@@ -491,7 +500,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-107": {
     "kind": "association",
-    "text": "heureux 高兴、malheureux 不幸；mal- 一加，情绪翻面。"
+    "text": "heureux 读 /øʁø/，h 和最后的 x 都不发音；两个 eu 都读 /ø/，记住这个“幸福的”。"
   },
   "fr-108": {
     "kind": "english",
@@ -511,11 +520,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-112": {
     "kind": "association",
-    "text": "voiture 汽车 → covoiturage 拼车：co- 表示共同，大家共用车。"
+    "text": "voiture 的 oi＝/wa/，u＝/y/；这两个元音不同，整词表示汽车。"
   },
   "fr-113": {
     "kind": "association",
-    "text": "vélo 自行车，vélocipède 是更长的相关名称；短词像轻便的两轮车。"
+    "text": "vélo 很短，只有 /ve/、/lo/ 两个音节；对应 bike，是日常最常用的自行车说法。"
   },
   "fr-114": {
     "kind": "association",
@@ -547,11 +556,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-121": {
     "kind": "association",
-    "text": "réussir 成功 → réussite 成就；同一组 réuss-，一个动作一个结果。"
+    "text": "réussir 对应 succeed；é 与 u 分开读，开头是 /ʁe.y/，不要把它们合成一个音。"
   },
   "fr-122": {
     "kind": "association",
-    "text": "和 réussir 成对记：一个成功，一个失败。"
+    "text": "échouer 的 ch＝/ʃ/，ou＝/u/；对应 fail，既可说考试失败，也可说计划失败。"
   },
   "fr-123": {
     "kind": "english",
@@ -562,8 +571,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "develop"
   },
   "fr-125": {
-    "kind": "association",
-    "text": "éviter 避开、inévitable 不可避免：in- 否定把退路堵住。"
+    "kind": "english",
+    "text": "inevitable（不可避免的）去掉否定 in-，留下 evit- 这段“避免”的线索；éviter 是避免这个动作。"
   },
   "fr-126": {
     "kind": "english",
@@ -571,7 +580,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-127": {
     "kind": "association",
-    "text": "permettre 放行，empêcher 拦住：想象绿灯和红灯。"
+    "text": "empêcher 的 em- 是鼻化音，pê 读 /pɛ/；表示 prevent／stop someone from doing something，阻止事情发生。"
   },
   "fr-128": {
     "kind": "english",
@@ -590,8 +599,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "decide"
   },
   "fr-132": {
-    "kind": "association",
-    "text": "choisir 是动词，choix 是“选择”这个名词。"
+    "kind": "english",
+    "text": "choice（选择）作线索：choi- 保留在 choisir 里，词尾 -ir 表示这里记的是“选择”这个动作。"
   },
   "fr-133": {
     "kind": "english",
@@ -615,7 +624,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-138": {
     "kind": "association",
-    "text": "constater 察觉并确认，constat 是确认后形成的记录。"
+    "text": "constater 的核心是“查看后确认”；对应英语 observe / establish a fact，不是猜测。"
   },
   "fr-139": {
     "kind": "association",
@@ -662,8 +671,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "receive"
   },
   "fr-150": {
-    "kind": "association",
-    "text": "envoyer 发送、envoi 寄送；renvoyer 加 re- 就是寄回。"
+    "kind": "english",
+    "text": "send：envoyer 表示发送；en- 是鼻化音，voy- 读 /vwaj/，整词不要照英语 envoy 念。"
   },
   "fr-151": {
     "kind": "association",
@@ -687,11 +696,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-156": {
     "kind": "association",
-    "text": "prêter 借出、emprunter 借入：把自己放在箭头起点或终点。"
+    "text": "prêter 的 ê 读 /ɛ/；主语是把东西借给别人的一方，对应英语 lend。"
   },
   "fr-157": {
     "kind": "association",
-    "text": "louer 租用，loyer 房租，location 租赁：别把 location 当地点。"
+    "text": "louer 对应 rent；ou 读 /u/，末尾 -er 读 /e/，两个音节 /lu.e/。"
   },
   "fr-158": {
     "kind": "english",
@@ -714,8 +723,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "construct"
   },
   "fr-163": {
-    "kind": "association",
-    "text": "和 construire 成对记：建造 / 摧毁。"
+    "kind": "english",
+    "text": "destroy（摧毁）的 de-/détr- 可作线索；détruire 表示破坏原来的结构、使之毁坏。"
   },
   "fr-164": {
     "kind": "english",
@@ -751,11 +760,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-172": {
     "kind": "association",
-    "text": "ajouter 添加 → ajout 添加的部分；像给清单再添一个加号。"
+    "text": "ajouter 的 j＝/ʒ/，ou＝/u/；对应 add，在原有数量或内容上增加。"
   },
   "fr-173": {
     "kind": "association",
-    "text": "tirer 拉 → retirer 取出、拉走；想象把物品从抽屉拉出来。"
+    "text": "re-（回、离开原处）＋ tirer（拉）：把原处的东西拉出来，取走。"
   },
   "fr-174": {
     "kind": "english",
@@ -783,11 +792,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-180": {
     "kind": "association",
-    "text": "gagner / perdre：赢 / 输，赚到 / 失去。"
+    "text": "perdre 对应 lose，既能失去物品，也能输掉比赛；结尾 -dre 的 r 仍要读。"
   },
   "fr-181": {
     "kind": "association",
-    "text": "manquer 缺少 → manque 缺口；错过火车也像行程缺了一环。"
+    "text": "manquer 对应 lack / miss；an 是鼻化音，qu 读 /k/。既可缺某物，也可错过一次机会。"
   },
   "fr-182": {
     "kind": "english",
@@ -814,8 +823,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "depend"
   },
   "fr-188": {
-    "kind": "association",
-    "text": "appartenir 属于 → appartenance 归属；把长词拆成共同的 apparten-。"
+    "kind": "english",
+    "text": "part（部分）是拼写线索；appartenir 表示“属于某人或某个整体”，不是把东西分开。"
   },
   "fr-189": {
     "kind": "english",
@@ -823,7 +832,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-190": {
     "kind": "association",
-    "text": "oublier 忘记 → oubli 遗忘；对照 souvenir 回忆。"
+    "text": "oublier 开头 ou＝/u/，后面的 -lier＝/lje/；对应 forget，记两个音块 /u.bli.je/。"
   },
   "fr-191": {
     "kind": "association",
@@ -847,11 +856,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-196": {
     "kind": "association",
-    "text": "想象线团打结，你自己一点点理顺：设法应付。"
+    "text": "se débrouiller 的 dé- 有解除的作用；这里是自己解决混乱、把事情应付过去，相当于英语 manage / get by。"
   },
   "fr-197": {
-    "kind": "association",
-    "text": "联想英语 complain；名词 plainte 是投诉。"
+    "kind": "english",
+    "text": "complain（抱怨）：比较 complain 与 plaindre 共有的 plain-，先用熟悉的英语抓住含义。"
   },
   "fr-198": {
     "kind": "english",
@@ -866,8 +875,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "visage 是脸；联想把一个方案摆到眼前考虑。"
   },
   "fr-201": {
-    "kind": "association",
-    "text": "avis 意见，aviser 通知；不是英语 advice 的逐字等价词。"
+    "kind": "english",
+    "text": "advice（建议）可作字形和意思线索；avis 常是“意见、看法”，范围不只建议。"
   },
   "fr-202": {
     "kind": "english",
@@ -939,7 +948,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-219": {
     "kind": "association",
-    "text": "échec / réussite：失败 / 成功；下棋将军也说 échec。"
+    "text": "échec 读 /e.ʃɛk/，结尾 c 要读；既指失败，也是国际象棋里的“将军”，对应 check。"
   },
   "fr-220": {
     "kind": "english",
@@ -955,7 +964,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-223": {
     "kind": "association",
-    "text": "entretenir 维护、交谈 → entretien；照料机器与维持对话都能联想。"
+    "text": "entretien 可指维护，也可指面谈；后半段 -tien 读 /tjɛ̃/，不用把每个字母拆开念。"
   },
   "fr-224": {
     "kind": "english",
@@ -987,12 +996,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "facture 是付款账单，fracture 是骨折；多一个 r 可别付成骨折。"
   },
   "fr-229": {
-    "kind": "association",
-    "text": "dépenser（花钱）→ dépense（支出）。"
+    "kind": "english",
+    "text": "expense（支出）与 dépense 字形接近；une dépense 表示花出去的一笔钱、一项开销。"
   },
   "fr-230": {
     "kind": "association",
-    "text": "épargner 储蓄 → épargne 积蓄；和 dépenser 花费配成进出账。"
+    "text": "épargne 的 gn 读 /ɲ/，不是 g＋n；意思是存下来的钱、储蓄。"
   },
   "fr-231": {
     "kind": "english",
@@ -1004,11 +1013,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-233": {
     "kind": "association",
-    "text": "marche 有步行之意；把 démarche 想成办事走的步骤。"
+    "text": "marche（走路、一步）是基础线索；démarche 可以是步态，也可以是为办成事情采取的步骤。"
   },
   "fr-234": {
     "kind": "association",
-    "text": "renseigner 提供信息 → renseignement 信息；长词先抓 renseign-。"
+    "text": "renseignement 的 -gn- 合读 /ɲ/，-ment 是名词结尾；表示询问后能得到的信息。"
   },
   "fr-235": {
     "kind": "association",
@@ -1020,7 +1029,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-237": {
     "kind": "association",
-    "text": "tard 晚 → retard 延误；retarder 是让进度落后。"
+    "text": "tard（晚）是简单基础：retard 表示比应有的时间晚了，也就是延误、迟到。"
   },
   "fr-238": {
     "kind": "english",
@@ -1032,7 +1041,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-240": {
     "kind": "association",
-    "text": "se comporter 表现、举止 → comportement 行为方式。"
+    "text": "comportement 用 -ment 把行为表达成名词；对应英语 behaviour，指一个人如何表现。"
   },
   "fr-241": {
     "kind": "english",
@@ -1056,11 +1065,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-246": {
     "kind": "association",
-    "text": "craindre 是害怕；crainte 是担忧本身。"
+    "text": "crainte 的 ain 是鼻化音；英语 fear 可作含义锚点，指担忧或恐惧。"
   },
   "fr-247": {
     "kind": "association",
-    "text": "colère 愤怒，colérique 易怒的；共同的 colér- 配一张涨红的脸。"
+    "text": "colère 读 /kɔ.lɛʁ/；è 读 /ɛ/，末尾 e 不另读。这个词表示怒气，而不是英语 colour。"
   },
   "fr-248": {
     "kind": "english",
@@ -1068,15 +1077,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-249": {
     "kind": "association",
-    "text": "honte 羞耻 → honteux 羞愧的；用低头脸红的表情作联想。"
+    "text": "honte 的 h 不发音，on 是鼻化音；但这个 h 会阻止省音，所以说 la honte（羞耻）。"
   },
   "fr-250": {
     "kind": "association",
     "text": "长得像 deception，但 déception 是失望，不是欺骗。"
   },
   "fr-251": {
-    "kind": "association",
-    "text": "soulager 缓解 → soulagement 宽慰；想象肩上的重量终于被卸下。"
+    "kind": "english",
+    "text": "relief：soulagement 把压力或痛苦减轻后的状态表达为名词；-ment 结尾不用单独背另一个动词。"
   },
   "fr-252": {
     "kind": "english",
@@ -1084,7 +1093,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-253": {
     "kind": "association",
-    "text": "besoin 必需、envie 想要：前者像缺水，后者像想喝果汁。"
+    "text": "besoin 对应 need，表示缺了会有问题的需要；末尾 -oin 合读 /wɛ̃/。"
   },
   "fr-254": {
     "kind": "association",
@@ -1092,15 +1101,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-255": {
     "kind": "association",
-    "text": "souhaiter 是祝愿；un souhait 是一个愿望。"
+    "text": "souhait 对应 wish；ou＝/u/，ai＝/ɛ/，结尾 t 不发音，读 /swɛ/。"
   },
   "fr-256": {
     "kind": "english",
     "text": "counsel（建议）"
   },
   "fr-257": {
-    "kind": "association",
-    "text": "soutenir 是支持；soutien 是支持这件事。"
+    "kind": "english",
+    "text": "sustain（支撑、维持）作线索；soutien 是得到的支持或支撑。"
   },
   "fr-258": {
     "kind": "english",
@@ -1131,20 +1140,20 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "voisin 是邻居，voisinage 是周围邻里。"
   },
   "fr-265": {
-    "kind": "association",
-    "text": "trajet 是走过的路线，trajectoire 是轨迹：共同抓住 traj-。"
+    "kind": "english",
+    "text": "trajectory（轨迹）的 traj- 可作线索；trajet 是实际走过的一段路程。"
   },
   "fr-266": {
-    "kind": "association",
-    "text": "bouteille 是瓶子；把堵车想成车流卡在瓶颈。"
+    "kind": "english",
+    "text": "bottleneck（瓶颈）可帮助理解交通堵塞；embouteillage 也以“瓶子”的字形为基础，表示车流受阻。"
   },
   "fr-267": {
     "kind": "association",
-    "text": "panne 是故障；dépanner 是排除故障，像把卡住的东西松开。"
+    "text": "panne 读 /pan/，双 n 使前面的 a 不鼻化；表示设备、车等出了故障。"
   },
   "fr-268": {
     "kind": "association",
-    "text": "grève 是停工，gréviste 是罢工者；-iste 可以帮你记“参与的人”。",
+    "text": "grève 的词源与巴黎旧日工人聚集找工作的河岸广场有关；后来用来指停工、罢工。",
     "origin": {
       "text": "“罢工”这个意思与巴黎的 Place de Grève 有关。过去工人会在那里聚集等候雇用；这个地名后来进入了表示集体停工的词语。",
       "sources": [
@@ -1173,11 +1182,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-273": {
     "kind": "association",
-    "text": "déchet 废物、déchéance 衰落：只作词形联想，把 déch- 和被丢下的部分绑定。"
+    "text": "déchet 指被丢弃、不要的剩余物；ch 读 /ʃ/，末尾 t 不发音，读 /de.ʃɛ/。"
   },
   "fr-274": {
     "kind": "association",
-    "text": "gaspiller 是浪费；gaspillage 是浪费的行为。"
+    "text": "gaspillage 的 -illage 读 /ijaʒ/；英语 waste 可固定意思：白白消耗了本来有用的东西。"
   },
   "fr-275": {
     "kind": "english",
@@ -1204,8 +1213,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "responsibility"
   },
   "fr-281": {
-    "kind": "association",
-    "text": "disponible 可用，indisponible 不可用：in- 把空闲变成忙碌。"
+    "kind": "english",
+    "text": "available：disponible 的重点是“现在可以使用或腾得出时间”，用于东西也用于人。"
   },
   "fr-282": {
     "kind": "english",
@@ -1224,12 +1233,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "precise"
   },
   "fr-286": {
-    "kind": "association",
-    "text": "flou 模糊，fluide 流动：只是字形联想，别把糊成一团和流动混为一义。"
+    "kind": "english",
+    "text": "blur：flou 指边界不清的模糊，也可说计划含糊；ou 是一个 /u/ 音。"
   },
   "fr-287": {
     "kind": "association",
-    "text": "se fier à 是信赖；fiable 是值得信赖的。"
+    "text": "fiable 的 -able 像英语 reliable 的结尾，都表示“可以被信赖的”。"
   },
   "fr-288": {
     "kind": "english",
@@ -1269,11 +1278,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-297": {
     "kind": "association",
-    "text": "léger / lourd：轻 / 重，想象两只不同重量的箱子。"
+    "text": "léger 读 /le.ʒe/：g 在 e 前读 /ʒ/，末尾 r 不发音；意思是轻的。"
   },
   "fr-298": {
     "kind": "association",
-    "text": "lourd 重、lourdeur 沉重感；和 léger 轻放在天平两端。"
+    "text": "lourd 读 /luʁ/，末尾 d 不发音；对应 heavy，可表示重量重或负担重。"
   },
   "fr-299": {
     "kind": "english",
@@ -1340,32 +1349,32 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "curious"
   },
   "fr-315": {
-    "kind": "association",
-    "text": "inquiet / tranquille：不安 / 平静。"
+    "kind": "english",
+    "text": "quiet（平静）作字形线索；inquiet 多了否定的 in-，意思是不安、担忧的。"
   },
   "fr-316": {
     "kind": "association",
-    "text": "déception 是失望；déçu 是失望的状态。"
+    "text": "déçu 中 ç 保证 c 在 u 前仍读 /s/；整词 /de.sy/，表示失望的。"
   },
   "fr-317": {
     "kind": "association",
-    "text": "fier 自豪 → fierté 自豪感；抬头挺胸地记这组 fier-。"
+    "text": "fier 这里读 /fjɛʁ/，r 要读，别当成 -er 动词结尾；意思是自豪的。"
   },
   "fr-318": {
     "kind": "association",
-    "text": "gêner 是使不自在；gêné 是感到不自在。"
+    "text": "gêné 读 /ʒe.ne/，开头 g 是软音；表示不好意思、不自在，而不是犯了罪。"
   },
   "fr-319": {
-    "kind": "association",
-    "text": "remercier 表示感谢；reconnaissant 表示心怀感激。"
+    "kind": "english",
+    "text": "recognize（认可、承认）可作字形线索；reconnaissant 表示承认别人的帮助、心怀感激。"
   },
   "fr-320": {
     "kind": "association",
-    "text": "exiger 是要求；exigeant 是要求高的。"
+    "text": "exigeant 的 -ge- 保留 /ʒ/ 音；对应 demanding，指要求多、标准高。"
   },
   "fr-321": {
     "kind": "association",
-    "text": "pourtant 和 cependant 都引出转折；把语气箭头折回来记“然而”。"
+    "text": "pourtant 常接与预期相反的结果，相当于英语 yet / however；不要按 pour＋tant 逐字翻译。"
   },
   "fr-322": {
     "kind": "association",
@@ -1373,11 +1382,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-323": {
     "kind": "association",
-    "text": "moins 是少；联想“即便如此，力度也不少”：仍然。"
+    "text": "néanmoins 可借英语 nevertheless 记结构：“尽管前面这样，结论仍然成立”。"
   },
   "fr-324": {
-    "kind": "association",
-    "text": "donc 因此，把它想成逻辑箭头 ⇒，前面是原因，后面是结论。"
+    "kind": "english",
+    "text": "therefore / so：donc 引出由前文得出的结论，意思是因此、所以。"
   },
   "fr-325": {
     "kind": "association",
@@ -1389,7 +1398,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-327": {
     "kind": "association",
-    "text": "ici 这里，ailleurs 别处：把视线从这里移开。"
+    "text": "ailleurs 的 -ill- 读 /j/；相当于 elsewhere，明确表示别的地方。"
   },
   "fr-328": {
     "kind": "association",
@@ -1397,7 +1406,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-329": {
     "kind": "association",
-    "text": "désormais 是从此以后；把此刻画成分界线，箭头只朝未来。"
+    "text": "désormais 对应 from now on，重点是“从此开始的新状态”，不是单指将来某天。"
   },
   "fr-330": {
     "kind": "association",
@@ -1425,11 +1434,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-336": {
     "kind": "association",
-    "text": "environ 大约、environnement 周围环境：用“围着一个范围”作联想。"
+    "text": "environ 对应 about / around；数字前表示在那个数值附近，也就是大约。"
   },
   "fr-337": {
     "kind": "association",
-    "text": "presque 几乎，prêt 准备好：都以 pr- 开头，但几乎完成不等于已经准备好。"
+    "text": "presque 对应 almost：接近达成，却还没完全达成。qu 读 /k/，末尾 e 不另读。"
   },
   "fr-338": {
     "kind": "association",
@@ -1505,7 +1514,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-356": {
     "kind": "association",
-    "text": "把天平另一边想成 en revanche：另一方面。"
+    "text": "en revanche 用来补充另一面的得失，相当于 on the other hand；不是单纯的“同时”。"
   },
   "fr-357": {
     "kind": "association",
@@ -1517,7 +1526,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-359": {
     "kind": "association",
-    "text": "像进度条边走边增长：随着进展，逐步地。"
+    "text": "au fur et à mesure 表示进展到哪里，变化也跟到哪里；可对照英语 as… progresses 理解“随着、逐渐”。"
   },
   "fr-360": {
     "kind": "association",
@@ -1660,8 +1669,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "recount（讲述）"
   },
   "fr-395": {
-    "kind": "association",
-    "text": "traduire（翻译）→ traduction（译文、翻译）。"
+    "kind": "english",
+    "text": "translate（翻译）作含义锚点；traduire 中的 ui 连读 /ɥi/，是两种语言之间的转换。"
   },
   "fr-396": {
     "kind": "english",
@@ -1709,7 +1718,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-407": {
     "kind": "english",
-    "text": "launch；想象发射或发起一个项目"
+    "text": "launch：lancer 可以发射物体，也可以发起项目，两个语言都有这种延伸。"
   },
   "fr-408": {
     "kind": "english",
@@ -1756,8 +1765,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "transport"
   },
   "fr-419": {
-    "kind": "association",
-    "text": "livrer 交付 → livraison 配送；和 livre 书同形部分可联想送书上门。"
+    "kind": "english",
+    "text": "deliver（递送）的 liver 这一段可作字形线索；livrer 是把东西交到收件人手中。"
   },
   "fr-420": {
     "kind": "english",
@@ -1768,8 +1777,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "联想英语 arrange：把东西排整齐、归位。"
   },
   "fr-422": {
-    "kind": "association",
-    "text": "net 干净清楚、nettoyer 清洁、nettoyage 清扫：一起抓住 net-。"
+    "kind": "english",
+    "text": "neat（整洁）可帮助认出 net- 的“干净”含义；nettoyer 就是清洁。"
   },
   "fr-423": {
     "kind": "association",
@@ -1784,12 +1793,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "cover"
   },
   "fr-426": {
-    "kind": "association",
-    "text": "想象把 cover 揭开：découvrir 是发现、揭开。"
+    "kind": "english",
+    "text": "discover：dis-cover 与 dé-couvrir 都保留“去掉遮盖”的线索，再引申为发现。"
   },
   "fr-427": {
-    "kind": "association",
-    "text": "tenir 握住，retenir 留住，maintenir 维持；把 ten-/tenir 这组词形连起来。"
+    "kind": "english",
+    "text": "retain（保留）的 -tain 可作“握住、留住”的线索；tenir 是最基础的握住、保持。"
   },
   "fr-428": {
     "kind": "english",
@@ -1809,7 +1818,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-432": {
     "kind": "association",
-    "text": "pousser 推，tirer 拉：想象两只手一个向外，一个向里。"
+    "text": "pousser 的双 s 读 /s/；对应 push，表示向前推，也可说植物向外生长。"
   },
   "fr-433": {
     "kind": "association",
@@ -1825,7 +1834,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-436": {
     "kind": "association",
-    "text": "poids 是重量；peser 是上秤称重。"
+    "text": "peser 对应 weigh；字母 s 在两个元音之间读 /z/，不是 /s/。"
   },
   "fr-437": {
     "kind": "english",
@@ -1849,7 +1858,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-442": {
     "kind": "association",
-    "text": "épreuve 考验、éprouver 经历或感受；把经历考验后的感受作为联想。"
+    "text": "éprouver 对应 experience / feel，指亲身感受到；ou＝/u/，不用先背抽象名词。"
   },
   "fr-443": {
     "kind": "english",
@@ -1861,11 +1870,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-445": {
     "kind": "association",
-    "text": "espérer 希望 → espoir 希望；两个词的 esp- 一起记。"
+    "text": "espérer 对应 hope；三个 e 都写重音或处于 -er 结尾，读 /ɛs.pe.ʁe/。"
   },
   "fr-446": {
     "kind": "association",
-    "text": "souhait 愿望 → souhaiter 祝愿；用一支生日蜡烛联想这个词族。"
+    "text": "souhaiter 对应 wish，常表达希望某件好事发生；souhai- 读 /swɛ/，不是逐字母读。"
   },
   "fr-447": {
     "kind": "english",
@@ -1913,7 +1922,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-458": {
     "kind": "association",
-    "text": "accueil 接待 → accueillir 迎接；注意两个 c 和两个 l。"
+    "text": "accueillir 的 cueil 读 /kœj/；意思是迎接、接待，先分成 ac-cueil-lir 认字形。"
   },
   "fr-459": {
     "kind": "english",
@@ -1948,8 +1957,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "aid"
   },
   "fr-467": {
-    "kind": "association",
-    "text": "conseil 是建议；conseiller 是给建议。"
+    "kind": "english",
+    "text": "counsel（建议）作线索；conseiller 表示向别人提出建议，名词也可指顾问。"
   },
   "fr-468": {
     "kind": "english",
@@ -1965,7 +1974,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-471": {
     "kind": "association",
-    "text": "déçu（失望的）来自 décevoir（使失望）。"
+    "text": "décevoir 表示“使某人失望”；-cevoir 读 /sə.vwaʁ/，不是英语 deceive 的欺骗。"
   },
   "fr-472": {
     "kind": "association",
@@ -2001,7 +2010,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-480": {
     "kind": "association",
-    "text": "想象花朵舒展开，也联想人充分成长。"
+    "text": "s'épanouir 可用于花朵开放，也用于人充分发展、感到舒展；对照英语 bloom 同样能从花扩展到人。"
   },
   "fr-481": {
     "kind": "english",
@@ -2009,7 +2018,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-482": {
     "kind": "association",
-    "text": "penser 是想；pensée 是脑中的一个想法。"
+    "text": "penser（想）是更基础的动词；pensée 是一次想法、一个思想，英语可对照 thought。"
   },
   "fr-483": {
     "kind": "english",
@@ -2172,8 +2181,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "society；法语也常指公司"
   },
   "fr-523": {
-    "kind": "association",
-    "text": "équipe 队伍、coéquipier 队友；co- 帮你记“在同一队”。"
+    "kind": "english",
+    "text": "team：équipe 是共同做事的一组人，qu 读 /k/，末尾 e 不另读。"
   },
   "fr-524": {
     "kind": "english",
@@ -2249,7 +2258,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-542": {
     "kind": "association",
-    "text": "étape 阶段，把它想成楼梯上的一个台阶；不是整个旅程。"
+    "text": "étape 对应 stage / step，指整个过程中的一个阶段；每个阶段不等于整个过程。"
   },
   "fr-543": {
     "kind": "association",
@@ -2257,7 +2266,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-544": {
     "kind": "association",
-    "text": "échéance 到期日，échu 到期的；écho 才是回声，别看开头就猜。"
+    "text": "échéance 中 é-ché 两段都是 /e/；意思是付款或任务到期的时点，对照 due date。"
   },
   "fr-545": {
     "kind": "english",
@@ -2273,7 +2282,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-548": {
     "kind": "association",
-    "text": "gestion 管理 → gestionnaire 管理者；和英语 manager 放在同一张组织图上。"
+    "text": "gestion 对应 management；-tion 读 /sjɔ̃/，开头 g 在 e 前读 /ʒ/。"
   },
   "fr-549": {
     "kind": "english",
@@ -2292,8 +2301,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "partner"
   },
   "fr-553": {
-    "kind": "association",
-    "text": "fournir 是供应；fournisseur 是供货的人或公司。"
+    "kind": "english",
+    "text": "furnish（提供）的 furn- 可帮助认 fourn-；fournisseur 是供应货物的人或公司。"
   },
   "fr-554": {
     "kind": "english",
@@ -2304,8 +2313,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "像英语 command；购物时 une commande 是订单。"
   },
   "fr-556": {
-    "kind": "association",
-    "text": "livrer 是送货；livraison 是配送这件事。"
+    "kind": "english",
+    "text": "delivery：livraison 表示配送、交货，rai 读 /ʁɛ/，最后 son 是鼻化音。"
   },
   "fr-557": {
     "kind": "english",
@@ -2313,7 +2322,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-558": {
     "kind": "association",
-    "text": "réseau 网络 → réseautage 拓展人脉；节点可以是电脑，也可以是人。"
+    "text": "réseau 对应 network；eau 合读 /o/，整词 /ʁe.zo/。电脑网络、人际网络都可以用。"
   },
   "fr-559": {
     "kind": "english",
@@ -2337,7 +2346,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-564": {
     "kind": "association",
-    "text": "monter 上升，montant 金额；想象账目加总后数字向上增加。"
+    "text": "montant 的两个鼻化部分是 mon- /mɔ̃/ 和 -tant /tɑ̃/；账单中表示合计的金额。"
   },
   "fr-565": {
     "kind": "english",
@@ -2353,7 +2362,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-568": {
     "kind": "association",
-    "text": "perdre 是失去；perte 是损失。"
+    "text": "perdre（失去）是更基础的动词；perte 是失去的东西或造成的损失。"
   },
   "fr-569": {
     "kind": "english",
@@ -2361,7 +2370,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-570": {
     "kind": "association",
-    "text": "prêter 是借出；un prêt 是借出的一笔贷款。"
+    "text": "prêt 作名词是 loan，指借出去的一笔钱；êt 只读 /ɛ/，别按英语结尾读 t。"
   },
   "fr-571": {
     "kind": "association",
@@ -2373,7 +2382,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-573": {
     "kind": "association",
-    "text": "impôt 税、imposable 应税的；共同的 imp- 让你想到被征收的一部分。"
+    "text": "impôt 的 ô 读 /o/，最后 t 不发音；表示国家征收的税，对照 tax。"
   },
   "fr-574": {
     "kind": "english",
@@ -2389,11 +2398,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-577": {
     "kind": "association",
-    "text": "remise 来自 remettre 的词形家族；退回一部分价格，联想折扣。"
+    "text": "remise 在价格语境中是折扣；s 在两个元音之间读 /z/，读 /ʁə.miz/。"
   },
   "fr-578": {
     "kind": "association",
-    "text": "s'abonner 是订阅；abonnement 是订阅服务。"
+    "text": "abonnement 对应 subscription；中间双 n 要保留，-ment 是名词结尾，表示持续订阅的服务。"
   },
   "fr-579": {
     "kind": "english",
@@ -2401,11 +2410,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-580": {
     "kind": "association",
-    "text": "virer 可指转移；virement 是把钱转过去。"
+    "text": "virement 对应 bank transfer；开头 vire- 读 /viʁ/，表示把钱从一个账户转到另一个。"
   },
   "fr-581": {
     "kind": "association",
-    "text": "prélever 是取出一部分；银行自动从账户扣走。"
+    "text": "prélèvement 的 pré- 写 é，lève 写 è；银行语境中是从账户扣走一笔钱。"
   },
   "fr-582": {
     "kind": "english",
@@ -2413,7 +2422,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-583": {
     "kind": "association",
-    "text": "retirer 取出 → retrait 取款。"
+    "text": "retrait 的 -trait 读 /tʁɛ/，末尾 t 不发音；银行里对应 withdrawal，取出账户的钱。"
   },
   "fr-584": {
     "kind": "association",
@@ -2441,11 +2450,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-590": {
     "kind": "association",
-    "text": "recevoir 是收到；reçu 是“已收到”的凭证。"
+    "text": "reçu 中 ç 在 u 前仍读 /s/，读 /ʁə.sy/；名词是确认已收款的凭证，对照 receipt。"
   },
   "fr-591": {
-    "kind": "association",
-    "text": "caisse 箱子或收银处，caissier 收银员；想象装钱的箱子。"
+    "kind": "english",
+    "text": "case（箱、盒）可帮助记 caisse 的容器含义；商店里还指收钱的收银处。"
   },
   "fr-592": {
     "kind": "association",
@@ -2544,8 +2553,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "vote"
   },
   "fr-616": {
-    "kind": "association",
-    "text": "loi 法律，loyal 忠实：只作词形联想，守法与守信放在一起记。"
+    "kind": "english",
+    "text": "law（法律）与 loi 都是很短的 l 开头词；loi 的 oi 合读 /wa/，指制定的法律。"
   },
   "fr-617": {
     "kind": "association",
@@ -2561,23 +2570,23 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-620": {
     "kind": "association",
-    "text": "procès 是诉讼，processus 是过程：别把相似的开头当作同一个词。"
+    "text": "procès 对应 trial / lawsuit；结尾 ès 读 /ɛ/，重音和 s 都保留在拼写里。"
   },
   "fr-621": {
     "kind": "english",
     "text": "judge"
   },
   "fr-622": {
-    "kind": "association",
-    "text": "se plaindre 是抱怨；plainte 是正式投诉。"
+    "kind": "english",
+    "text": "complaint（投诉）去掉 com-，剩下 plaint；法语 plainte 是投诉、控诉。"
   },
   "fr-623": {
     "kind": "association",
     "text": "amende 是罚款，amande 是杏仁：只差一个元音。"
   },
   "fr-624": {
-    "kind": "association",
-    "text": "peine 痛苦、辛劳、刑罚兼有；把“难受的负担”作为共同画面。"
+    "kind": "english",
+    "text": "pain（痛苦）可帮助记 peine；这个词还覆盖辛劳、刑罚，核心是承受的苦。"
   },
   "fr-625": {
     "kind": "english",
@@ -2616,16 +2625,16 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "syndicate；法语劳动语境中常指工会"
   },
   "fr-634": {
-    "kind": "association",
-    "text": "manifester 表达、示威 → manifestation；让意见公开可见。"
+    "kind": "english",
+    "text": "manifest（显现、表明）作线索；manifestation 可指公开表明诉求的示威活动。"
   },
   "fr-635": {
     "kind": "english",
     "text": "reform"
   },
   "fr-636": {
-    "kind": "association",
-    "text": "mesurer 是测量；mesure 也可指解决问题的措施。"
+    "kind": "english",
+    "text": "measure：mesure 同样既可表示测量尺度，也可表示为解决问题采取的措施。"
   },
   "fr-637": {
     "kind": "english",
@@ -2637,7 +2646,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-639": {
     "kind": "association",
-    "text": "interdire 是禁止；interdiction 是禁令。"
+    "text": "interdiction 对应 ban / prohibition；-tion 结尾表示禁止这件事或禁令本身。"
   },
   "fr-640": {
     "kind": "english",
@@ -2648,8 +2657,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "research"
   },
   "fr-642": {
-    "kind": "association",
-    "text": "découvrir 是发现；découverte 是发现的成果。"
+    "kind": "english",
+    "text": "discovery：découverte 保留“揭开、发现”的线索，名词可指发现这件事或成果。"
   },
   "fr-643": {
     "kind": "english",
@@ -2665,7 +2674,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-646": {
     "kind": "association",
-    "text": "échantillon 样本 → échantillonnage 取样；一小份代表整体。"
+    "text": "échantillon 的 -illon 合读 /ijɔ̃/；对应 sample，是用来代表整体的一小份。"
   },
   "fr-647": {
     "kind": "association",
@@ -2740,8 +2749,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "energy"
   },
   "fr-665": {
-    "kind": "association",
-    "text": "puissant 强大的 → puissance 力量或功率；和英语 power 对照。"
+    "kind": "english",
+    "text": "power：puissance 可表示力量、能力，也可表示物理功率，含义范围与 power 相近。"
   },
   "fr-666": {
     "kind": "english",
@@ -2756,8 +2765,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "circuit"
   },
   "fr-669": {
-    "kind": "association",
-    "text": "capter 是捕捉；capteur 捕捉信号，就是传感器。"
+    "kind": "english",
+    "text": "capture（捕捉）的 capt- 作线索；capteur 捕捉物理信号，指传感器。"
   },
   "fr-670": {
     "kind": "english",
@@ -2773,15 +2782,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-673": {
     "kind": "association",
-    "text": "appareil 设备，appareiller 装配或启航；把它想成可运作的一整套装置。"
+    "text": "appareil 的末尾 -eil 合读 /ɛj/；对应 device，是有一定用途的设备。"
   },
   "fr-674": {
-    "kind": "association",
-    "text": "outil 是单件工具；outillage 是一套工具装备。"
+    "kind": "english",
+    "text": "utility（用途）的 util- 可帮助记 outil；outil 是用来完成某件工作的工具。"
   },
   "fr-675": {
-    "kind": "association",
-    "text": "logique 像 logic；把 logiciel 联想成运行逻辑的软件。"
+    "kind": "english",
+    "text": "logic（逻辑）的逻辑处理含义可帮助记 logiciel；它是软件，与实体硬件相区分。"
   },
   "fr-676": {
     "kind": "association",
@@ -2817,11 +2826,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-684": {
     "kind": "association",
-    "text": "averse 阵雨，avers 正面：写阵雨多一个 e，别和反面 revers 的搭档混。"
+    "text": "averse 对应 shower，强调短时降下的一阵雨；s 在两个元音之间读 /z/。"
   },
   "fr-685": {
     "kind": "association",
-    "text": "neige 雪 → neiger 下雪 → neigeux 多雪的；都抓住 neig-。"
+    "text": "neige 的 ei 读 /ɛ/，g 在 e 前读 /ʒ/，整词 /nɛʒ/；就是雪。"
   },
   "fr-686": {
     "kind": "association",
@@ -2829,7 +2838,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-687": {
     "kind": "association",
-    "text": "orage 雷雨 → orageux 雷雨的；别因像 orange 就记成橙子。"
+    "text": "orage 读 /ɔ.ʁaʒ/；英语 storm 可固定意思，g 在 e 前读软音 /ʒ/。"
   },
   "fr-688": {
     "kind": "association",
@@ -2841,15 +2850,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-690": {
     "kind": "association",
-    "text": "brouillard 雾，brouiller 使模糊；想象玻璃被蒙上看不清。"
+    "text": "brouillard 的 -ouill- 读 /uj/，末尾 d 不发音；指让能见度变低的雾。"
   },
   "fr-691": {
     "kind": "association",
-    "text": "nuage 云 → nuageux 多云的；在 nuage 后接 -ux 记形容词。"
+    "text": "nuage 的 u、a 分属两个音节 /ny.aʒ/；这是天上的云，不读成英语单词的发音。"
   },
   "fr-692": {
     "kind": "association",
-    "text": "canicule 酷暑 → caniculaire 酷暑的；别和普通 chaud 热的混为同等强度。",
+    "text": "canicule 的名字和古人所说的“小狗星”有关；把盛夏酷暑对应英语 dog days 来记。",
     "origin": {
       "text": "酷暑的名字里藏着一只“小狗”：拉丁语 canicula 意为“小母狗”，也是天狼星的称呼。这个与星星有关的名字，后来成了炎热天气的名称。",
       "sources": [
@@ -2893,8 +2902,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "ocean"
   },
   "fr-701": {
-    "kind": "association",
-    "text": "fleuve 直接入海；想象河流一路奔向大海。"
+    "kind": "english",
+    "text": "flow（流动）可作字形线索；fleuve 专指最终流入海里的河流。"
   },
   "fr-702": {
     "kind": "english",
@@ -2910,15 +2919,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-705": {
     "kind": "english",
-    "text": "coast；另把肋骨和坡道想成身体、地形的侧边"
+    "text": "coast（海岸）作线索；côte 还可表示坡道或肋骨，需按海边、地形或身体的语境判断。"
   },
   "fr-706": {
     "kind": "association",
-    "text": "mer 海、marée 潮汐、maritime 海事的：把这组词围绕海洋记。"
+    "text": "mer（海）是更简单的基础词；marée 表示海水周期性的涨落，也就是潮汐。"
   },
   "fr-707": {
     "kind": "association",
-    "text": "falaise 悬崖，faillite 破产：只作区分记忆，悬崖不是财务“掉下去”。"
+    "text": "falaise 的 ai 读 /ɛ/、s 读 /z/；对应 cliff，指陡直的岩壁、悬崖。"
   },
   "fr-708": {
     "kind": "english",
@@ -2926,7 +2935,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-709": {
     "kind": "association",
-    "text": "colline 是小山，montagne 是大山；先把高矮两种轮廓固定。"
+    "text": "colline 的两个 l 只读一个 /l/；对应 hill，通常是比山峰低缓的小山丘。"
   },
   "fr-710": {
     "kind": "english",
@@ -2934,7 +2943,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-711": {
     "kind": "association",
-    "text": "racine 根，racinaire 根部的；树根和数学的根都可以用 racine。"
+    "text": "racine 同时能表示植物的根和数学的根；和英语 root 的两种用法一致。"
   },
   "fr-712": {
     "kind": "association",
@@ -2982,7 +2991,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-723": {
     "kind": "association",
-    "text": "étage 楼层、étagère 架子：把搁板想成物品的楼层。"
+    "text": "étage 对应 floor / storey，指建筑的楼层；g 在 e 前读 /ʒ/。"
   },
   "fr-724": {
     "kind": "association",
@@ -2994,7 +3003,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-726": {
     "kind": "association",
-    "text": "couloir 走廊，couler 流动；只作联想，人流沿着走廊流过去。"
+    "text": "couloir 读 /ku.lwaʁ/：ou＝/u/，oi＝/wa/；走廊这个词能一次记住两组常见字母组合。"
   },
   "fr-727": {
     "kind": "association",
@@ -3022,7 +3031,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-733": {
     "kind": "association",
-    "text": "toit 屋顶，toile 布；想象布篷当屋顶，注意它们只是字形联想。"
+    "text": "toit 的 oi＝/wa/，最后 t 不发音，读 /twa/；指房子最上面遮风挡雨的屋顶。"
   },
   "fr-734": {
     "kind": "association",
@@ -3046,15 +3055,24 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-739": {
     "kind": "association",
-    "text": "robinet 水龙头，robot 机器人：给机器人装个水龙头作画面联想，别混拼写。"
+    "text": "robinet 的名字原来与“绵羊”有关，早期水龙头常做成羊头形；这段实物历史能帮助记住水龙头。",
+    "origin": {
+      "text": "词典把 robinet 追溯到曾表示绵羊的 robin，并说明早期水龙头常呈羊头形。这里是实际器物造型留下的名称，不必先背另一个法语词。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9R2766"
+        }
+      ]
+    }
   },
   "fr-740": {
     "kind": "association",
-    "text": "évier 厨房水槽，lavabo 洗手盆：用厨房和浴室两张图区分。"
+    "text": "évier 对应 kitchen sink；开头 é 后接 /vje/，主要是厨房洗菜洗碗的水槽。"
   },
   "fr-741": {
     "kind": "association",
-    "text": "douche 淋浴 → doucher 冲淋；雨从上面下来，不是在 baignoire 里泡。"
+    "text": "douche 的 ou＝/u/，ch＝/ʃ/，整体 /duʃ/；表示用水流冲淋的淋浴。"
   },
   "fr-742": {
     "kind": "association",
@@ -3070,7 +3088,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-745": {
     "kind": "association",
-    "text": "étage 是楼层；把 étagère 想成物品的小楼层。"
+    "text": "étage（楼层）是较基础的词；étagère 表示分成一层层、可以放物品的架子。"
   },
   "fr-746": {
     "kind": "association",
@@ -3078,7 +3096,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-747": {
     "kind": "association",
-    "text": "rideau 窗帘，ride 皱纹；把窗帘的褶皱作为字形联想。"
+    "text": "rideau 的 eau 合读 /o/，读 /ʁi.do/；窗帘不是由三个独立元音拼出来的长词。"
   },
   "fr-748": {
     "kind": "association",
@@ -3097,8 +3115,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "drape（披盖）；drap 是铺床的床单"
   },
   "fr-752": {
-    "kind": "association",
-    "text": "serviette 毛巾或餐巾，servir 服务；想象服务员递来餐巾。"
+    "kind": "english",
+    "text": "serviette 在英语里也能指餐巾；法语还常指擦手、擦身体的毛巾。"
   },
   "fr-753": {
     "kind": "association",
@@ -3109,12 +3127,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "tissue；布料和身体组织都能联想"
   },
   "fr-755": {
-    "kind": "association",
-    "text": "taille 尺寸、腰围，tailler 裁剪；裁衣服就要量尺寸。"
+    "kind": "english",
+    "text": "tailor（裁缝）的 tail- 可作线索；taille 指衣服尺寸，也可指人的腰围或身材。"
   },
   "fr-756": {
     "kind": "association",
-    "text": "manche 袖子，manchette 袖口；-ette 让你想到较小的部分。"
+    "text": "manche 读 /mɑ̃ʃ/；表示衣袖时是阴性，结尾 ch 是 /ʃ/。"
   },
   "fr-757": {
     "kind": "english",
@@ -3142,7 +3160,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-763": {
     "kind": "association",
-    "text": "想象煎鸡蛋的平锅；une poêle 是煎锅，un poêle 是炉子。"
+    "text": "poêle 中的 oê 合读 /wa/，读 /pwal/；une poêle 是煎锅，性别一并记在词里。"
   },
   "fr-764": {
     "kind": "association",
@@ -3165,8 +3183,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "découper 是切开；用来切菜的 planche（板）。"
   },
   "fr-769": {
-    "kind": "association",
-    "text": "couteau 刀、couper 切：同样以 cou- 开头，工具和动作一起记。"
+    "kind": "english",
+    "text": "cut（切）可帮助固定工具用途；couteau 是刀，-eau 合读 /o/。"
   },
   "fr-770": {
     "kind": "english",
@@ -3174,11 +3192,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-771": {
     "kind": "association",
-    "text": "cuillère 有凹槽，fourchette 有叉齿；用形状分开两种餐具。"
+    "text": "cuillère 的 ui 合读 /ɥi/，-ll- 在这里读 /j/；指舀取食物用的勺子。"
   },
   "fr-772": {
     "kind": "association",
-    "text": "assiette 是盘子，assise 是坐着的状态；只作联想，食物“坐”在盘上。"
+    "text": "assiette 对应 plate；双 s 读 /s/，-iette 读 /jɛt/，就是盛食物的盘子。"
   },
   "fr-773": {
     "kind": "english",
@@ -3190,7 +3208,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-775": {
     "kind": "association",
-    "text": "tasse 杯子；不是英语 task（任务），想象用一杯咖啡开始任务。",
+    "text": "tasse 读 /tas/，双 s 读 /s/；对应 cup，词尾没有英语 task 的 /k/ 音。",
     "origin": {
       "text": "tasse 来自阿拉伯语 ṭāsa（杯、碗），更早可追溯到波斯语 ṭast。每天用的小杯子，其名称也记录了一段跨语言的旅程。",
       "sources": [
@@ -3234,12 +3252,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "联想英语 farina（谷物粉），记 farine。"
   },
   "fr-784": {
-    "kind": "association",
-    "text": "huile 油、huileux 油腻的；抓住 huil-，不是英语 hill。"
+    "kind": "english",
+    "text": "oil（油）可作含义线索；huile 开头 h 不发音，ui 合读 /ɥi/，整词 /ɥil/。"
   },
   "fr-785": {
-    "kind": "association",
-    "text": "beurre 黄油，beurrer 涂黄油；多一个 r 变成动作。"
+    "kind": "english",
+    "text": "butter（黄油）：beurre 和它都以 b 开头；beurre 的 eu 合读 /œ/，末尾 e 不另成音节。"
   },
   "fr-786": {
     "kind": "english",
@@ -3291,7 +3309,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-798": {
     "kind": "association",
-    "text": "haricot 豆类，haricots verts 是其中的绿色豆角；先记整荚长条形。"
+    "text": "haricot 读 /a.ʁi.ko/，h、t 都不发音；这个 h 阻止连读，所以 les haricots 中不加 /z/。"
   },
   "fr-799": {
     "kind": "english",
@@ -3311,8 +3329,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "savor / savour"
   },
   "fr-801": {
-    "kind": "association",
-    "text": "santé 健康，sain 健康的；不要和 saint（圣人）同音混写。"
+    "kind": "english",
+    "text": "health：santé 表示健康；an 鼻化，é 读 /e/，只有两个音节。"
   },
   "fr-802": {
     "kind": "association",
@@ -3324,7 +3342,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-804": {
     "kind": "association",
-    "text": "douloureux 是痛的；douleur 是疼痛本身。"
+    "text": "douleur 的 ou＝/u/、eu＝/œ/，两组元音不同；表示疼痛，对照 pain。"
   },
   "fr-805": {
     "kind": "english",
@@ -3335,12 +3353,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "infection"
   },
   "fr-807": {
-    "kind": "association",
-    "text": "blesser 是弄伤；blessure 是伤口或伤势。"
+    "kind": "english",
+    "text": "bless（祝福）容易误导：blessure 是伤口、伤势，记住法语这组字形表达的是受伤。"
   },
   "fr-808": {
     "kind": "association",
-    "text": "cicatrice 疤痕 → cicatriser 愈合；伤口关闭后留下疤。"
+    "text": "cicatrice 两个 c 都在 i 前读 /s/；表示伤口愈合后留下的疤痕。"
   },
   "fr-809": {
     "kind": "english",
@@ -3376,7 +3394,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-817": {
     "kind": "association",
-    "text": "soin 照料 → soigner 照顾；同一词族，一个名词一个动作。"
+    "text": "soin 读 /swɛ̃/，oin 是一个鼻化音组；既可指照顾，也可指医疗护理。"
   },
   "fr-818": {
     "kind": "english",
@@ -3391,8 +3409,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "clinic"
   },
   "fr-821": {
-    "kind": "association",
-    "text": "médecin 是医生，médicament 是药，别混。"
+    "kind": "english",
+    "text": "medicine（医学）作线索；médecin 指从事医学的人，也就是医生。"
   },
   "fr-822": {
     "kind": "association",
@@ -3412,7 +3430,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-826": {
     "kind": "association",
-    "text": "peau 皮肤，pot 罐：同音但一个包住身体，一个装东西。"
+    "text": "peau 的 eau 合读 /o/，读 /po/；表皮、皮肤都可用这个短词。"
   },
   "fr-827": {
     "kind": "english",
@@ -3451,8 +3469,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "respiration"
   },
   "fr-836": {
-    "kind": "association",
-    "text": "联想英语 somnolent（困倦的），记 sommeil。"
+    "kind": "english",
+    "text": "insomnia（失眠）里的 somn- 可作“睡眠”的线索；sommeil 表示睡眠，也可表示困意。"
   },
   "fr-837": {
     "kind": "english",
@@ -3464,7 +3482,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-839": {
     "kind": "association",
-    "text": "guérir 是治好；guérison 是痊愈。"
+    "text": "guérison 的 gu 在 é 前仍读硬音 /ɡ/，s 在元音间读 /z/；指恢复健康、痊愈。"
   },
   "fr-840": {
     "kind": "english",
@@ -3492,7 +3510,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-846": {
     "kind": "association",
-    "text": "escale 经停，escalier 楼梯；联想旅途像爬楼，中间停一层。"
+    "text": "escale 对应 stopover，航程中的中途停靠；读 /ɛs.kal/，不需要先背其他交通词。"
   },
   "fr-847": {
     "kind": "english",
@@ -3512,7 +3530,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-851": {
     "kind": "association",
-    "text": "voler 可指飞或偷；用航班、失窃两个场景区分。"
+    "text": "vol 对应 flight 时，是一次飞行或航班；同形词也有盗窃义，要由整句语境区分。"
   },
   "fr-852": {
     "kind": "association",
@@ -3528,7 +3546,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-855": {
     "kind": "association",
-    "text": "douane 海关，douanier 海关人员；-ier 帮你从地方联想到职业。",
+    "text": "douane 的 oua 合读 /wa/，整体 /dwan/；指检查进出口物品的海关。",
     "origin": {
       "text": "douane 经古意大利语追溯到阿拉伯语 diwan，后者可指登记簿或议事厅，并来自波斯语。海关的名称里，留下了登记与行政事务的痕迹。",
       "sources": [
@@ -3544,8 +3562,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "visa"
   },
   "fr-857": {
-    "kind": "association",
-    "text": "permettre 是允许；permis 是准许做事的证件。"
+    "kind": "english",
+    "text": "permit（许可证）与 permis 字形接近；permis 就是获准做某事的证件。"
   },
   "fr-858": {
     "kind": "english",
@@ -3553,11 +3571,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-859": {
     "kind": "association",
-    "text": "héberger 提供住宿 → hébergement 住宿；先抓 héberg-。"
+    "text": "hébergement 对应 accommodation；开头 h 不发音，-ment 表示住宿这项安排。"
   },
   "fr-860": {
     "kind": "association",
-    "text": "auberge 旅舍，aubergine 茄子；一字之差的联想是旅舍端来茄子。"
+    "text": "auberge 的 au＝/o/、g＝/ʒ/，读 /o.bɛʁʒ/；指旅舍、小旅馆。"
   },
   "fr-861": {
     "kind": "english",
@@ -3597,7 +3615,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-870": {
     "kind": "association",
-    "text": "trotter 小步快走 → trottoir 人行道；把脚步和走的地方连起来。"
+    "text": "trottoir 的 oi＝/wa/，两个 t 只读一个 /t/；指马路旁供人走的人行道。"
   },
   "fr-871": {
     "kind": "association",
@@ -3608,12 +3626,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "tri- 三＋ colore 颜色：三色交通灯。"
   },
   "fr-873": {
-    "kind": "association",
-    "text": "payer 付款，péage 道路收费；用收费闸口作共同画面。"
+    "kind": "english",
+    "text": "pay（付款）可作含义线索；péage 指使用道路、桥梁等所交的通行费。"
   },
   "fr-874": {
-    "kind": "association",
-    "text": "stationner 是停车；stationnement 是停车这件事。"
+    "kind": "english",
+    "text": "station（停驻的位置）作线索；stationnement 表示停车，占用一个位置停下来。"
   },
   "fr-875": {
     "kind": "english",
@@ -3637,7 +3655,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-880": {
     "kind": "association",
-    "text": "randonnée 徒步，randonneur 徒步者；-eur 帮你记活动的人。"
+    "text": "randonnée 中 -nnée 读 /ne/；表示徒步或远足，末尾两个 e 不是两个音节。"
   },
   "fr-881": {
     "kind": "english",
@@ -3664,8 +3682,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "epoch"
   },
   "fr-887": {
-    "kind": "association",
-    "text": "siècle 世纪、séculaire 世纪的或世代的；和 cent 一百一起放入时间轴。"
+    "kind": "english",
+    "text": "century：siècle 表示一百年，也可指某个时代；è 读 /ɛ/，结尾 -cle 读 /kl/。"
   },
   "fr-888": {
     "kind": "english",
@@ -3680,8 +3698,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "author"
   },
   "fr-891": {
-    "kind": "association",
-    "text": "romancier 是小说家；roman 是他写的小说。"
+    "kind": "english",
+    "text": "romance（传奇、爱情故事）作线索；roman 是小说，不限于爱情题材。"
   },
   "fr-892": {
     "kind": "english",
@@ -3689,7 +3707,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-893": {
     "kind": "association",
-    "text": "conte 故事，compte 账目：同音，讲故事不用那个 p。"
+    "text": "conte 读 /kɔ̃t/，是一个讲出来的故事；结尾 t 要读，e 不另读。"
   },
   "fr-894": {
     "kind": "english",
@@ -3732,8 +3750,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "review；如文学评论期刊"
   },
   "fr-904": {
-    "kind": "association",
-    "text": "lire 是读，lecteur 是读者，也能指读取设备。"
+    "kind": "english",
+    "text": "lecture（讲授、讲课）的 lect- 可作阅读线索；lecteur 是读者，也可指读取设备。"
   },
   "fr-905": {
     "kind": "association",
@@ -4037,23 +4055,23 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-980": {
     "kind": "association",
-    "text": "fin 是结束；和 au début 配对。"
+    "text": "fin（结束）是基础词；à la fin 表示在最后、到了结束时。"
   },
   "fr-981": {
     "kind": "association",
     "text": "entre（之间）＋ temps（时间）：两件事之间的时间。"
   },
   "fr-982": {
-    "kind": "association",
-    "text": "把 dès que 当作时间开关：一发生就行动。"
+    "kind": "english",
+    "text": "as soon as：dès que 强调前一件事刚发生，后一件事就开始。"
   },
   "fr-983": {
-    "kind": "association",
-    "text": "tant que 像持续按住开关：只要条件持续就继续。"
+    "kind": "english",
+    "text": "as long as：tant que 强调条件持续成立的这段时间。"
   },
   "fr-984": {
-    "kind": "association",
-    "text": "左右两幅同时发生的画面，用 tandis que 连接。"
+    "kind": "english",
+    "text": "while / whereas：tandis que 可以连接同时发生的事，也可以对比两种情况。"
   },
   "fr-985": {
     "kind": "association",
@@ -4068,8 +4086,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "même（甚至）＋ si（如果）：即使。"
   },
   "fr-988": {
-    "kind": "association",
-    "text": "pourvu que 是“但愿、只要”；想象愿望旁边仍挂着一个条件钩子。"
+    "kind": "english",
+    "text": "provided that：pourvu que 可以提出必要条件，也能表示“但愿”，后面通常接虚拟式。"
   },
   "fr-989": {
     "kind": "association",
@@ -4101,7 +4119,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-996": {
     "kind": "association",
-    "text": "与 au-delà de 成对记：界限内 / 界限外。"
+    "text": "en deçà de 表示没有越过某个界限，可对照英语 short of / this side of。"
   },
   "fr-997": {
     "kind": "association",
@@ -4112,8 +4130,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "près 是近；auprès de 是靠近某人或向某机构。"
   },
   "fr-999": {
-    "kind": "association",
-    "text": "英语也用 vis-à-vis；想象两个人面对面。"
+    "kind": "english",
+    "text": "vis-à-vis（面对、相对于）在英语里也使用；法语写三个带连字符的部分 vis-à-vis。"
   },
   "fr-1000": {
     "kind": "association",
@@ -4124,8 +4142,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "联想英语 power（能力）；je peux 是我能。"
   },
   "fr-1002": {
-    "kind": "association",
-    "text": "vouloir 想要，volonté 意愿；vou-/vol- 让你联想到意愿推动行动。"
+    "kind": "english",
+    "text": "voluntary（自愿的）可作“意愿”的线索；vouloir 是日常表达想要的动词。"
   },
   "fr-1003": {
     "kind": "association",
@@ -4149,7 +4167,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1008": {
     "kind": "association",
-    "text": "联想英语 voyeur 的“观看”含义；voir 是看见。"
+    "text": "voir 读 /vwaʁ/，oi＝/wa/；对应 see，强调看见或与人见面。"
   },
   "fr-1009": {
     "kind": "association",
@@ -4160,8 +4178,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "像 demand，但 demander 也可以只是礼貌询问。"
   },
   "fr-1011": {
-    "kind": "association",
-    "text": "appeler 叫、appel 呼叫；重复的 pp 和共同的 appel- 一起记。"
+    "kind": "english",
+    "text": "call：appeler 既是给人打电话，也可表示叫某人的名字；两个 p 留在拼写里。"
   },
   "fr-1012": {
     "kind": "english",
@@ -4177,7 +4195,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1015": {
     "kind": "association",
-    "text": "suivre 跟随 → suite 后续；像队伍里后一个紧跟前一个。"
+    "text": "suivre 的 ui 连读 /ɥi/；对应 follow，既能跟随脚步，也能跟得上别人的话。"
   },
   "fr-1016": {
     "kind": "association",
@@ -4221,7 +4239,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1026": {
     "kind": "association",
-    "text": "montrer 给别人看，voir 是自己看见。"
+    "text": "montrer 对应 show；意思是让别人看见，主语是展示的人。"
   },
   "fr-1027": {
     "kind": "association",
@@ -4240,12 +4258,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "finish"
   },
   "fr-1031": {
-    "kind": "association",
-    "text": "jouer de + 乐器；jouer à + 游戏或运动。"
+    "kind": "english",
+    "text": "play：jouer 和 play 一样，可以指玩游戏，也可以指演奏乐器。"
   },
   "fr-1032": {
-    "kind": "association",
-    "text": "s'asseoir 是坐下，assis 是坐着的；一张椅子串起动作与状态。"
+    "kind": "english",
+    "text": "sit down：s'asseoir 表示把自己坐下，se 标记动作落到自己身上；重点是坐下这个动作。"
   },
   "fr-1033": {
     "kind": "association",
@@ -4273,7 +4291,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1039": {
     "kind": "association",
-    "text": "se dépêcher 赶快，dépêche 急件；想象收到急件后立刻加速。"
+    "text": "se dépêcher 的 ê 读 /ɛ/，ch 读 /ʃ/；整体对应 hurry up，强调赶快行动。"
   },
   "fr-1040": {
     "kind": "english",
@@ -4329,15 +4347,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1053": {
     "kind": "association",
-    "text": "tomber 掉落，tombe 坟墓；只是词形联想，勿把普通跌倒想得太严重。"
+    "text": "tomber 的 om 鼻化，b 要读；对应 fall，既可指东西掉下，也可指人跌倒。"
   },
   "fr-1054": {
-    "kind": "association",
-    "text": "courir 跑起来，course 是跑步或赛跑。"
+    "kind": "english",
+    "text": "course（赛程、路线）可作线索；courir 表示跑，注意它只有一个 r 在中间。"
   },
   "fr-1055": {
     "kind": "association",
-    "text": "nager 游泳 → nage 泳姿 → nageur 游泳者；抓住 nag-。"
+    "text": "nager 的 g 在 e 前读 /ʒ/，整词 /na.ʒe/；意思是游泳。"
   },
   "fr-1056": {
     "kind": "association",
@@ -4345,7 +4363,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1057": {
     "kind": "association",
-    "text": "两幅画面记：鸟 voler 飞走；小偷 voler 偷东西。"
+    "text": "voler 的两种常见义是“飞”和“偷”；不把它们硬编成故事，按句子里谈的是鸟、航行还是失物来区分。"
   },
   "fr-1058": {
     "kind": "english",
@@ -4369,7 +4387,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1063": {
     "kind": "association",
-    "text": "avancer 向前，reculer 向后：两支相反箭头。"
+    "text": "reculer 的 re- 表示向回；核心动作是往后移动，对照英语 move back。"
   },
   "fr-1064": {
     "kind": "association",
@@ -4389,7 +4407,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1068": {
     "kind": "association",
-    "text": "rire 笑，rire 的过去分词 ri 很短：一声“哈”的长度作联想。"
+    "text": "rire 的两个 r 都要读，整词 /ʁiʁ/；指笑出声，对照 laugh。"
   },
   "fr-1069": {
     "kind": "association",
@@ -4397,7 +4415,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1070": {
     "kind": "association",
-    "text": "pleurer 哭 → pleurs 泪水；把共同的 pleur- 和眼泪绑定。"
+    "text": "pleurer 的 eu 读 /œ/，最后 -er 读 /e/；英语 cry 可固定“哭泣”的意思。"
   },
   "fr-1071": {
     "kind": "english",
@@ -4409,11 +4427,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1073": {
     "kind": "association",
-    "text": "toux 咳嗽，tousser 咳；字尾变化了，开头 tou- 没变。"
+    "text": "tousser 的双 s 读 /s/，ou 读 /u/，整词 /tu.se/；就是咳嗽这个动作。"
   },
   "fr-1074": {
     "kind": "association",
-    "text": "打完喷嚏会听到 À tes souhaits !，和 éternuer 一起记。"
+    "text": "éternuer 对应 sneeze；最后的 -nuer 读 /nɥe/，不要把 u 读成英语 /uː/。"
   },
   "fr-1075": {
     "kind": "english",
@@ -4421,11 +4439,24 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1076": {
     "kind": "association",
-    "text": "boiter 是走路一瘸一拐；想象左右步子不一样。"
+    "text": "词源线索是“关节窝”：这个词的历史与骨头相接的位置有关，后来形成“跛行、一瘸一拐地走”的含义。",
+    "origin": {
+      "text": "boiter 经较早的 boiteux 追溯到表示“骨头的窝、关节窝”的词义。这解释了它为何与跛行有关；这里介绍的是语言历史，并不把所有跛行都归因于关节。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9B1477"
+        },
+        {
+          "label": "CNRTL 词源词典",
+          "url": "https://www.cnrtl.fr/etymologie/boiteux"
+        }
+      ]
+    }
   },
   "fr-1077": {
     "kind": "association",
-    "text": "naissance 是出生；naître 是出生这个动作。"
+    "text": "naître 的 aî 合读 /ɛ/，整词 /nɛtʁ/；表示出生、诞生，结尾不是 -er 动词的读音。"
   },
   "fr-1078": {
     "kind": "association",
@@ -4445,7 +4476,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1082": {
     "kind": "association",
-    "text": "allumer / éteindre：亮起来 / 熄下去。"
+    "text": "éteindre 对应 turn off / put out；ein 是鼻化音，既可说关灯，也可说灭火。"
   },
   "fr-1083": {
     "kind": "association",
@@ -4476,8 +4507,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "scan"
   },
   "fr-1090": {
-    "kind": "association",
-    "text": "registre 是登记册；把内容记录、保存进去。"
+    "kind": "english",
+    "text": "register（登记、记录）的 registr- 可帮助认 enregistrer；既可记录信息，也可录音、保存文件。"
   },
   "fr-1091": {
     "kind": "english",
@@ -4513,7 +4544,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1099": {
     "kind": "association",
-    "text": "appui 支撑，appuyer 按压；按按钮和支住重量都要施力。"
+    "text": "appuyer 对应 press / lean on；-uyer 读 /ɥije/，把按压按钮和施力支撑归到“压住”这个核心。"
   },
   "fr-1100": {
     "kind": "english",
@@ -4525,11 +4556,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1102": {
     "kind": "association",
-    "text": "emmener 带人去；emporter 带物去。"
+    "text": "emmener 对应 take someone along，核心是带人离开当前地点；开头 em- 不读成英语 em。"
   },
   "fr-1103": {
     "kind": "association",
-    "text": "amener 带人来；apporter 带物来。"
+    "text": "amener 对应 bring someone，核心是把人带到目标地点；三个音节 /a.mə.ne/。"
   },
   "fr-1104": {
     "kind": "english",
@@ -4540,8 +4571,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "import；另记 peu importe 是不要紧"
   },
   "fr-1106": {
-    "kind": "association",
-    "text": "valeur 是价值；valoir 是值多少钱、值得。"
+    "kind": "english",
+    "text": "value（价值）的 val- 作线索；valoir 表示值多少钱或值得做。"
   },
   "fr-1107": {
     "kind": "english",
@@ -4560,16 +4591,16 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "英语 cache 是隐藏的缓存；cacher 是藏起来。"
   },
   "fr-1111": {
-    "kind": "association",
-    "text": "action 是行动；agir 是采取行动。"
+    "kind": "english",
+    "text": "action（行动）作线索；agir 是采取行动这个动词，g 在 i 前读 /ʒ/。"
   },
   "fr-1112": {
     "kind": "english",
     "text": "adore"
   },
   "fr-1113": {
-    "kind": "association",
-    "text": "jet 是喷射；联想把东西一下扔出去。"
+    "kind": "english",
+    "text": "jet（喷出的一股）可作字形线索；jeter 的核心动作是把东西扔出去。"
   },
   "fr-1114": {
     "kind": "english",
@@ -4577,7 +4608,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1115": {
     "kind": "association",
-    "text": "mensonge 是谎言；mentir 是说谎。"
+    "text": "mentir 的 en 是鼻化音，末尾 r 要读；对应 lie，指故意说不真实的话。"
   },
   "fr-1116": {
     "kind": "english",
@@ -4585,11 +4616,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1117": {
     "kind": "association",
-    "text": "mettre 穿上或放上，enlever 脱下或移走。"
+    "text": "enlever 对应 remove / take off；把原来在那里的东西移走，也就能表示脱下衣物。"
   },
   "fr-1118": {
     "kind": "association",
-    "text": "lâche 松的或胆怯的，lâcher 松开；把绳子由紧变松。"
+    "text": "lâcher 对应 let go；â 读 /ɑ/ 或 /a/，ch 读 /ʃ/，指不再抓紧、松手。"
   },
   "fr-1119": {
     "kind": "english",
@@ -4600,8 +4631,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "dis- 消失的方向＋ apparaître 出现：不见了。"
   },
   "fr-1121": {
-    "kind": "association",
-    "text": "casser 打碎 → casse 破损；听到玻璃碎裂就给 cass- 配声音联想。"
+    "kind": "english",
+    "text": "break：casser 的双 s 读 /s/，表示让原来完整的东西断裂、破碎。"
   },
   "fr-1122": {
     "kind": "association",
@@ -4613,7 +4644,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1124": {
     "kind": "association",
-    "text": "se taire 不说话，silence 沉默；一个是动作，一个是状态。"
+    "text": "se taire 对应 be quiet / stop talking；ai 读 /ɛ/，意思是让自己不再说话。"
   },
   "fr-1125": {
     "kind": "english",
@@ -4657,7 +4688,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1135": {
     "kind": "association",
-    "text": "paraître 显得，apparaître 出现：作为一组记。"
+    "text": "paraître 的 aî＝/ɛ/，读 /pa.ʁɛtʁ/；表示从外表看起来如此，不保证事实确实如此。"
   },
   "fr-1136": {
     "kind": "english",
@@ -4665,7 +4696,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1137": {
     "kind": "association",
-    "text": "crainte 是担忧；craindre 是害怕这个动作。"
+    "text": "craindre 的 ain 是鼻化音，结尾 -dre 要读 /dʁ/；表示害怕、担心。"
   },
   "fr-1138": {
     "kind": "english",
@@ -4712,8 +4743,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "oser 敢于；可以联想英语 bold 的勇敢，但 oser 是动词。"
   },
   "fr-1149": {
-    "kind": "association",
-    "text": "plaisanterie 是笑话；plaisanter 是开玩笑。"
+    "kind": "english",
+    "text": "pleasant（愉快的）作字形线索；plaisanter 指轻松地开玩笑。"
   },
   "fr-1150": {
     "kind": "association",
@@ -4736,8 +4767,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "cost"
   },
   "fr-1155": {
-    "kind": "association",
-    "text": "rater 没成功，raté 失败的；不是英语 rate（评级）。"
+    "kind": "english",
+    "text": "rate（评级）容易误导；法语 rater 是没做到、没赶上，也就是失败或错过。"
   },
   "fr-1156": {
     "kind": "association",
@@ -4761,11 +4792,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1161": {
     "kind": "association",
-    "text": "deviner 猜 → devinette 谜语；看到小谜语就想到猜答案。"
+    "text": "deviner 对应 guess；不是已经知道，而是根据线索猜出，读 /də.vi.ne/。"
   },
   "fr-1162": {
     "kind": "association",
-    "text": "tenir 是握住；retenir 把东西留住，也把知识留在脑中。"
+    "text": "tenir（握住）是更基础的词；re- 加到前面，retenir 表示留住，包括把信息记住。"
   },
   "fr-1163": {
     "kind": "english",
@@ -4837,7 +4868,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1180": {
     "kind": "association",
-    "text": "gêné 是感到尴尬的；gêner 是使人不舒服。"
+    "text": "gêner 的 g 在 ê 前读 /ʒ/；表示使人不方便、不自在，对照 bother / embarrass。"
   },
   "fr-1181": {
     "kind": "association",
@@ -4852,16 +4883,16 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "nerf 是神经；联想触动神经、让人烦躁。"
   },
   "fr-1184": {
-    "kind": "association",
-    "text": "étonné 是吃惊的；étonner 是使吃惊。"
+    "kind": "english",
+    "text": "astonish（使吃惊）作字形线索；étonner 表示使人意外，两个 n 留在拼写里。"
   },
   "fr-1185": {
     "kind": "english",
     "text": "deposit；放下或提交一份文件"
   },
   "fr-1186": {
-    "kind": "association",
-    "text": "nourriture 是食物；nourrir 是用食物喂养。"
+    "kind": "english",
+    "text": "nourish（滋养）与 nourrir 共享明显的 nour-；法语表示喂养、供给营养。"
   },
   "fr-1187": {
     "kind": "association",
@@ -4869,7 +4900,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1188": {
     "kind": "association",
-    "text": "serré 紧的，serrer 弄紧；和 desserrer 松开作反向记忆。"
+    "text": "serrer 的双 r 只读一个 /ʁ/；对应 tighten / squeeze，核心是把原来松的东西弄紧。"
   },
   "fr-1189": {
     "kind": "association",
@@ -4877,7 +4908,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1190": {
     "kind": "association",
-    "text": "guérison 是康复；guérir 是康复的动作。"
+    "text": "guérir 的 gu 在 é 前仍读 /ɡ/；可以表示病人康复，也可以表示治好病。"
   },
   "fr-1191": {
     "kind": "english",
@@ -5076,8 +5107,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "une personne 是一个人；ne…personne 是没有人。"
   },
   "fr-1240": {
-    "kind": "association",
-    "text": "rien 什么也没有，personne 没有人：一格装物，一格装人，两格都空。"
+    "kind": "english",
+    "text": "nothing：rien 否定“有某个东西或某件事”，不是用来回答“没有哪个人”。"
   },
   "fr-1241": {
     "kind": "association",
@@ -5120,44 +5151,44 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "ton livre → le tien：省掉名词后的“你的那个”。"
   },
   "fr-1251": {
-    "kind": "association",
-    "text": "把 à 想成指向一个点的箭头：à Paris、à toi。"
+    "kind": "english",
+    "text": "at / to：à 常标记所处地点、到达点或动作的对象；重音是这个介词拼写的一部分。"
   },
   "fr-1252": {
-    "kind": "association",
-    "text": "把 de 想成从来源牵出一条线：de Paris、le livre de Paul。"
+    "kind": "english",
+    "text": "of / from：de 常标记所属关系、来源或材料，这几种用法都可由“来自、属于”理解。"
   },
   "fr-1253": {
-    "kind": "association",
-    "text": "把 en tant que 看作身份胸牌：“作为谁”参加这件事。"
+    "kind": "english",
+    "text": "as：en tant que 表明一个人在事情中的身份或资格，整体理解成“作为”。"
   },
   "fr-1254": {
     "kind": "association",
     "text": "dans la boîte 在盒内；dans une heure 再过一小时。"
   },
   "fr-1255": {
-    "kind": "association",
-    "text": "把 sur 想成东西放在桌面上，有接触。"
+    "kind": "english",
+    "text": "on：sur 表示在表面上，通常有接触；不用先记另一个位置词。"
   },
   "fr-1256": {
-    "kind": "association",
-    "text": "sur 上，sous 下：多一个 s，钻到桌子下面。"
+    "kind": "english",
+    "text": "under：sous 的 ou＝/u/，结尾 s 不发音；直接记“在下面”。"
   },
   "fr-1257": {
     "kind": "association",
-    "text": "avec 和 sans 成对记：有同伴一起 / 没有同伴。"
+    "text": "avec 读 /a.vɛk/，结尾 c 要读；英语 with 可固定“一起、有某物”的意思。"
   },
   "fr-1258": {
     "kind": "association",
     "text": "英语也借用 sans 表示没有，如 sans-serif 无衬线。"
   },
   "fr-1259": {
-    "kind": "association",
-    "text": "pour 朝向目的或受益人；把它画成礼物送向某人的箭头。"
+    "kind": "english",
+    "text": "for：pour 常指目的、用途或受益人，这几种意思与 for 很相近。"
   },
   "fr-1260": {
-    "kind": "association",
-    "text": "par 像一条途经路线：借助某手段，或由某人完成。"
+    "kind": "english",
+    "text": "by / through：par 常说明途径、手段或行为由谁完成。"
   },
   "fr-1261": {
     "kind": "association",
@@ -5181,19 +5212,19 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1266": {
     "kind": "english",
-    "text": "after；配 avant 一起记前后顺序"
+    "text": "after；après 既能用于时间上的之后，也能用于顺序上的后面。"
   },
   "fr-1267": {
-    "kind": "association",
-    "text": "从过去起点拉一条延续到现在的线：depuis。"
+    "kind": "english",
+    "text": "since：depuis 标记从过去开始、延续到所谈时刻的时间；重点是持续，而不只一个过去时点。"
   },
   "fr-1268": {
     "kind": "association",
     "text": "pendant deux heures 是持续两小时，强调时长。"
   },
   "fr-1269": {
-    "kind": "association",
-    "text": "把 jusqu'à 记作终点箭头：一直到那里。"
+    "kind": "english",
+    "text": "until / up to：jusqu'à 标记到哪里为止，可以是时间，也可以是地点。"
   },
   "fr-1270": {
     "kind": "association",
@@ -5208,12 +5239,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "联想英语 contra-（反对）；也可指靠着表面。"
   },
   "fr-1273": {
-    "kind": "association",
-    "text": "selon 根据；想象在一句话旁标上信息来源“依某人所说”。"
+    "kind": "english",
+    "text": "according to：selon 标明一句话依据谁、依据什么，读 /sə.lɔ̃/。"
   },
   "fr-1274": {
-    "kind": "association",
-    "text": "entre 想两者之间，parmi 想一群之中。"
+    "kind": "english",
+    "text": "among：parmi 表示处于一个群体或集合之中，末尾 i 要读。"
   },
   "fr-1275": {
     "kind": "association",
@@ -5225,7 +5256,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1277": {
     "kind": "association",
-    "text": "和 près de 配对：近处 / 远处。"
+    "text": "loin 的 oin 合读 /wɛ̃/；loin de 表示离某处远，对照 far from。"
   },
   "fr-1278": {
     "kind": "association",
@@ -5249,7 +5280,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1283": {
     "kind": "association",
-    "text": "hors 外面，dehors 在外面；抓住共同的 hors。"
+    "text": "hors de 对应 outside of；h 与 s 不发音，hors 读 /ɔʁ/，表示在某个范围之外。"
   },
   "fr-1284": {
     "kind": "association",
@@ -5305,15 +5336,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1297": {
     "kind": "association",
-    "text": "combien 问数量，comment 问方式：前者想数字，后者想步骤。"
+    "text": "combien 询问可用数字回答的数量或金额；-bien 读 /bjɛ̃/，末尾 n 不单独发音。"
   },
   "fr-1298": {
     "kind": "association",
     "text": "ni…ni… 对应 neither…nor…。"
   },
   "fr-1299": {
-    "kind": "association",
-    "text": "两扇可选的门：soit A, soit B。"
+    "kind": "english",
+    "text": "either…or…：soit…soit… 提供二选一的可能，重复同一个 soit。"
   },
   "fr-1300": {
     "kind": "association",
@@ -5328,8 +5359,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "把 pas 换成 plus：从“不”变成“不再”。"
   },
   "fr-1303": {
-    "kind": "association",
-    "text": "ne…que 像围栏只留下一个选择：只有。"
+    "kind": "english",
+    "text": "only：ne…que 限制范围，意思是只有；它并不是把整件事否定掉。"
   },
   "fr-1304": {
     "kind": "association",
@@ -5340,12 +5371,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "trop 多到过量；和恰好够的 assez 对照。"
   },
   "fr-1306": {
-    "kind": "association",
-    "text": "assez 恰好够，trop 超过头，peu 太少：画三个不同的水位线。"
+    "kind": "english",
+    "text": "enough：assez 的重点是达到需要的量，也可表示“相当”；双 s 读 /s/，结尾 ez 读 /e/。"
   },
   "fr-1307": {
     "kind": "association",
-    "text": "beaucoup 很多，peu 很少；把数量条拉满或缩短。"
+    "text": "beaucoup 的 eau＝/o/、ou＝/u/，p 不发音，读 /bo.ku/；数量上表示很多。"
   },
   "fr-1308": {
     "kind": "association",
@@ -5377,7 +5408,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1315": {
     "kind": "association",
-    "text": "souvent 经常，parfois 有时，rarement 很少：排成频率阶梯。"
+    "text": "souvent 对应 often；ou 读 /u/，en 鼻化，结尾 t 不发音。"
   },
   "fr-1316": {
     "kind": "association",
@@ -5389,7 +5420,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1318": {
     "kind": "association",
-    "text": "tôt / tard：早 / 晚，放到钟表两边记。"
+    "text": "tôt 整个词读 /to/，最后 t 不发音；意思是早，帽子 ô 保留在拼写中。"
   },
   "fr-1319": {
     "kind": "association",
@@ -5397,7 +5428,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1320": {
     "kind": "association",
-    "text": "vitesse 是速度；vite 就是速度快。"
+    "text": "vite 读 /vit/，t 要读出来，末尾 e 不另读；意思是快、迅速地。"
   },
   "fr-1321": {
     "kind": "association",
@@ -5441,7 +5472,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1331": {
     "kind": "association",
-    "text": "ici 这里，là 那里；靠近自己的位置用较短的 ici 锚住。"
+    "text": "ici 两个 i 都读 /i/，中间 c 在 i 前读 /s/；读 /i.si/，就是这里。"
   },
   "fr-1332": {
     "kind": "association",
@@ -5449,15 +5480,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1333": {
     "kind": "association",
-    "text": "là 加 -bas，把手指向更远的那边。"
+    "text": "là（那里）是更简单的基础词；加上 -bas 后，là-bas 指离说话人更远的那边。"
   },
   "fr-1334": {
     "kind": "association",
-    "text": "par＋tout：像足迹遍布所有地方。"
+    "text": "par＋tout（全部）：partout 表示无论哪里、到处；最后 t 不发音。"
   },
   "fr-1335": {
     "kind": "association",
-    "text": "dehors / dedans：门外 / 门内。"
+    "text": "dehors 读 /də.ɔʁ/，h 与末尾 s 都不发音；对应 outside，可独立表示在外面。"
   },
   "fr-1336": {
     "kind": "association",
@@ -5476,8 +5507,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "suite 是后续；ensuite 接着说下一步。"
   },
   "fr-1340": {
-    "kind": "association",
-    "text": "puis 然后，把它看成流程图里连向下一格的箭头。"
+    "kind": "english",
+    "text": "then：puis 按先后顺序接着讲下一件事，ui 合读 /ɥi/。"
   },
   "fr-1341": {
     "kind": "association",
@@ -5488,16 +5519,16 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "fin 是结束；enfin 到最后终于完成。"
   },
   "fr-1343": {
-    "kind": "association",
-    "text": "alors 那么、于是；像对话中的转场按钮，把情境推进一步。"
+    "kind": "english",
+    "text": "then / so：alors 既可承接时间顺序，也可接着前面的条件说“那么”。"
   },
   "fr-1344": {
     "kind": "association",
     "text": "long（长）＋ temps（时间）：很久。"
   },
   "fr-1345": {
-    "kind": "association",
-    "text": "tellement 如此、那么；想象程度滑块被拖到说话人强调的位置。"
+    "kind": "english",
+    "text": "so / so much：tellement 强调程度或数量到了很高的水平，后面可以继续说明造成的结果。"
   },
   "fr-1346": {
     "kind": "english",
@@ -5541,7 +5572,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1356": {
     "kind": "association",
-    "text": "cinq 五，cinquante 五十；共同的 cinq- 把个位和十位连起来。"
+    "text": "cinq 单独报数时读 /sɛ̃k/，最后 q 要读成 /k/；数字五只写四个字母。"
   },
   "fr-1357": {
     "kind": "association",
@@ -5553,7 +5584,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1359": {
     "kind": "association",
-    "text": "huit 八，huitième 第八；把一个 8 和带编号的第八位配对。"
+    "text": "huit 单独报数时读 /ɥit/；h 不发音，t 要读，意思是八。"
   },
   "fr-1360": {
     "kind": "association",
@@ -5561,7 +5592,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1361": {
     "kind": "association",
-    "text": "dix 十，dizaine 十个左右；整十和约十共同抓 dix-/diz-。"
+    "text": "dix 单独报数读 /dis/，x 在这里读 /s/；数字十的读法不要照英语字母名。"
   },
   "fr-1362": {
     "kind": "association",
@@ -5601,7 +5632,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1371": {
     "kind": "association",
-    "text": "vingt 二十，vingtaine 二十个左右；先认住共同的 vingt-。"
+    "text": "vingt 单独报数通常读 /vɛ̃/，g、t 都不发音；二十是一个鼻化音节。"
   },
   "fr-1372": {
     "kind": "association",
@@ -5645,27 +5676,81 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1382": {
     "kind": "association",
-    "text": "把 mardi 与 Mars（火星）配对记星期二。"
+    "text": "mardi 的 mar- 对应 Mars（火星／战神玛尔斯）；星期二的名字保留了古代用行星命名星期的传统。",
+    "origin": {
+      "text": "这个星期名来自拉丁语中“战神玛尔斯 Mars之日”的名称，保留了古代星期命名的历史。日常法语星期名用小写。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9M1062"
+        }
+      ]
+    }
   },
   "fr-1383": {
     "kind": "association",
-    "text": "把 mercredi 与 Mercury（水星）配对记星期三。"
+    "text": "mercredi 的 mercr- 对应 Mercury（水星／墨丘利）；星期三沿用了古代行星命名星期的传统。",
+    "origin": {
+      "text": "这个星期名来自拉丁语中“墨丘利 Mercury之日”的名称，保留了古代星期命名的历史。日常法语星期名用小写。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9M1768"
+        }
+      ]
+    }
   },
   "fr-1384": {
     "kind": "association",
-    "text": "把 jeudi 与 Jupiter（木星）配对记星期四。"
+    "text": "jeudi 的 jeu- 来自朱庇特之名，与 Jupiter（木星／朱庇特）对应；记星期四。",
+    "origin": {
+      "text": "这个星期名来自拉丁语中“朱庇特 Jupiter之日”的名称，保留了古代星期命名的历史。日常法语星期名用小写。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9J0206"
+        }
+      ]
+    }
   },
   "fr-1385": {
     "kind": "association",
-    "text": "把 vendredi 与 Venus（金星）配对记星期五。"
+    "text": "vendredi 的 ven- 对应 Venus（金星／维纳斯）；记星期五，来源是古代行星星期制。",
+    "origin": {
+      "text": "这个星期名来自拉丁语中“维纳斯 Venus之日”的名称，保留了古代星期命名的历史。日常法语星期名用小写。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9V0355"
+        }
+      ]
+    }
   },
   "fr-1386": {
     "kind": "association",
-    "text": "samedi 与 dimanche 是周末两格；samedi 放在左边先来。"
+    "text": "samedi 的词源与“安息日”有关；这能把星期六和休息日联系起来，而不必先背别的星期名。",
+    "origin": {
+      "text": "samedi 追溯到拉丁语中表示“安息日之日”的名称，其中又有希腊语“安息日”的来路；名字保留了宗教历法的历史。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9S0322"
+        }
+      ]
+    }
   },
   "fr-1387": {
     "kind": "association",
-    "text": "dimanche 后面重新到 lundi；把日历看成闭合一圈。"
+    "text": "dimanche 的来源意为“主的日子”，保留了基督教将星期日视为主日的历史。",
+    "origin": {
+      "text": "dimanche 来自基督教拉丁语，意思是“主的日子”。这个名称保留了星期日与基督教礼拜传统的联系。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9D2525"
+        }
+      ]
+    }
   },
   "fr-1388": {
     "kind": "english",
@@ -5760,8 +5845,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "les gens 是复数；不能用 un gens 表示一个人。"
   },
   "fr-1411": {
-    "kind": "association",
-    "text": "nuit 夜晚，nocturne 夜间的；和英语 nocturnal 一起记。"
+    "kind": "english",
+    "text": "night 可固定意思；nuit 的 ui 合读 /ɥi/，t 不发音，整体 /nɥi/。"
   },
   "fr-1412": {
     "kind": "english",
@@ -5769,7 +5854,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1413": {
     "kind": "association",
-    "text": "peur 恐惧，peureux 胆小的；共同的 peur- 配一张害怕的脸。"
+    "text": "peur 只有一个音节 /pœʁ/，eu 合读 /œ/；对应 fear，表示害怕的感觉。"
   },
   "fr-1414": {
     "kind": "english",
@@ -5781,7 +5866,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1416": {
     "kind": "association",
-    "text": "钱和银都叫 argent：想象银币。"
+    "text": "argent 的两个意思是银和钱；贵金属曾被用作货币，银与金钱因此有直接的含义联系。"
   },
   "fr-1417": {
     "kind": "association",
@@ -5789,15 +5874,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1418": {
     "kind": "association",
-    "text": "fils 的 s 要发音；和 fille（女儿）配对记。"
+    "text": "fils 指儿子时读 /fis/：l 不读，s 要读；别套用“词尾辅音都不读”的猜法。"
   },
   "fr-1419": {
     "kind": "association",
     "text": "英语 tête-à-tête 是私下交谈；两个人头对头。"
   },
   "fr-1420": {
-    "kind": "association",
-    "text": "coup 一击，cou 脖子；p 不发音，想象脖子边停住的一拳区分写法。"
+    "kind": "english",
+    "text": "coup 在英语里常指政变；法语基本义是“一击”，政变只是由此形成的一种特定表达。"
   },
   "fr-1421": {
     "kind": "english",
@@ -5824,8 +5909,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "affair；mes affaires 常指我的随身东西"
   },
   "fr-1427": {
-    "kind": "association",
-    "text": "travailler 工作 → travail 工作这件事。"
+    "kind": "english",
+    "text": "work：travail 可指工作活动或劳动成果；-ail 合读 /aj/，不是英语 trail 的发音。"
   },
   "fr-1428": {
     "kind": "association",
@@ -5864,12 +5949,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "联想英语 terrestrial（陆地的），记 terre。"
   },
   "fr-1437": {
-    "kind": "association",
-    "text": "gars 和 garçon 都可指男孩或小伙；前者短，语气也更随意。"
+    "kind": "english",
+    "text": "guy：gars 是口语里的小伙子、家伙；通常读 /ɡɑ/，rs 不发音。"
   },
   "fr-1438": {
     "kind": "association",
-    "text": "côté 侧边，latéral 侧面的；把物体左右两翼当作“侧”的画面。"
+    "text": "côté 的 ô 读 /o/、é 读 /e/；它表示侧面、一边，两个重音都要保留。"
   },
   "fr-1439": {
     "kind": "english",
@@ -5901,11 +5986,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1446": {
     "kind": "association",
-    "text": "garçon 男孩，fille 女孩：配对记。"
+    "text": "英语餐厅里偶尔借用 garçon 称侍者；法语日常更基本的意思是男孩，ç 读 /s/。"
   },
   "fr-1447": {
     "kind": "association",
-    "text": "想象一团火，也想到路口亮着的信号灯。"
+    "text": "feu 的 eu 合读 /ø/，只有一个音节；基本义是火，交通里的灯光信号也用这个词。"
   },
   "fr-1448": {
     "kind": "english",
@@ -5941,7 +6026,16 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1456": {
     "kind": "association",
-    "text": "midi 中午，minuit 午夜；一个是白天中点，一个是黑夜中点。"
+    "text": "mi- 表示中间，di 与“日”有关；midi 就是白天的中点——中午。",
+    "origin": {
+      "text": "midi 由古法语中表示“中间”和“日”的两部分构成，源头可追溯到拉丁语；名字本身就说明了白天的中点。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9M2097"
+        }
+      ]
+    }
   },
   "fr-1457": {
     "kind": "association",
@@ -5969,7 +6063,16 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1463": {
     "kind": "association",
-    "text": "printemps 中的 temps 是时间；想象一年重新发芽的时段。"
+    "text": "printemps 的词源意思是“一年开始的时节”；temps 是时间，整词后来专指春天。",
+    "origin": {
+      "text": "printemps 由古法语中表示“第一、最初”的部分与 temps（时间、时节）组成，保留了春天是一年初始时节的含义。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9P4336"
+        }
+      ]
+    }
   },
   "fr-1464": {
     "kind": "association",
@@ -6094,8 +6197,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "divorce"
   },
   "fr-1489": {
-    "kind": "association",
-    "text": "naître 是出生；naissance 是出生这件事。"
+    "kind": "english",
+    "text": "birth：naissance 表示生命的诞生，也能比喻一种事物的产生；双 s 读 /s/。"
   },
   "fr-1490": {
     "kind": "association",
@@ -6111,7 +6214,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1493": {
     "kind": "association",
-    "text": "cadeau 礼物，gâteau 蛋糕；生日桌上的两件东西，注意 c/g 不同。"
+    "text": "cadeau 的 eau 合读 /o/，整体 /ka.do/；英语 gift 可固定“礼物”的意思。"
   },
   "fr-1494": {
     "kind": "english",
@@ -6127,7 +6230,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1497": {
     "kind": "association",
-    "text": "rencontrer 相遇 → rencontre 一次会面。"
+    "text": "rencontre 表示一次相遇或会面；en 与 on 都鼻化，最后 -tre 读 /tʁ/。"
   },
   "fr-1498": {
     "kind": "english",
@@ -6147,7 +6250,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1502": {
     "kind": "association",
-    "text": "bouche 嘴，bouchée 一口；嘴张开一次能吃一 bouchée。"
+    "text": "bouche 的 ou＝/u/、ch＝/ʃ/，整词 /buʃ/；指用来吃、说话的嘴。"
   },
   "fr-1503": {
     "kind": "english",
@@ -6155,7 +6258,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1504": {
     "kind": "association",
-    "text": "oreiller 是枕头；oreille 是贴在枕上的耳朵。"
+    "text": "oreille 的 -eille 合读 /ɛj/，读 /ɔ.ʁɛj/；指耳朵，不需要先记住枕头的法语。"
   },
   "fr-1505": {
     "kind": "english",
@@ -6167,7 +6270,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1507": {
     "kind": "association",
-    "text": "cou 脖子，coup 一击：同音但拼写不同。"
+    "text": "cou 的 ou 合读 /u/，读 /ku/；这个三字母词指连接头部和身体的脖子。"
   },
   "fr-1508": {
     "kind": "association",
@@ -6182,12 +6285,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "epaulette（肩章）；戴在 épaule 上"
   },
   "fr-1511": {
-    "kind": "association",
-    "text": "jambe 腿，jambon 火腿；把腿的形状作为联想桥梁。"
+    "kind": "english",
+    "text": "jamb（门侧的竖框）可作字形线索；jambe 是人体的腿，末尾 e 不另读。"
   },
   "fr-1512": {
     "kind": "association",
-    "text": "genou 膝盖，genoux 多个膝盖；把一对弯曲的膝盖记成结尾 x。"
+    "text": "genou 读 /ʒə.nu/，g 是软音；复数加 x，但单复数都表示膝盖且读音相同。"
   },
   "fr-1513": {
     "kind": "association",
@@ -6195,15 +6298,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1514": {
     "kind": "association",
-    "text": "dos 背，dossier 椅背或档案；先从身体的背面联想椅背。"
+    "text": "dos 的 o 读 /o/，最后 s 不发音；这个短词指身体的背部。"
   },
   "fr-1515": {
     "kind": "association",
     "text": "联想英语 ventral（腹部的），记 ventre。"
   },
   "fr-1516": {
-    "kind": "association",
-    "text": "doigt 手指，doigté 指法或技巧；弹奏需要灵活的手指。"
+    "kind": "english",
+    "text": "digit（手指、数字）可作含义线索；doigt 是手指，gt 都不发音，读 /dwa/。"
   },
   "fr-1517": {
     "kind": "association",
@@ -6223,7 +6326,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1521": {
     "kind": "association",
-    "text": "ongle 指甲，onglerie 美甲店；店名中能直接找到 ongl-。"
+    "text": "ongle 的 on 是鼻化音，gle 读 /ɡl/；指指甲或趾甲，先记这一个身体部位。"
   },
   "fr-1522": {
     "kind": "english",
@@ -6235,7 +6338,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1524": {
     "kind": "association",
-    "text": "cheville 脚踝，poignet 手腕；都像四肢末端的一道转轴。"
+    "text": "cheville 的 -ille 读 /ij/，ch 读 /ʃ/；指脚与小腿连接的脚踝。"
   },
   "fr-1525": {
     "kind": "association",
@@ -6243,7 +6346,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1526": {
     "kind": "association",
-    "text": "chaussette 是袜，chaussure 是鞋：都穿脚上。"
+    "text": "chaussure 的 ch＝/ʃ/、au＝/o/，ss＝/s/；整体表示鞋，不需要先背袜子的词。"
   },
   "fr-1527": {
     "kind": "english",
@@ -6271,7 +6374,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1533": {
     "kind": "association",
-    "text": "jupe 裙子，jupon 衬裙；记住共同的 jup- 和一外一内。"
+    "text": "jupe 只有一个音节 /ʒyp/，末尾 p 要读；是从腰部往下穿的裙子。"
   },
   "fr-1534": {
     "kind": "english",
@@ -6287,7 +6390,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1537": {
     "kind": "association",
-    "text": "袜子 chaussette 套在鞋 chaussure 里面。"
+    "text": "chaussette 以 -ette 结尾，ch＝/ʃ/、au＝/o/、ss＝/s/；指袜子。"
   },
   "fr-1538": {
     "kind": "association",
@@ -6307,7 +6410,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1542": {
     "kind": "association",
-    "text": "chapeau 帽子，chapelier 帽匠；共同的 chap- 把物品和职业连起来。"
+    "text": "chapeau 的 ch＝/ʃ/、eau＝/o/，读 /ʃa.po/；指帽子。"
   },
   "fr-1543": {
     "kind": "english",
@@ -6315,15 +6418,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1544": {
     "kind": "association",
-    "text": "écharpe 围巾，échappe（逃脱）拼写相近但别混。"
+    "text": "écharpe 读 /e.ʃaʁp/，p 要读；表示围巾、披肩一类围在身上的长条织物。"
   },
   "fr-1545": {
     "kind": "association",
-    "text": "gant 手套，ganté 戴手套的；给词尾添 é，手也套进去了。"
+    "text": "gant 的 an 是鼻化音，t 不发音；这个短词就是手套。"
   },
   "fr-1546": {
     "kind": "association",
-    "text": "ceinture 腰带、ceinturer 围住；把中间围成一圈。"
+    "text": "ceinture 的 ein 是鼻化音，c 在 e 前读 /s/；表示围在腰部的腰带。"
   },
   "fr-1547": {
     "kind": "association",
@@ -6335,11 +6438,20 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1549": {
     "kind": "association",
-    "text": "lune 是月亮；想象两片小圆月组成眼镜。"
+    "text": "lunettes 的构词本来是“小月亮”，后来用于眼镜；-ette 是小称词尾，这一联系有词典依据。",
+    "origin": {
+      "text": "法兰西学院词典把 lunette 记为 lune（月亮）的小称形式。现代复数 lunettes 指眼镜；-ette 是这里可辨认的小称词尾。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9L1359"
+        }
+      ]
+    }
   },
   "fr-1550": {
     "kind": "association",
-    "text": "montrer 是展示；montre 给你展示时间。"
+    "text": "montre 读 /mɔ̃tʁ/，末尾 e 不另读；日常指戴在手腕上的表。"
   },
   "fr-1551": {
     "kind": "association",
@@ -6359,15 +6471,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1555": {
     "kind": "association",
-    "text": "faim 饿，fin 结束：同音，想象吃完饭让饥饿结束，只是助记联想。"
+    "text": "faim 读 /fɛ̃/，aim 是鼻化音；表示饥饿，词尾 m 不单独读出来。"
   },
   "fr-1556": {
     "kind": "association",
-    "text": "soif 渴，assoiffé 渴极了；共同的 soif- 和干燥嘴唇绑定。"
+    "text": "soif 的 oi 合读 /wa/，f 要读，整体 /swaf/；指需要喝水的口渴。"
   },
   "fr-1557": {
-    "kind": "association",
-    "text": "nourrir 是喂养；nourriture 是用来吃的食物。"
+    "kind": "english",
+    "text": "nourish（滋养）作线索；nourriture 保留 nourri-，表示供人吃的食物。"
   },
   "fr-1558": {
     "kind": "association",
@@ -6423,7 +6535,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1571": {
     "kind": "association",
-    "text": "chou 卷心菜，chou-fleur 花椰菜；后者像一颗开花的菜。"
+    "text": "chou 的 ch＝/ʃ/，ou＝/u/，整体 /ʃu/；这个很短的词表示卷心菜。"
   },
   "fr-1572": {
     "kind": "english",
@@ -6460,7 +6572,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1578": {
     "kind": "association",
-    "text": "fraise 草莓，fraisier 草莓植株；果实名加上植物的联想。"
+    "text": "fraise 的 ai 读 /ɛ/，s 在两个元音之间读 /z/；整体 /fʁɛz/，就是草莓。"
   },
   "fr-1579": {
     "kind": "association",
@@ -6476,7 +6588,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1582": {
     "kind": "association",
-    "text": "pastèque 西瓜，melon 甜瓜；一个想红瓤黑籽，一个想橙色瓜肉。"
+    "text": "pastèque 中 qu 读 /k/、è 读 /ɛ/，整词 /pas.tɛk/；对应 watermelon，指西瓜。"
   },
   "fr-1583": {
     "kind": "english",
@@ -6484,11 +6596,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1584": {
     "kind": "association",
-    "text": "多种语言用 ananas 表示菠萝；记住顶部像皇冠。"
+    "text": "ananas 是多种语言通用的菠萝名称；法语通常读 /a.na.nɑ/ 或 /a.na.nas/。"
   },
   "fr-1585": {
     "kind": "association",
-    "text": "noix 核桃或坚果，noisette 榛子；记住 noix/nois- 这组近形。"
+    "text": "noix 的 oi 合读 /wa/，x 不发音，读 /nwa/；可指核桃，也可泛指坚果。"
   },
   "fr-1586": {
     "kind": "english",
@@ -6526,7 +6638,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1590": {
     "kind": "association",
-    "text": "冰、冰激凌和镜子都可叫 glace；想象冰亮的表面。"
+    "text": "glace 在食品语境是冰或冰激凌，在梳妆语境可指镜子；同一个 /ɡlas/，由用途判断词义。"
   },
   "fr-1591": {
     "kind": "association",
@@ -6538,7 +6650,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1593": {
     "kind": "association",
-    "text": "miel 蜂蜜，mielleux 蜜一样甜的或甜言蜜语的；先抓 miel-。"
+    "text": "miel 读 /mjɛl/，只有一个音节，l 要读；这个短词表示蜂蜜。"
   },
   "fr-1594": {
     "kind": "english",
@@ -6562,7 +6674,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1599": {
     "kind": "association",
-    "text": "crevette 虾，想象一只弯成 C 形的小虾；C 就是首字母。"
+    "text": "crevette 的 -ette 读 /ɛt/，双 t 不增加音节；对应 shrimp，指虾。"
   },
   "fr-1600": {
     "kind": "english",
@@ -6578,7 +6690,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1603": {
     "kind": "association",
-    "text": "boîte 盒子，emboîter 嵌合；想象把一块东西装进另一块中。"
+    "text": "boîte 的 oî 合读 /wa/，读 /bwat/；帽子不会把 oi 分成两个音，意思是盒子。"
   },
   "fr-1604": {
     "kind": "english",
@@ -6598,11 +6710,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1608": {
     "kind": "association",
-    "text": "bocal 玻璃罐，bol 碗；中间多两个字母，联想碗长高变成罐。"
+    "text": "bocal 的 o 读 /ɔ/，结尾 l 要读；指装食物等用的广口罐。"
   },
   "fr-1609": {
     "kind": "association",
-    "text": "poubelle 垃圾桶，éboueur 清洁工；把容器和清运者配对记。",
+    "text": "poubelle 原本是巴黎行政官 Poubelle 的姓；他推行垃圾容器，姓氏后来变成了“垃圾桶”的名称。",
     "origin": {
       "text": "垃圾桶的名字来自巴黎行政官 Eugène Poubelle。19 世纪，他要求使用垃圾容器；后来，他的姓就成了日常说的“垃圾桶”。",
       "sources": [
@@ -6619,11 +6731,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1611": {
     "kind": "association",
-    "text": "fauteuil 扶手椅，chaise 普通椅子；长词像两侧多出扶手。"
+    "text": "fauteuil 的 au＝/o/、euil＝/œj/，读 /fo.tœj/；指带扶手的椅子。"
   },
   "fr-1612": {
-    "kind": "association",
-    "text": "meuble 是家具；immeuble 是楼房，一大一小别混。"
+    "kind": "english",
+    "text": "mobile（可移动的）可作线索；meuble 是能够搬动、摆放的家具。"
   },
   "fr-1613": {
     "kind": "english",
@@ -6642,8 +6754,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "micro 小＋ ondes 波：微波炉。"
   },
   "fr-1617": {
-    "kind": "association",
-    "text": "aspirer 是吸入；aspirateur 吸走灰尘。"
+    "kind": "english",
+    "text": "aspirate（吸入）的 aspir- 作线索；aspirateur 是吸走灰尘的吸尘器。"
   },
   "fr-1618": {
     "kind": "association",
@@ -6651,19 +6763,28 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1619": {
     "kind": "association",
-    "text": "balayer 是扫地；balai 是扫帚。"
+    "text": "balai 的 ai 读 /ɛ/，读 /ba.lɛ/；指扫帚，先记住工具本身。"
   },
   "fr-1620": {
     "kind": "english",
     "text": "sponge"
   },
   "fr-1621": {
-    "kind": "association",
-    "text": "torchon 抹布，torcher 擦拭的词形联系；不要当成英语 torch 火把。"
+    "kind": "english",
+    "text": "torch（火把）是容易认错的字形；torchon 是擦拭用的抹布，ch 读 /ʃ/，on 鼻化。"
   },
   "fr-1622": {
     "kind": "association",
-    "text": "savon 肥皂，savonner 打肥皂；多一个 n，把物品变成动作。"
+    "text": "肥皂 savon 的古老名称曾指洗头、染发用的制剂，后来成为一般清洁用品的名字；可以从这段真实用途来记。",
+    "origin": {
+      "text": "savon 经拉丁语 sapo 追溯到日耳曼语。法兰西学院词典说，这个古老名称起先用于洗头、染发的制剂。今天它指日常洗手、洗身的肥皂。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9S0661"
+        }
+      ]
+    }
   },
   "fr-1623": {
     "kind": "english",
@@ -6679,7 +6800,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1626": {
     "kind": "association",
-    "text": "peigner 是梳头；peigne 是梳子。"
+    "text": "peigne 的 gn 合读 /ɲ/，整词 /pɛɲ/；指梳子，不用先背“梳头”的动词。"
   },
   "fr-1627": {
     "kind": "english",
@@ -6699,11 +6820,24 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1631": {
     "kind": "association",
-    "text": "coller 是粘；colle 是用来粘的胶。"
+    "text": "colle 读 /kɔl/，双 l 只发一个 /l/；英语 glue 可固定“胶水”的意思。"
   },
   "fr-1632": {
     "kind": "association",
-    "text": "想象 Scotch 胶带；这里不是苏格兰威士忌。"
+    "text": "Scotch 原本是胶带品牌名；法语把这个品牌名用于日常说的胶带，和英语 Scotch tape 直接对应。",
+    "origin": {
+      "text": "Scotch 是注册商标名。3M 的历史记载，1930 年推出了 Scotch 透明胶带；法语日常使用中，品牌名也被用来称呼胶带这一类物品。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9S0885"
+        },
+        {
+          "label": "3M 品牌历史",
+          "url": "https://www.3mcanada.ca/3M/en_CA/about-3m/history/"
+        }
+      ]
+    }
   },
   "fr-1633": {
     "kind": "association",
@@ -6711,7 +6845,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1634": {
     "kind": "association",
-    "text": "ficelle 细绳，corde 粗绳：按粗细一起记。"
+    "text": "ficelle 的 c 在 e 前读 /s/，末尾 -elle 读 /ɛl/；表示细绳、捆扎用的线绳。"
   },
   "fr-1635": {
     "kind": "association",
@@ -6723,19 +6857,19 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1637": {
     "kind": "association",
-    "text": "clou 钉子，clouer 钉牢；名词后加 -er 变成动作。"
+    "text": "clou 的 ou 合读 /u/，整体 /klu/；是钉入材料里固定东西的钉子。"
   },
   "fr-1638": {
     "kind": "association",
-    "text": "visser 是拧螺丝；vis 是螺丝本身。"
+    "text": "vis 读 /vis/，结尾 s 要读；指靠螺纹旋进去固定的螺丝。"
   },
   "fr-1639": {
     "kind": "association",
-    "text": "marteau 锤子，marteler 锤打；抓住共同的 mart-。"
+    "text": "marteau 的 eau 合读 /o/，读 /maʁ.to/；对应 hammer，指锤子。"
   },
   "fr-1640": {
-    "kind": "association",
-    "text": "prise 抓住电源插头；想象插座的连接动作。"
+    "kind": "english",
+    "text": "take / grip 的“接住、握住”含义可帮助理解 prise；电气语境里指接住插头的插座。"
   },
   "fr-1641": {
     "kind": "english",
@@ -6763,7 +6897,16 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1647": {
     "kind": "association",
-    "text": "bougie 蜡烛，想象烛火像字母 i 上的小点，是形状联想。"
+    "text": "bougie 来自北非港口 Bougie（今 Béjaïa）的地名；当地出产的蜡，让城市名字成了“蜡烛”。",
+    "origin": {
+      "text": "Bougie 是今阿尔及利亚 Béjaïa 的旧法语地名。当地输入欧洲的细蜡曾用于做蜡烛；词典把 bougie 解释为“来自 Bougie 的蜡烛”这一称呼的缩短。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9B1717"
+        }
+      ]
+    }
   },
   "fr-1648": {
     "kind": "association",
@@ -6771,23 +6914,23 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1649": {
     "kind": "association",
-    "text": "étui 贴合小物的套盒，boîte 普通盒子；一个量身包裹，一个宽松容纳。"
+    "text": "étui 中的 ui 合读 /ɥi/，读 /e.tɥi/；指眼镜、乐器等物品贴身的套盒。"
   },
   "fr-1650": {
     "kind": "association",
-    "text": "se moucher 是擤鼻涕；mouchoir 是用的手帕或纸巾。"
+    "text": "mouchoir 的 ou＝/u/、oi＝/wa/；表示手帕或纸巾，结尾 r 要读。"
   },
   "fr-1651": {
     "kind": "association",
     "text": "endroit 地方，envers 反面；endroit 还可指物品的正面。"
   },
   "fr-1652": {
-    "kind": "association",
-    "text": "英语 in lieu of 是“代替”；把 lieu 联想成位置。"
+    "kind": "english",
+    "text": "in lieu of（代替）中的 lieu 可作线索；法语 lieu 本身表示地点、位置。"
   },
   "fr-1653": {
     "kind": "association",
-    "text": "pays 国家，paysage 风景：国家里能看到风景。"
+    "text": "pays 读 /pe.i/，最后 s 不发音；这个“国家”词有两个音节，不按英语 pays 念。"
   },
   "fr-1654": {
     "kind": "english",
@@ -6795,7 +6938,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1655": {
     "kind": "association",
-    "text": "chemin 小路，cheminement 行进过程；把路延伸成一段旅程。"
+    "text": "chemin 的 ch＝/ʃ/、in 鼻化；对应 path，指走的路或通向目标的途径。"
   },
   "fr-1656": {
     "kind": "english",
@@ -6811,7 +6954,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1659": {
     "kind": "association",
-    "text": "camion 卡车，camionnette 小货车；-ette 提醒较小的版本。"
+    "text": "camion 的 -mion 读 /mjɔ̃/；表示运货用的卡车，不需要先背小货车的名称。"
   },
   "fr-1660": {
     "kind": "association",
@@ -6819,7 +6962,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1661": {
     "kind": "association",
-    "text": "bateau 船，batelier 船工；抓住共同的 bate-。"
+    "text": "bateau 的 eau 合读 /o/，整词 /ba.to/；是水上行驶的船。"
   },
   "fr-1662": {
     "kind": "association",
@@ -6863,7 +7006,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1672": {
     "kind": "association",
-    "text": "plage 海滩，plagiste 海滩服务人员；把场所和在那里工作的人连起来。"
+    "text": "plage 的 g 在 e 前读 /ʒ/，读 /plaʒ/；指海边、湖边供人活动的沙滩。"
   },
   "fr-1673": {
     "kind": "english",
@@ -6919,7 +7062,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1686": {
     "kind": "association",
-    "text": "église 教堂，ecclésiastique 教会的；联想英语 ecclesiastical。"
+    "text": "église 读 /e.ɡliz/，s 在元音之间读 /z/；指教堂，不用先记更长的宗教形容词。"
   },
   "fr-1687": {
     "kind": "english",
@@ -6930,8 +7073,21 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "post；la poste 是邮政，un poste 是岗位"
   },
   "fr-1689": {
-    "kind": "association",
-    "text": "commissaire 是警官；commissariat 是警察局。"
+    "kind": "english",
+    "text": "commission（委任、委员会）的 commiss- 是字形线索；commissariat 指相关办事机构，日常常特指警察局。",
+    "origin": {
+      "text": "这个机构名称在 18 世纪已有记载。更早的词根与“受委派去执行任务的人”有关，后来可指其职务、服务机构或办公场所；日常独立使用时常指警察局。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9C3135"
+        },
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9C3133"
+        }
+      ]
+    }
   },
   "fr-1690": {
     "kind": "english",
@@ -6943,11 +7099,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1692": {
     "kind": "association",
-    "text": "bâtir 是建造；bâtiment 是建成的建筑。"
+    "text": "bâtiment 的 â 读 /ɑ/ 或 /a/，结尾 -ment 鼻化；对应 building，指建筑物。"
   },
   "fr-1693": {
     "kind": "association",
-    "text": "usine 工厂，usiner 机械加工；词尾加 r，让工厂开工。"
+    "text": "usine 的 s 在两个元音之间读 /z/，读 /y.zin/；是制造产品的工厂。"
   },
   "fr-1694": {
     "kind": "english",
@@ -6967,7 +7123,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1698": {
     "kind": "association",
-    "text": "roue 轮子，rouler 滚动；共同的 rou- 连起物体和动作。"
+    "text": "roue 的 ou 合读 /u/，末尾 e 不另读；这个短词表示转动的轮子。"
   },
   "fr-1699": {
     "kind": "association",
@@ -6975,7 +7131,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1700": {
     "kind": "association",
-    "text": "freiner 是刹车；frein 是刹车装置。"
+    "text": "frein 的 ein 是鼻化音，整体 /fʁɛ̃/；是让车辆减速、停下的刹车装置。"
   },
   "fr-1701": {
     "kind": "english",
@@ -6986,12 +7142,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "music"
   },
   "fr-1703": {
-    "kind": "association",
-    "text": "chanter 是唱；chanson 是唱的歌。"
+    "kind": "english",
+    "text": "chant（吟唱）的 chan- 作线索；chanson 是唱的歌曲，son 鼻化。"
   },
   "fr-1704": {
     "kind": "association",
-    "text": "jouer 是玩；jeu 是游戏。"
+    "text": "jeu 的 eu 合读 /ø/，整体 /ʒø/；英语 game 可固定“游戏”的意思。"
   },
   "fr-1705": {
     "kind": "association",
@@ -7124,8 +7280,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "number"
   },
   "fr-1732": {
-    "kind": "association",
-    "text": "appeler 打电话 → appel 一次呼叫。"
+    "kind": "english",
+    "text": "call：appel 是一次呼叫、电话，也能表示呼吁；结尾 l 要读。"
   },
   "fr-1733": {
     "kind": "english",
@@ -7193,7 +7349,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1749": {
     "kind": "association",
-    "text": "cahier 本子，carnet 小记事本；前者想课堂练习，后者想随身口袋。"
+    "text": "cahier 的 h 不发音，ier 合读 /je/；对应 notebook，主要是写作业、记笔记的本子。"
   },
   "fr-1750": {
     "kind": "english",
@@ -7213,11 +7369,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1754": {
     "kind": "association",
-    "text": "pleuvoir 是下雨；pluie 是雨。"
+    "text": "pluie 的 ui 连读 /ɥi/，e 不另读，整词 /plɥi/；表示雨。"
   },
   "fr-1755": {
     "kind": "association",
-    "text": "étoile 星，étoilé 星状的或有星级的；把天上的星移到酒店招牌。"
+    "text": "étoile 的 oi 合读 /wa/，l 要读；指星星，也用于酒店等的星级。"
   },
   "fr-1756": {
     "kind": "english",
@@ -7249,11 +7405,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1763": {
     "kind": "association",
-    "text": "Pierre 也常作人名；想象名叫 Pierre 的人捡石头。"
+    "text": "pierre 读 /pjɛʁ/，表示石头；大写的 Pierre 也常是人名“皮埃尔”，按大小写与语境区分。"
   },
   "fr-1764": {
     "kind": "association",
-    "text": "sable 沙，sablier 沙漏；后者让沙从一个小口漏下去。"
+    "text": "sable 读 /sabl/，bl 两个辅音都要读；表示沙子，不需要先记沙漏。"
   },
   "fr-1765": {
     "kind": "english",
@@ -7292,32 +7448,32 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "animal"
   },
   "fr-1774": {
-    "kind": "association",
-    "text": "chien 狗，chienne 母狗；阴性形式把 n 加倍再加 e。"
+    "kind": "english",
+    "text": "canine（犬类的）可作含义线索；chien 是日常说的狗，ien 合读 /jɛ̃/。"
   },
   "fr-1775": {
     "kind": "english",
     "text": "cat；法语写 chat，别按英语聊天来读"
   },
   "fr-1776": {
-    "kind": "association",
-    "text": "联想英语 chevalier（骑士）：骑士骑马。"
+    "kind": "english",
+    "text": "cavalry（骑兵）可作“马”的线索；cheval 是日常表示马的词。"
   },
   "fr-1777": {
     "kind": "association",
-    "text": "oiseau 鸟，oisillon 雏鸟；把共同的 ois- 和鸟巢里的小鸟绑定。"
+    "text": "oiseau 的 oi＝/wa/、s＝/z/、eau＝/o/，读 /wa.zo/；六个字母组成两个音节，就是鸟。"
   },
   "fr-1778": {
     "kind": "association",
-    "text": "vache 奶牛，vacher 牧牛人；名词后多一个 r，联想到照看它的人。"
+    "text": "vache 的 ch 读 /ʃ/，整词 /vaʃ/；表示母牛、奶牛，英语是 cow。"
   },
   "fr-1779": {
     "kind": "association",
-    "text": "cochon 猪，cochonnerie 脏东西；从猪滚泥巴的夸张画面作联想。"
+    "text": "cochon 的 ch＝/ʃ/、on 鼻化，整体 /kɔ.ʃɔ̃/；就是猪。"
   },
   "fr-1780": {
-    "kind": "association",
-    "text": "poule 母鸡，poulet 鸡肉：一起记。"
+    "kind": "english",
+    "text": "poultry（家禽）的 poul- 是好认的线索；poule 专指母鸡。"
   },
   "fr-1781": {
     "kind": "english",
@@ -7325,11 +7481,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1782": {
     "kind": "association",
-    "text": "canard 鸭，caneton 小鸭；共同的 can- 是母鸭带小鸭的队伍。"
+    "text": "canard 读 /ka.naʁ/，最后 d 不发音；指鸭子。"
   },
   "fr-1783": {
     "kind": "association",
-    "text": "lapin 兔，lapereau 幼兔；共同的 lap- 连起大小两只兔子。"
+    "text": "lapin 的 in 鼻化，读 /la.pɛ̃/；指兔子，不需要先认识幼兔的名称。"
   },
   "fr-1784": {
     "kind": "english",
@@ -7349,11 +7505,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1788": {
     "kind": "association",
-    "text": "mouche 苍蝇，moucheron 小飞虫；后者是更小的飞虫。"
+    "text": "mouche 的 ou＝/u/、ch＝/ʃ/，读 /muʃ/；指苍蝇。"
   },
   "fr-1789": {
     "kind": "association",
-    "text": "abeille 蜜蜂，essaim 蜂群；一只和一团嗡嗡飞的画面对照。"
+    "text": "abeille 的 -eille 合读 /ɛj/，读 /a.bɛj/；指采花产蜜的蜜蜂。"
   },
   "fr-1790": {
     "kind": "english",
@@ -7373,15 +7529,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1794": {
     "kind": "association",
-    "text": "联想英语 ursine（熊的），记 ours。"
+    "text": "ours 读 /uʁs/，r、s 都要读；指熊，不按英语 ours（我们的）的读音念。"
   },
   "fr-1795": {
     "kind": "association",
-    "text": "loup 狼，louve 母狼；把 ou 的声音配上狼嚎作联想。"
+    "text": "loup 的 ou 合读 /u/，最后 p 不发音；整个词只有一个音节，表示狼。"
   },
   "fr-1796": {
     "kind": "association",
-    "text": "联想英语 simian（猴的），记 singe。"
+    "text": "singe 的 in 是鼻化音，g 在 e 前读 /ʒ/，整词 /sɛ̃ʒ/；英语 monkey 可固定“猴子”的含义。"
   },
   "fr-1797": {
     "kind": "association",
@@ -7405,15 +7561,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1802": {
     "kind": "association",
-    "text": "bon / mauvais：好 / 坏，先成对记。"
+    "text": "mauvais 的 au＝/o/、ai＝/ɛ/，最后 s 不发音；英语 bad 可固定含义。"
   },
   "fr-1803": {
     "kind": "english",
     "text": "beautiful；法语 beau 的阴性是 belle"
   },
   "fr-1804": {
-    "kind": "association",
-    "text": "joli 漂亮，joliment 漂亮地；和 beau 意义接近，不是英语 jolly 的准确翻译。"
+    "kind": "english",
+    "text": "jolly（愉快的）与 joli 字形接近，但法语 joli 重点是外观漂亮，而不是心情愉快。"
   },
   "fr-1805": {
     "kind": "association",
@@ -7429,7 +7585,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1808": {
     "kind": "association",
-    "text": "vrai 真，faux 假：像判断题的两项。"
+    "text": "vrai 的 ai 合读 /ɛ/，读 /vʁɛ/；英语 true 可固定“真实的”这个意思。"
   },
   "fr-1809": {
     "kind": "association",
@@ -7468,8 +7624,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "联想英语 plenty（丰富），记 plein 是满的。"
   },
   "fr-1818": {
-    "kind": "association",
-    "text": "vider 清空 → vide 空的。"
+    "kind": "english",
+    "text": "void（空的、空缺）与 vide 字形接近；vide 表示里面没有东西。"
   },
   "fr-1819": {
     "kind": "association",
@@ -7493,7 +7649,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1824": {
     "kind": "association",
-    "text": "triste 难过 → tristesse 悲伤；共同的 trist- 配垂下的嘴角。"
+    "text": "triste 的 s、t 都要读，e 不另读；对应 sad，表示悲伤、难过。"
   },
   "fr-1825": {
     "kind": "english",
@@ -7505,7 +7661,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1827": {
     "kind": "association",
-    "text": "gentil 友善，méchant 凶恶：想象两种表情。"
+    "text": "méchant 的 é＝/e/、ch＝/ʃ/、an 鼻化；对应 mean / nasty，指待人凶、不友善。"
   },
   "fr-1828": {
     "kind": "association",
@@ -7537,7 +7693,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1835": {
     "kind": "association",
-    "text": "maladie 是疾病；malade 是生病的。"
+    "text": "mal（不好、不适）是简单基础；malade 表示身体不好、生病的。"
   },
   "fr-1836": {
     "kind": "association",
@@ -7565,11 +7721,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1842": {
     "kind": "association",
-    "text": "doux 柔和 → douce 阴性 → douceur 柔和感；把 x/c 的变化一起记。"
+    "text": "doux 读 /du/，x 不发音；对应 soft / gentle，可形容触感、声音或性情。"
   },
   "fr-1843": {
-    "kind": "association",
-    "text": "dur 硬 → dureté 硬度；有形的硬也可延伸为事情艰难。"
+    "kind": "english",
+    "text": "durable（耐用的）可帮助认 dur-；dur 表示硬、坚实，也能引申为事情难。"
   },
   "fr-1844": {
     "kind": "association",
@@ -7585,7 +7741,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1847": {
     "kind": "association",
-    "text": "tiède 温的，tiédeur 温热；在 froid 冷与 chaud 热之间放一个中点。"
+    "text": "tiède 的 iè 合读 /jɛ/，读 /tjɛd/；对应 lukewarm，指不冷不热、温温的。"
   },
   "fr-1848": {
     "kind": "english",
@@ -7612,8 +7768,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "英语 large 常是大；法语 large 重点是宽。"
   },
   "fr-1854": {
-    "kind": "association",
-    "text": "large 宽，étroit 窄：想象并排两条通道。"
+    "kind": "english",
+    "text": "strict（严格、紧的）可作含义线索；étroit 表示空间狭窄，oi 合读 /wa/。"
   },
   "fr-1855": {
     "kind": "association",
@@ -7625,7 +7781,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1857": {
     "kind": "association",
-    "text": "épais 厚 → épaisseur 厚度；把共同的 épaiss- 和书脊宽度绑定。"
+    "text": "épais 的 ai 合读 /ɛ/，s 不发音，读 /e.pɛ/；对应 thick，指有厚度。"
   },
   "fr-1858": {
     "kind": "english",
@@ -7636,12 +7792,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "round"
   },
   "fr-1860": {
-    "kind": "association",
-    "text": "carré / rond：方 / 圆；想象方形棋盘和圆形棋子。"
+    "kind": "english",
+    "text": "square（方的）可作含义与字形线索；carré 的 é 要读 /e/，表示正方形的。"
   },
   "fr-1861": {
-    "kind": "association",
-    "text": "plate 是 plat 的阴性；想象平平的盘面。"
+    "kind": "english",
+    "text": "plate（平盘）可帮助记 plat 的“平”义；plat 本身作形容词是平的，t 不发音。"
   },
   "fr-1862": {
     "kind": "association",
@@ -7673,7 +7829,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1869": {
     "kind": "association",
-    "text": "jaune 黄，jeune 年轻；想象黄色香蕉来固定元音。"
+    "text": "jaune 的 au 合读 /o/，j 读 /ʒ/，整词 /ʒon/；这个词表示黄色。"
   },
   "fr-1870": {
     "kind": "english",
@@ -7701,7 +7857,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1876": {
     "kind": "association",
-    "text": "联想红褐色头发；roux 的阴性是 rousse。"
+    "text": "roux 的 ou 合读 /u/，x 不发音；形容头发时指偏红或红褐色。"
   },
   "fr-1877": {
     "kind": "english",
@@ -7709,7 +7865,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1878": {
     "kind": "association",
-    "text": "clair 浅，foncé 深：想象同一种颜色的深浅色卡。"
+    "text": "foncé 的 on 鼻化，cé 读 /se/；形容颜色时表示深色的，不是在说颜色种类。"
   },
   "fr-1879": {
     "kind": "english",
@@ -7725,7 +7881,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1882": {
     "kind": "association",
-    "text": "lisse 光滑 → lisser 抹平；名词外形般的形容词加 r 变动作。"
+    "text": "lisse 的双 s 读 /s/，e 不另读；对应 smooth，表示表面没有粗糙起伏。"
   },
   "fr-1883": {
     "kind": "association",
@@ -7753,7 +7909,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1889": {
     "kind": "association",
-    "text": "cru / cuit：生 / 熟，放在两只食物盘旁记。"
+    "text": "cru 读 /kʁy/，u 是圆唇的 /y/；指未煮过的生食，对照 raw。"
   },
   "fr-1890": {
     "kind": "association",
@@ -7772,8 +7928,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "practical"
   },
   "fr-1894": {
-    "kind": "association",
-    "text": "proche 近的，approcher 靠近；一个位置，一个缩短距离的动作。"
+    "kind": "english",
+    "text": "approach（靠近）的 proach 可帮助认 proche；proche 说明距离或关系近。"
   },
   "fr-1895": {
     "kind": "association",
@@ -7817,7 +7973,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1905": {
     "kind": "english",
-    "text": "verity（真实）；vrai 真的 → vérité 真相"
+    "text": "verify（核实）的 veri- 可作“真”的线索；vérité 表示真相、真理。"
   },
   "fr-1906": {
     "kind": "english",
@@ -7850,7 +8006,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1911": {
     "kind": "association",
-    "text": "rêver 做梦 → rêve 一个梦。"
+    "text": "rêve 的 ê 读 /ɛ/，v 要读；指睡着时的梦，也可指希望实现的梦想。"
   },
   "fr-1912": {
     "kind": "association",
@@ -7878,7 +8034,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1918": {
     "kind": "association",
-    "text": "bout 末端或小块，debout 站着；想象一小段竖立起来作词形联想。"
+    "text": "bout 的 ou 合读 /u/，最后 t 不发音；表示一端、末端，也能指一小段。"
   },
   "fr-1919": {
     "kind": "english",
@@ -7890,7 +8046,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1921": {
     "kind": "association",
-    "text": "salle 厅，salon 客厅；都用 sal- 开头，但 salle 常按用途命名。"
+    "text": "salle 读 /sal/，双 l 只发一个 /l/；表示有特定用途的房间、厅。"
   },
   "fr-1922": {
     "kind": "english",
@@ -7921,8 +8077,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "secret"
   },
   "fr-1929": {
-    "kind": "association",
-    "text": "parler 是说；parole 是说出来的话，也可指歌词。"
+    "kind": "english",
+    "text": "parole 在英语里与“承诺、假释”有关；法语 parole 更基本地指说出的话、发言。"
   },
   "fr-1930": {
     "kind": "association",
@@ -7934,7 +8090,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1932": {
     "kind": "association",
-    "text": "bruyant 是吵闹的；bruit 是发出的噪声。"
+    "text": "bruit 的 ui 合读 /ɥi/，最后 t 不发音；表示噪声、声响，英语是 noise。"
   },
   "fr-1933": {
     "kind": "english",
@@ -7982,11 +8138,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1944": {
     "kind": "association",
-    "text": "moitié 一半，demi 半个；把一个圆切成两份，对照名词和数量修饰。"
+    "text": "moitié 的 oi＝/wa/，tié＝/tje/，读 /mwa.tje/；指一个整体分成相等两份中的一份。"
   },
   "fr-1945": {
     "kind": "association",
-    "text": "baignoire 是浴缸；bain 是里面泡的澡。"
+    "text": "bain 的 ain 合读鼻化音 /ɛ̃/，整体 /bɛ̃/；英语 bath 可固定“泡澡、洗澡”的含义。"
   },
   "fr-1946": {
     "kind": "english",
@@ -7994,15 +8150,15 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1947": {
     "kind": "association",
-    "text": "blague 笑话，blaguer 开玩笑；加 r 就开始讲笑话。"
+    "text": "blague 的 gu 在 e 前仍读硬音 /ɡ/，整体 /blaɡ/；指一个笑话、玩笑。"
   },
   "fr-1948": {
     "kind": "association",
     "text": "à venir 是即将到来；avenir 是未来。"
   },
   "fr-1949": {
-    "kind": "association",
-    "text": "courir 是跑；course 是赛跑，courses 还常指购物。"
+    "kind": "english",
+    "text": "course（赛程）与 course 同形；法语可指赛跑，复数也常表示出门购物。"
   },
   "fr-1950": {
     "kind": "english",
@@ -8010,7 +8166,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1951": {
     "kind": "association",
-    "text": "secours 援救，secourir 救助；把共同的 secour- 和伸出的援手绑定。"
+    "text": "secours 对应 help / rescue；ou＝/u/，rs 中 r 要读、s 不发音，表示援助、救援。"
   },
   "fr-1952": {
     "kind": "english",
@@ -8034,7 +8190,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1957": {
     "kind": "association",
-    "text": "morceau 一块，morceler 分成小块；共同的 morc- 联想切块动作。"
+    "text": "morceau 的 ce＝/s/、eau＝/o/，读 /mɔʁ.so/；表示从整体分出的一块、一段。"
   },
   "fr-1958": {
     "kind": "english",
@@ -8042,7 +8198,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1959": {
     "kind": "association",
-    "text": "espérer 是希望；espoir 是心里的希望。"
+    "text": "espoir 的 oi 合读 /wa/，读 /ɛs.pwaʁ/；指对好结果抱有的希望。"
   },
   "fr-1960": {
     "kind": "english",
@@ -8070,7 +8226,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1966": {
     "kind": "association",
-    "text": "mentir 是说谎；mensonge 是一句谎言。"
+    "text": "mensonge 的 en、on 都是鼻化音，g 在 e 前读 /ʒ/；表示故意说出的谎言。"
   },
   "fr-1967": {
     "kind": "english",
@@ -8078,7 +8234,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1968": {
     "kind": "association",
-    "text": "goûter 是品尝；goût 是尝到的味道。"
+    "text": "goût 的 oû 合读 /u/，t 不发音；既可说味道，也可说个人品味、喜好。"
   },
   "fr-1969": {
     "kind": "english",
@@ -8086,11 +8242,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1970": {
     "kind": "association",
-    "text": "niveau 水平，niveler 整平；把起伏高低拉到同一水平面。"
+    "text": "niveau 的 eau 合读 /o/，读 /ni.vo/；既可指水位、高度，也可指能力水平。"
   },
   "fr-1971": {
     "kind": "association",
-    "text": "souci 担忧，soucieux 忧虑的；后者像脸上写满 souci。"
+    "text": "souci 的 ou＝/u/、c 在 i 前＝/s/，读 /su.si/；表示放不下的担忧或烦心事。"
   },
   "fr-1972": {
     "kind": "english",
@@ -8110,7 +8266,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-1976": {
     "kind": "association",
-    "text": "peser 是称重；poids 是称出来的重量。"
+    "text": "poids 的 oi 合读 /wa/，d、s 都不发音；指重量，对照英语 weight。"
   },
   "fr-1977": {
     "kind": "english",
@@ -8137,8 +8293,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "英语 patron 多是顾客或赞助者；法语 patron 常是老板。"
   },
   "fr-1983": {
-    "kind": "association",
-    "text": "律师与牛油果都叫 avocat；想象律师拿着牛油果作联想。",
+    "kind": "english",
+    "text": "advocate（为人辩护的人）可帮助记 avocat 的律师义；“牛油果”与它只是同形，词源不同。",
     "origin": {
       "text": "avocat 的两个常见意思来源不同：“律师”来自拉丁语，与“呼唤到身旁”有关；“牛油果”则经西班牙语来自纳瓦特尔语。它们同形，却不是同一个词源。",
       "sources": [
@@ -8259,12 +8415,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "liberate"
   },
   "fr-2008": {
-    "kind": "association",
-    "text": "débarrasser 清走障碍；联想英语 embarrassment，别让杂物造成窘迫。"
+    "kind": "english",
+    "text": "barrier（障碍）可作“清除阻碍”的含义线索；débarrasser 表示清走、摆脱。"
   },
   "fr-2009": {
-    "kind": "association",
-    "text": "se moquer 嘲笑，moqueur 爱嘲弄的人；抓住 moqu-。"
+    "kind": "english",
+    "text": "mock（嘲弄）与 moquer 在字形和意思上接近；se moquer 表示取笑别人。"
   },
   "fr-2010": {
     "kind": "association",
@@ -8291,12 +8447,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "train；s'entraîner 是自己训练"
   },
   "fr-2016": {
-    "kind": "association",
-    "text": "piquer 刺，piquant 辛辣；像辣味在舌尖轻轻扎一下。"
+    "kind": "english",
+    "text": "pick（挑、刺）的字形可帮助固定 piquer；核心动作是刺一下，也可形容蚊虫叮咬。"
   },
   "fr-2017": {
     "kind": "association",
-    "text": "gâcher 糟蹋，gâchis 浪费的结果；共同的 gâch- 配被毁掉的成果。"
+    "text": "gâcher 的 ch＝/ʃ/，最后 -er＝/e/；表示把本来有用、不错的东西糟蹋掉。"
   },
   "fr-2018": {
     "kind": "english",
@@ -8308,7 +8464,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-2020": {
     "kind": "association",
-    "text": "rigoler 笑，rigolo 好笑的；同一组 rigol-，动词与形容词相连。"
+    "text": "rigoler 读 /ʁi.ɡɔ.le/，g 是硬音；这是口语的“笑、开玩笑”，语气较随意。"
   },
   "fr-2021": {
     "kind": "english",
@@ -8356,11 +8512,11 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-2032": {
     "kind": "association",
-    "text": "avaler 吞下，avalanche 雪崩；只是画面联想，像东西一下滑了下去。"
+    "text": "avaler 的 a- 之后分 va-ler 来读，/a.va.le/；对应 swallow，指食物从嘴里咽下。"
   },
   "fr-2033": {
     "kind": "association",
-    "text": "démarrer 启动，démarrage 启动过程；和 arrêter 停止成对记。"
+    "text": "démarrer 的双 r 只读一个 /ʁ/，表示启动、开动，也可以说活动开始。"
   },
   "fr-2034": {
     "kind": "english",
@@ -8375,8 +8531,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "ménage 是家庭生活；déménager 是迁移住处。"
   },
   "fr-2037": {
-    "kind": "association",
-    "text": "enseignant 是教师；enseigner 是教课。"
+    "kind": "english",
+    "text": "sign（记号）的 sign- 可作字形线索；enseigner 是把知识传授给人，也就是教。"
   },
   "fr-2038": {
     "kind": "english",
@@ -8384,7 +8540,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-2039": {
     "kind": "association",
-    "text": "verser 倒，renverser 打翻；多了 ren-，杯子从主动倒水变成翻倒。"
+    "text": "verser 读 /vɛʁ.se/；英语 pour 可固定核心意思，液体从容器中倒出来。"
   },
   "fr-2040": {
     "kind": "english",
@@ -8407,12 +8563,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "dessin 是画；dessiner 是画画。"
   },
   "fr-2045": {
-    "kind": "association",
-    "text": "cuisson 是烹煮过程；cuire 是把食物做熟。"
+    "kind": "english",
+    "text": "cuisine（烹饪）的 cui- 可作线索；cuire 是把食物做熟，ui 合读 /ɥi/。"
   },
   "fr-2046": {
-    "kind": "association",
-    "text": "联想英语 boil；bouilloire 是烧水壶。"
+    "kind": "english",
+    "text": "boil（沸腾）：bouillir 保留相近的 bouill-，表示液体烧开、沸腾。"
   },
   "fr-2047": {
     "kind": "english",
@@ -8420,7 +8576,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-2048": {
     "kind": "association",
-    "text": "éplucher 削皮，épluchure 削下的皮；动作与剩下的薄皮一起记。"
+    "text": "éplucher 的 ch＝/ʃ/，读 /e.ply.ʃe/；对应 peel，指削去、剥去外皮。"
   },
   "fr-2049": {
     "kind": "english",
@@ -8440,7 +8596,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-2053": {
     "kind": "association",
-    "text": "debout 站着，assis 坐着，couché 躺着：把身体摆成三种姿势。"
+    "text": "debout 的 ou 合读 /u/，t 不发音；对照 standing，说明人处于站立状态。"
   },
   "fr-2054": {
     "kind": "english",
