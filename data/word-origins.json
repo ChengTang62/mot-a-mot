@@ -227,15 +227,6 @@
       }
     ]
   },
-  "fr-028": {
-    "text": "12 世纪的写法是 fenestre，来自拉丁语中表示窗户的词。现代写成 fenêtre，帽子符号保留了旧拼写中 s 的线索。",
-    "sources": [
-      {
-        "label": "法兰西学院词典",
-        "url": "https://www.dictionnaire-academie.fr/article/A9F0457"
-      }
-    ]
-  },
   "fr-739": {
     "text": "词典把 robinet 追溯到曾表示绵羊的 robin，并说明早期水龙头常呈羊头形。这里是实际器物造型留下的名称，不必先背另一个法语词。",
     "sources": [
@@ -380,6 +371,112 @@
       {
         "label": "法兰西学院词典",
         "url": "https://www.dictionnaire-academie.fr/article/A9V0355"
+      }
+    ]
+  },
+  "fr-036": {
+    "text": "这个名称原来有“使事物有条理、安排秩序的人”的意思。IBM 法国征求 computer 的法语名称时，学者 Jacques Perret 提议采用 ordinateur；电脑因此被命名为整理、处理信息的工具。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9O0665"
+      },
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/QR_0582"
+      }
+    ]
+  },
+  "fr-037": {
+    "text": "eau 来自拉丁语 aqua。词典记录了 egua、ewe、eve、eaue 等历史形式，最后才缩成今天的 eau。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9E0003"
+      }
+    ]
+  },
+  "fr-061": {
+    "text": "古法语 hui 本来已经是“今天”；说话者又加上 au jour de 来加强表达，后来合成 aujourd’hui。它的结构其实是“在今天的这一天”。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9A3151"
+      }
+    ]
+  },
+  "fr-064": {
+    "text": "词典将 maintenant 追溯到“手里拿着某物的时候”，继而产生“立即、当下”的意思。词中的 main 对应手，tenant 对应拿着。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9M0232"
+      }
+    ]
+  },
+  "fr-548": {
+    "text": "gestion 来自拉丁语 gestio，属于表示“承载、做、执行”的 gerere 词根。英语 gesture 经 gestus 也来自 gerere：两词确有词源关系，但现代意义分别是管理与手势。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9G0664"
+      },
+      {
+        "label": "American Heritage Dictionary",
+        "url": "https://www.ahdictionary.com/word/search.html?q=gesture"
+      }
+    ]
+  },
+  "fr-740": {
+    "text": "évier 与表示盛水容器的拉丁语 aquarium 有关。法语中的旧形式曾指排出污水的通道，后来指厨房里洗菜、洗餐具的水槽。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9E3163"
+      }
+    ]
+  },
+  "fr-771": {
+    "text": "词典把 cuillère 追溯到吃蜗牛用的尖头餐具，其更早词根就是“蜗牛”。今天泛指勺子，名字仍保留着古代餐具的用途。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9C5200%2A"
+      }
+    ]
+  },
+  "fr-1605": {
+    "text": "panier 来自表示面包篮的拉丁语 panarium，其中 panis 是“面包”，也与法语 pain 对应。它后来不再限于装面包，成为篮子的通称。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9P0312"
+      }
+    ]
+  },
+  "fr-1697": {
+    "text": "crèche 起初指牲畜的食槽。基督教耶稣诞生叙事中的马槽与婴儿联系起来，后来这个词又用于接收婴幼儿的场所；它与英语 crib 有共同的日耳曼语来路。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9C4856"
+      },
+      {
+        "label": "CNRTL / TLFi",
+        "url": "https://www.cnrtl.fr/etymologie/cr%C3%A8che"
+      },
+      {
+        "label": "Etymonline",
+        "url": "https://www.etymonline.com/word/crib"
+      }
+    ]
+  },
+  "fr-1749": {
+    "text": "cahier 的源头意为“每四个一组”，曾指四张纸组成的一叠。纸张成组装订的历史，留在了今天“笔记本”的名字里。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9C0177"
       }
     ]
   }
