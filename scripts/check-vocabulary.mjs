@@ -121,6 +121,18 @@ try {
   assert.throws(()=>study.removeUpcomingWord(study.freshQueue([current]),current.id));
   const mastered = study.advanceQueue(round, { wordId: current.id, action: "master" });
   assert.ok(mastered.queue.slice(mastered.index).every(w => w.id !== current.id));
+  // Both directions use the same answer IDs and scheduling; reverse prompts must not leak audio.
+  for(const word of words){
+    const forward=study.questionPresentation(word,"fr-zh");
+    const reverse=study.questionPresentation(word,"zh-fr");
+    assert.equal(forward.prompt,word.french);
+    assert.equal(forward.answer,word.meaning);
+    assert.equal(forward.canPlayWord,true);
+    assert.equal(reverse.prompt,word.meaning);
+    assert.equal(reverse.answer,word.french);
+    assert.equal(reverse.canPlayWord,false);
+    assert.deepEqual(study.questionPresentation(word,"zh-fr",true),forward,"First encounters remain French introductions");
+  }
   // Optional reference from the previously published code, outside this checkout.
   if (process.argv[2]) {
     const baseline = require(resolve(process.argv[2])).words;
