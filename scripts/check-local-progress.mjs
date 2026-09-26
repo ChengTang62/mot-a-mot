@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
+import { mkdtempSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join, resolve } from 'node:path';
+import { createRequire } from 'node:module';
+import { randomUUID } from 'node:crypto';
+const temp=mkdtempSync(join(tmpdir(),'mot-storage-'));
+try {
+  execFileSync(process.execPath,[resolve('node_modules/typescript/bin/tsc'),'--target','es2022','--module','commonjs','--skipLibCheck','--outDir',temp,'lib/local-progress.ts'],{stdio:'inherit'});
+  const disk=new Map(); let fail=false, chain=Promise.resolve();
+  globalThis.localStorage={getItem:k=>disk.get(k)??null,setItem:(k,v)=>{if(fail)throw new Error('Quota exceeded');disk.set(k,v);}};
+  Object.defineProperty(globalThis,'navigator',{value:{locks:{request:(_name,fn)=>{const next=chain.then(fn);chain=next.catch(()=>{});return next;}}},configurable:true});
+  const {loadLocalProgress,saveLocalAction,STORAGE_KEY}=createRequire(import.meta.url)(join(temp,'local-progress.js'));
+  const action=(kind,wordId='fr-001',selectedId=null)=>({eventId:randomUUID(),wordId,selectedId,action:kind});
+  assert.deepEqual((await loadLocalProgress()).progress,{});
+  await saveLocalAction(action('introduce'));
+  assert.equal((await loadLocalProgress()).progress['fr-001'].seen,0);
+  const correct=action('answer','fr-001','fr-001');await saveLocalAction(correct);await saveLocalAction(correct);
+  assert.equal((await loadLocalProgress()).progress['fr-001'].seen,1);
+  await saveLocalAction(action('hint'));let p=(await loadLocalProgress()).progress['fr-001'];assert.equal(p.seen,1);assert.equal(p.reviewed_at,0);
+  await saveLocalAction(action('master'));await saveLocalAction(action('answer'));assert.equal((await loadLocalProgress()).progress['fr-001'].mastered,1);
+  await saveLocalAction(action('restore'));assert.equal((await loadLocalProgress()).progress['fr-001'].mastered,0);
+  await Promise.all([saveLocalAction(action('introduce','fr-002')),saveLocalAction(action('introduce','fr-003'))]);
+  assert.equal(Object.keys((await loadLocalProgress()).progress).length,3);
+  const before=disk.get(STORAGE_KEY),retry=action('answer','fr-002','fr-002');fail=true;await assert.rejects(saveLocalAction(retry));assert.equal(disk.get(STORAGE_KEY),before);
+  fail=false;await saveLocalAction(retry);assert.equal((await loadLocalProgress()).progress['fr-002'].correct,1);
+  disk.set(STORAGE_KEY,'broken');await assert.rejects(saveLocalAction(action('introduce')));assert.equal(disk.get(STORAGE_KEY),'broken');
+  console.log('PASS: local persistence, retries, neutral hints, mastery, serialized writes, quota errors and corrupt-data protection.');
+} finally {rmSync(temp,{recursive:true,force:true});}
