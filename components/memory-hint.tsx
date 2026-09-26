@@ -1,9 +1,9 @@
 import type { Word } from "@/lib/words";
 
-const labels = { english: "英语关联", association: "记忆点" };
+const labels = { english: "英语关联", association: "记忆点", playful: "趣味联想" };
 
 export function MemoryHint({ word }: { word: Word }) {
-  // Only render reviewed cues; deferred entries have no placeholder panel.
+  // Playful mnemonics and sourced word histories have separate labels.
   const hint = word.memoryHint;
   if (!hint) return null;
   return <div className="memory-hint" aria-label={`${word.french} 的记忆点`}>
