@@ -3,6 +3,8 @@ import type { Word } from "@/lib/words";
 const labels = { english: "英语关联", association: "记忆点" };
 
 export function MemoryHint({ word }: { word: Word }) {
+  // Only render reviewed cues; deferred entries have no placeholder panel.
+  if (!word.memoryHint) return null;
   return <div className="memory-hint" aria-label={`${word.french} 的记忆点`}>
     <span className="memory-hint-label">{labels[word.memoryHint.kind]}</span>
     <div className="memory-hint-text" lang="zh-CN">{word.memoryHint.text}</div>
