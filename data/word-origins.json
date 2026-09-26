@@ -72,7 +72,7 @@
     ]
   },
   "fr-043": {
-    "text": "fromage 在古法语中曾写作 formage，源头与“模具成形的奶酪”有关。想象把奶酪放进模具定形，就能把它与 forme（形状）联系起来。",
+    "text": "fromage 在古法语中曾写作 formage，源头与“模具成形的奶酪”有关。旧拼写中 form- 的次序，保留了奶酪用模具成形的线索。",
     "sources": [
       {
         "label": "法兰西学院词典",
@@ -224,6 +224,162 @@
       {
         "label": "Larousse",
         "url": "https://www.larousse.fr/dictionnaires/francais/avocat/7135"
+      }
+    ]
+  },
+  "fr-028": {
+    "text": "12 世纪的写法是 fenestre，来自拉丁语中表示窗户的词。现代写成 fenêtre，帽子符号保留了旧拼写中 s 的线索。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9F0457"
+      }
+    ]
+  },
+  "fr-739": {
+    "text": "词典把 robinet 追溯到曾表示绵羊的 robin，并说明早期水龙头常呈羊头形。这里是实际器物造型留下的名称，不必先背另一个法语词。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9R2766"
+      }
+    ]
+  },
+  "fr-1076": {
+    "text": "boiter 经较早的 boiteux 追溯到表示“骨头的窝、关节窝”的词义。这解释了它为何与跛行有关；这里介绍的是语言历史，并不把所有跛行都归因于关节。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9B1477"
+      },
+      {
+        "label": "CNRTL 词源词典",
+        "url": "https://www.cnrtl.fr/etymologie/boiteux"
+      }
+    ]
+  },
+  "fr-1622": {
+    "text": "savon 经拉丁语 sapo 追溯到日耳曼语。法兰西学院词典说，这个古老名称起先用于洗头、染发的制剂。今天它指日常洗手、洗身的肥皂。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9S0661"
+      }
+    ]
+  },
+  "fr-1632": {
+    "text": "Scotch 是注册商标名。3M 的历史记载，1930 年推出了 Scotch 透明胶带；法语日常使用中，品牌名也被用来称呼胶带这一类物品。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9S0885"
+      },
+      {
+        "label": "3M 品牌历史",
+        "url": "https://www.3mcanada.ca/3M/en_CA/about-3m/history/"
+      }
+    ]
+  },
+  "fr-1689": {
+    "text": "这个机构名称在 18 世纪已有记载。更早的词根与“受委派去执行任务的人”有关，后来可指其职务、服务机构或办公场所；日常独立使用时常指警察局。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9C3135"
+      },
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9C3133"
+      }
+    ]
+  },
+  "fr-1647": {
+    "text": "Bougie 是今阿尔及利亚 Béjaïa 的旧法语地名。当地输入欧洲的细蜡曾用于做蜡烛；词典把 bougie 解释为“来自 Bougie 的蜡烛”这一称呼的缩短。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9B1717"
+      }
+    ]
+  },
+  "fr-1386": {
+    "text": "samedi 追溯到拉丁语中表示“安息日之日”的名称，其中又有希腊语“安息日”的来路；名字保留了宗教历法的历史。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9S0322"
+      }
+    ]
+  },
+  "fr-1387": {
+    "text": "dimanche 来自基督教拉丁语，意思是“主的日子”。这个名称保留了星期日与基督教礼拜传统的联系。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9D2525"
+      }
+    ]
+  },
+  "fr-1456": {
+    "text": "midi 由古法语中表示“中间”和“日”的两部分构成，源头可追溯到拉丁语；名字本身就说明了白天的中点。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9M2097"
+      }
+    ]
+  },
+  "fr-1463": {
+    "text": "printemps 由古法语中表示“第一、最初”的部分与 temps（时间、时节）组成，保留了春天是一年初始时节的含义。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9P4336"
+      }
+    ]
+  },
+  "fr-1549": {
+    "text": "法兰西学院词典把 lunette 记为 lune（月亮）的小称形式。现代复数 lunettes 指眼镜；-ette 是这里可辨认的小称词尾。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9L1359"
+      }
+    ]
+  },
+  "fr-1382": {
+    "text": "这个星期名来自拉丁语中“战神玛尔斯 Mars之日”的名称，保留了古代星期命名的历史。日常法语星期名用小写。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9M1062"
+      }
+    ]
+  },
+  "fr-1383": {
+    "text": "这个星期名来自拉丁语中“墨丘利 Mercury之日”的名称，保留了古代星期命名的历史。日常法语星期名用小写。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9M1768"
+      }
+    ]
+  },
+  "fr-1384": {
+    "text": "这个星期名来自拉丁语中“朱庇特 Jupiter之日”的名称，保留了古代星期命名的历史。日常法语星期名用小写。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9J0206"
+      }
+    ]
+  },
+  "fr-1385": {
+    "text": "这个星期名来自拉丁语中“维纳斯 Venus之日”的名称，保留了古代星期命名的历史。日常法语星期名用小写。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9V0355"
       }
     ]
   }
