@@ -49,7 +49,8 @@ pnpm preview   # 本地预览构建结果
 - `lib/words.ts` 汇总词卡；`advanced-words.ts`、`expanded-words.ts`、`daily-words.ts` 扩充内容。
 - `lib/examples*.ts` 保存例句；`data/memory-hints.tsv` 保存记忆点。
 - `data/word-origins.json` 保存有来源链接的词源故事。
-- 记忆点遵循[编辑原则](docs/memory-hint-guidelines.md)：英语关联或更简单的基础词优先，不用陌生派生词互释、生僻法语借词重复、虚构画面、读音或翻译凑数。暂缺项在 `data/memory-hint-gaps.json` 明确记录，生成 `null`，不显示占位栏。
+- 全部 2,100 个词都有记忆点。熟悉的英语关联、简单基础词、谐音、拆字和有梗的小故事都可以用，详见[编辑原则](docs/memory-hint-guidelines.md)。
+- `F:` 开头的自创内容显示为“趣味联想”，不冒充真实词源；`E:` 是英语关联。真实词源另附来源、单独展示。不再隐藏提示或保留空缺，也不用读音规则、单纯翻译凑数。
 - 编辑记忆点或词源后运行 `pnpm generate:memory`，提交生成的 `lib/memory-hints.ts`。
 - 已发布的 `fr-XXX` ID 与顺序不能重排，否则会错配用户进度。增加词卡时也要更新校验数量。
 - `lib/study.ts` 是复习与队列逻辑；`lib/local-progress.ts` 是可替换的存储接口。
