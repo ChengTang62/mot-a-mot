@@ -479,5 +479,36 @@
         "url": "https://www.dictionnaire-academie.fr/article/A9C0177"
       }
     ]
+  },
+  "fr-329": {
+    "text": "12 世纪这个词还写成 des ore mais 三个部分，后来连成了 désormais。这里 ore 是旧时的“现在”，mais 保留的是“更多、再”的旧义，不是今天常见的“但是”。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9D1965"
+      }
+    ]
+  },
+  "fr-059": {
+    "text": "面包店名称里的 boulanger，源头是古皮卡第语中“做圆面包的人”；更早的相关词 bolle 指圆面包。店名因此留下了面包曾经的形状。",
+    "sources": [
+      {
+        "label": "法兰西学院词典",
+        "url": "https://www.dictionnaire-academie.fr/article/A9B1752"
+      }
+    ]
+  },
+  "fr-1553": {
+    "text": "déjeuner 来自表示“打破禁食、结束空腹”的拉丁语词。早期指一天的第一餐；如今法国常用它指午餐，加拿大法语等地区仍可用它指早餐。",
+    "sources": [
+      {
+        "label": "CNRTL 词源词典",
+        "url": "https://www.cnrtl.fr/etymologie/d%C3%A9jeuner"
+      },
+      {
+        "label": "法兰西学院 · 餐名的变化",
+        "url": "https://www.dictionnaire-academie.fr/article/QR_0681"
+      }
+    ]
   }
 }

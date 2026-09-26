@@ -112,7 +112,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-028": {
     "kind": "playful",
-    "text": "抓住 fen，借 fence（围栏）搭桥：给围栏挖个洞装玻璃，硬把它改造成一扇窗。"
+    "text": "fenêtre 开头的 fen 借“风”来记：窗户一开，风就进来。"
   },
   "fr-029": {
     "kind": "english",
@@ -311,8 +311,17 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "museum"
   },
   "fr-059": {
-    "kind": "playful",
-    "text": "boulangerie 开头硬借“布朗”：布朗先生每天烤一屋子面包，他的店就是 boulangerie。"
+    "kind": "association",
+    "text": "boulangerie 的 boul- 可以连到圆圆的面包球；这个词的来历本就与“做圆面包的人”有关。-erie 提醒这是一家店：面包店。",
+    "origin": {
+      "text": "面包店名称里的 boulanger，源头是古皮卡第语中“做圆面包的人”；更早的相关词 bolle 指圆面包。店名因此留下了面包曾经的形状。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9B1752"
+        }
+      ]
+    }
   },
   "fr-060": {
     "kind": "english",
@@ -399,7 +408,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-074": {
     "kind": "playful",
-    "text": "avoir 里有 voir，硬借“我有”这个回声：柜子一开，“我有、我有，这个我也有！”"
+    "text": "把 avoir 的 av 和英语 have 中间的 av 对上：两边都表示“有”，借这两个字母认出它。"
   },
   "fr-075": {
     "kind": "playful",
@@ -1155,12 +1164,12 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "mal（不好）＋ entendu（听到）：听岔了，误会。"
   },
   "fr-261": {
-    "kind": "playful",
-    "text": "logement 开头像 log（木头）：用几根 log 搭个小木屋，好歹有地方住了。"
+    "kind": "english",
+    "text": "用 lodge（住宿、小屋）认 logement：log- 和 lodg- 字形接近，意思也直接连着“住处”。"
   },
   "fr-262": {
-    "kind": "playful",
-    "text": "loyer 借 lawyer（律师）少个 a：房租迟迟不交，房东准备找 lawyer 了。"
+    "kind": "association",
+    "text": "从更基础的 louer（租）接过来：louer 是“租房”这个动作，loyer 是为这件事按月付的钱——房租。"
   },
   "fr-263": {
     "kind": "english",
@@ -1436,8 +1445,17 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "autre（别的）＋ fois（次、时候）：从前的时光。"
   },
   "fr-329": {
-    "kind": "playful",
-    "text": "désormais 末尾 mais 借“买”：旧账清零，立下规矩——从今以后不乱买！"
+    "kind": "association",
+    "text": "dès（从……起）＋古法语 ore（现在）＋mais（再、更多）：从现在起还会继续 → 从今以后。",
+    "origin": {
+      "text": "12 世纪这个词还写成 des ore mais 三个部分，后来连成了 désormais。这里 ore 是旧时的“现在”，mais 保留的是“更多、再”的旧义，不是今天常见的“但是”。",
+      "sources": [
+        {
+          "label": "法兰西学院词典",
+          "url": "https://www.dictionnaire-academie.fr/article/A9D1965"
+        }
+      ]
+    }
   },
   "fr-330": {
     "kind": "association",
@@ -1572,8 +1590,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "联想英语 pensive（沉思的），记 penser。"
   },
   "fr-363": {
-    "kind": "playful",
-    "text": "savoir 开头 sav 借 save（保存）：把知识存进脑子，轮到用时就知道怎么办。"
+    "kind": "english",
+    "text": "tech-savvy 是“懂技术、很在行”；抓住 savvy 的 sav-，savoir 就是“知道、懂”。"
   },
   "fr-364": {
     "kind": "english",
@@ -3137,7 +3155,7 @@ export const memoryHints: Record<string, MemoryHint> = {
   },
   "fr-744": {
     "kind": "playful",
-    "text": "armoire 开头是 arm（胳膊）：伸开两只 arm 试衣服，试完统统挂回衣柜。"
+    "text": "armoire 和 armor（盔甲）很像：把它记成挂盔甲的大衣柜。"
   },
   "fr-745": {
     "kind": "association",
@@ -6222,8 +6240,8 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "couple"
   },
   "fr-1483": {
-    "kind": "playful",
-    "text": "copain 抓住 co，借 co-op（合作）：一起开黑、一起吃饭的搭子，是朋友，也可能慢慢成了恋人。",
+    "kind": "association",
+    "text": "co-（一起）＋ pain（面包）：一起分面包的人，就是朋友。这条“同桌吃饭”的联系来自词源。",
     "origin": {
       "text": "copain 来自古法语 compain，与 compagnon 同源。更早的构词包含“共同”和“面包”，指一起分享面包的人：朋友的名字里，藏着同桌吃饭的亲近。",
       "sources": [
@@ -6524,8 +6542,21 @@ export const memoryHints: Record<string, MemoryHint> = {
     "text": "petit（小）＋ déjeuner（午餐）：把午餐缩成小一份，提前到起床后吃，变成早餐。"
   },
   "fr-1553": {
-    "kind": "playful",
-    "text": "déjeuner 抓住 je，借“借”：同事到中午问“借你饭卡刷一下”，午餐时间到了。"
+    "kind": "english",
+    "text": "déjeuner 的原意是“结束空腹”，和 breakfast 的 break（打破）＋ fast（禁食）是同一种思路。如今在法国通常指吃午饭。",
+    "origin": {
+      "text": "déjeuner 来自表示“打破禁食、结束空腹”的拉丁语词。早期指一天的第一餐；如今法国常用它指午餐，加拿大法语等地区仍可用它指早餐。",
+      "sources": [
+        {
+          "label": "CNRTL 词源词典",
+          "url": "https://www.cnrtl.fr/etymologie/d%C3%A9jeuner"
+        },
+        {
+          "label": "法兰西学院 · 餐名的变化",
+          "url": "https://www.dictionnaire-academie.fr/article/QR_0681"
+        }
+      ]
+    }
   },
   "fr-1554": {
     "kind": "english",
