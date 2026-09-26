@@ -11,7 +11,7 @@
 - 斩掉已会的词，也能斩掉上一词或撤销。
 - 每天复习所有学过且未斩掉的词；独立答对清除当天待复习，设备当地时间零点重置。
 - 错题、用过提示的题排到队尾。提示展示两条例句，不带翻译，不计对错，但仍提供答题反馈。
-- 每词两条双语例句、一个记忆点；40 条附来源的词源故事。
+- 每词两条双语例句；1,551 条有效记忆点、49 条附来源的词源说明。暂缺可靠助记的 549 张卡片隐藏记忆点，不用读音或翻译占位。
 - 单词自动发音、例句发音、慢速播放与答题音效。使用浏览器语音合成，没有抓取或附带音频文件。
 
 ## 本地运行
@@ -49,7 +49,7 @@ pnpm preview   # 本地预览构建结果
 - `lib/words.ts` 汇总词卡；`advanced-words.ts`、`expanded-words.ts`、`daily-words.ts` 扩充内容。
 - `lib/examples*.ts` 保存例句；`data/memory-hints.tsv` 保存记忆点。
 - `data/word-origins.json` 保存有来源链接的词源故事。
-- 记忆点遵循[编辑原则](docs/memory-hint-guidelines.md)：英语关联或更简单的基础词优先，不用陌生派生词互释、虚构画面或搭配凑数。
+- 记忆点遵循[编辑原则](docs/memory-hint-guidelines.md)：英语关联或更简单的基础词优先，不用陌生派生词互释、生僻法语借词重复、虚构画面、读音或翻译凑数。暂缺项在 `data/memory-hint-gaps.json` 明确记录，生成 `null`，不显示占位栏。
 - 编辑记忆点或词源后运行 `pnpm generate:memory`，提交生成的 `lib/memory-hints.ts`。
 - 已发布的 `fr-XXX` ID 与顺序不能重排，否则会错配用户进度。增加词卡时也要更新校验数量。
 - `lib/study.ts` 是复习与队列逻辑；`lib/local-progress.ts` 是可替换的存储接口。
