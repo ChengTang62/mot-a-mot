@@ -6,7 +6,7 @@ import { Switch } from "@/components/ui/switch";
 import { Progress } from "@/components/ui/progress";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { words, wordById, type Word } from "@/lib/words";
-import { advanceQueue, deckLabels, deckWords, dayStart, reviewWords, freshQueue, isInDeck, makeQueue, optionsFor, projectAction, removeUpcomingWord, type Deck, type Mode, type ProgressMap, type StudyQueue, type StudyAction } from "@/lib/study";
+import { advanceQueue, deckLabels, deckWords, dayStart, reviewWords, freshQueue, isInDeck, makeQueue, optionsFor, questionPresentation, type QuestionDirection, projectAction, removeUpcomingWord, type Deck, type Mode, type ProgressMap, type StudyQueue, type StudyAction } from "@/lib/study";
 import { useFrenchAudio } from "@/lib/use-french-audio";
 import { useAnswerSound } from "@/lib/use-answer-sound";
 import { newEventId } from "@/lib/event-id";
@@ -24,6 +24,7 @@ export default function StudyApp(){
   const [loading,setLoading]=useState(true),[loadError,setLoadError]=useState("");
   const [mode,setMode]=useState<Mode>("learn"),[deck,setDeck]=useState<Deck>("core");
   const [round,setRound]=useState<StudyQueue|null>(null);
+  const [direction,setDirection]=useState<QuestionDirection>("fr-zh");
   const [lastResult,setLastResult]=useState<LastResult|null>(null);
   const [pending,setPending]=useState<StudyAction|null>(null),[saving,setSaving]=useState(false),[saveError,setSaveError]=useState("");
   const [autoAudio,setAutoAudio]=useState(true),[now,setNow]=useState(0);
@@ -40,6 +41,7 @@ export default function StudyApp(){
   const speakingWord=activeSpeech?.text===current?.french&&activeSpeech?.slow===false;
   const speakingSlowWord=activeSpeech?.text===current?.french&&activeSpeech?.slow===true;
   const firstEncounter=!!current&&!progress[current.id];
+  const question=current?questionPresentation(current,direction,firstEncounter):null;
   const options=useMemo(()=>current&&!firstEncounter?optionsFor(current):[],[current,round?.index,firstEncounter]);
   const pool=useMemo(()=>deckWords(deck),[deck]);
   const records=Object.values(progress).filter(p=>wordById[p.word_id]&&isInDeck(wordById[p.word_id],deck));
@@ -53,8 +55,9 @@ export default function StudyApp(){
     stop();
     const queue=makeQueue(nextMode,data,nextDeck).filter(w=>!data[w.id]?.mastered);
     setMode(nextMode);setDeck(nextDeck);deckRef.current=nextDeck;
-    setRound(freshQueue(queue));setLastResult(null);setHintWord(null);
-    if(autoRef.current&&queue[0])speak(queue[0].french);
+    const nextDirection:QuestionDirection=Math.random()<0.5?"fr-zh":"zh-fr";
+    setDirection(nextDirection);setRound(freshQueue(queue));setLastResult(null);setHintWord(null);
+    if(autoRef.current&&queue[0]&&questionPresentation(queue[0],nextDirection,!data[queue[0].id]).canPlayWord)speak(queue[0].french);
   },[speak,stop]);
   const load=useCallback(async()=>{
     setLoading(true);setLoadError("");
@@ -119,9 +122,10 @@ export default function StudyApp(){
       target=freshQueue(makeQueue(mode,projected,deck));
     }
     const nextWord=target.queue[target.index];
+    const nextDirection:QuestionDirection=Math.random()<0.5?"fr-zh":"zh-fr";
     const advance=()=>{
-      setLastResult({word:current,kind});setRound(target);setHintWord(null);setAnswerFeedback(null);stop();
-      if(autoRef.current&&nextWord)speak(nextWord.french);
+      setDirection(nextDirection);setLastResult({word:current,kind});setRound(target);setHintWord(null);setAnswerFeedback(null);stop();
+      if(autoRef.current&&nextWord&&questionPresentation(nextWord,nextDirection,!projected[nextWord.id]).canPlayWord)speak(nextWord.french);
     };
     let saved:boolean;
     // Hints change scoring and scheduling, but every answer keeps immediate feedback.
@@ -171,15 +175,15 @@ export default function StudyApp(){
     window.addEventListener("keydown",handle);return()=>window.removeEventListener("keydown",handle);
   },[lock,options,choose]);
   const changeDeck=(value:string)=>{if(lock||!isDeck(value))return;try{localStorage.setItem("mot-deck-v3",value);}catch{}begin(mode,progress,value);};
-  const setAuto=(checked:boolean)=>{autoRef.current=checked;setAutoAudio(checked);try{localStorage.setItem("mot-auto-audio-v2",String(checked));}catch{}if(checked&&current)speak(current.french);else stop();};
+  const setAuto=(checked:boolean)=>{autoRef.current=checked;setAutoAudio(checked);try{localStorage.setItem("mot-auto-audio-v2",String(checked));}catch{}if(checked&&current&&question?.canPlayWord)speak(current.french);else stop();};
 
-  const live=useRef({progress,current,firstEncounter,options,mode,deck,loading,lock,begin,choose,lastResult});
-  live.current={progress,current,firstEncounter,options,mode,deck,loading,lock,begin,choose,lastResult};
+  const live=useRef({progress,current,firstEncounter,direction,options,mode,deck,loading,lock,begin,choose,lastResult});
+  live.current={progress,current,firstEncounter,direction,options,mode,deck,loading,lock,begin,choose,lastResult};
   useEffect(()=>{
     const context=(document as ModelDocument).modelContext;if(!context?.registerTool)return;
     const lifecycle=new AbortController();
     const register=(tool:ModelTool)=>{try{void Promise.resolve(context.registerTool(tool,{signal:lifecycle.signal})).catch(()=>{});}catch{}};
-    const read=()=>{const x=live.current;return {mode:x.mode,deck:x.deck,loading:x.loading,presentation:x.current?(x.firstEncounter?"introduction":"question"):null,mastered:Object.values(x.progress).filter(p=>p.mastered).length,word:x.current?{id:x.current.id,french:x.current.french,...(x.firstEncounter?{meaning:x.current.meaning,examples:x.current.examples}:{})}:null,options:x.options.map(w=>({id:w.id,meaning:w.meaning})),lastResult:x.lastResult?{word:x.lastResult.word.french,result:x.lastResult.kind,meaning:x.lastResult.word.meaning,examples:x.lastResult.word.examples}:null};};
+    const read=()=>{const x=live.current;return {mode:x.mode,deck:x.deck,loading:x.loading,presentation:x.current?(x.firstEncounter?"introduction":"question"):null,mastered:Object.values(x.progress).filter(p=>p.mastered).length,word:x.current?{id:x.current.id,...(questionPresentation(x.current,x.direction,x.firstEncounter).reverse?{meaning:x.current.meaning}:{french:x.current.french}),...(x.firstEncounter?{meaning:x.current.meaning,examples:x.current.examples}:{})}:null,direction:x.firstEncounter?null:x.direction,options:x.options.map(w=>({id:w.id,...(x.direction==="zh-fr"?{french:w.french}:{meaning:w.meaning})})),lastResult:x.lastResult?{word:x.lastResult.word.french,result:x.lastResult.kind,meaning:x.lastResult.word.meaning,examples:x.lastResult.word.examples}:null};};
     const settled=()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
     register({name:"read_french_study",description:"Read the current French question, previous answer and progress.",inputSchema:{type:"object",properties:{},additionalProperties:false},annotations:{readOnlyHint:true},execute:()=>read()});
     register({name:"start_french_round",description:"Start continuous study or review from the selected deck.",inputSchema:{type:"object",properties:{mode:{type:"string",enum:["learn","review"]},deck:{type:"string",enum:["core","basic","intermediate","all"]}},required:["mode"],additionalProperties:false},annotations:{readOnlyHint:false},execute:async(input)=>{const {mode:m,deck:d}=(input||{}) as {mode:unknown;deck?:unknown};if(m!=="learn"&&m!=="review")throw new Error("Invalid mode");if(d!==undefined&&!isDeck(d))throw new Error("Invalid deck");const x=live.current;if(x.lock)throw new Error("Wait for progress to save or load.");x.begin(m,x.progress,(d||x.deck) as Deck);await settled();return read();}});
@@ -197,22 +201,23 @@ export default function StudyApp(){
     </div>
     <p><span lang="fr">{lastResult.word.french}</span><span>{lastResult.word.meaning}</span></p>
     {lastResult.kind!=="master"&&<button type="button" className="master-button previous-master" disabled={lock} onClick={()=>void masterPrevious()} aria-label={`斩掉上一词 ${lastResult.word.french}`}><Scissors size={16}/>斩掉上一词</button>}
+    <button type="button" className="audio-button" onClick={()=>speak(lastResult.word.french)} aria-label="重听上一词的法语发音"><Volume2 size={16}/>重听上一词</button>
     <ExampleSentences word={lastResult.word} speak={speak} activeSpeech={activeSpeech} compact/>
   </div>;
   const saveFailure=saveError&&<div className="save-error" role="alert">{saveError}<button className="retry" disabled={saving} onClick={()=>pending&&void persist(pending)}>重试保存</button></div>;
   const content=()=>{
     if(loading)return <div className="card empty-state"><Loader2 className="spinner" size={26}/><p>正在读取学习进度…</p></div>;
     if(loadError)return <div className="card empty-state"><BookOpen size={30}/><h2>暂时无法读取进度</h2><p>{loadError}</p><button className="primary-button" onClick={()=>void load()}>重试</button></div>;
-    if(!current)return <div className="card"><div className="empty-state"><CheckCircle2 size={34}/><h2>{mode==="review"?(hasReviewWords?"今日复习完成":"当前词库还没有可复习的词"):"当前词库暂时没有新词"}</h2><p>{mode==="review"?(hasReviewWords?"今天的词都已独立答对，待复习已清零。明天会自动重新加入。":"学过且未斩掉的词会加入每日复习。"):"可以切换词库，或复习还没斩掉的词。"}</p><button disabled={lock} className="primary-button" onClick={()=>begin(mode==="review"?"learn":"review",progress,deck)}>{mode==="review"?"去学习":"去复习"}</button></div><div className="end-previous">{previous}{saveFailure}</div></div>;
+    if(!current||!question)return <div className="card"><div className="empty-state"><CheckCircle2 size={34}/><h2>{mode==="review"?(hasReviewWords?"今日复习完成":"当前词库还没有可复习的词"):"当前词库暂时没有新词"}</h2><p>{mode==="review"?(hasReviewWords?"今天的词都已独立答对，待复习已清零。明天会自动重新加入。":"学过且未斩掉的词会加入每日复习。"):"可以切换词库，或复习还没斩掉的词。"}</p><button disabled={lock} className="primary-button" onClick={()=>begin(mode==="review"?"learn":"review",progress,deck)}>{mode==="review"?"去学习":"去复习"}</button></div><div className="end-previous">{previous}{saveFailure}</div></div>;
 
     const repeat=!!round&&round.queue.slice(0,round.index).some(w=>w.id===current.id);
-    return <section className={`card ${answerFeedback?(answerFeedback.correct?"answer-correct":"answer-wrong"):""}`} aria-label={firstEncounter?"新词展示卡":"法语选择题"}>
+    return <section className={`card ${answerFeedback?(answerFeedback.correct?"answer-correct":"answer-wrong"):""}`} aria-label={firstEncounter?"新词展示卡":question.reverse?"看中文选法语":"看法语选中文"}>
       <div className="round-line"><span>{firstEncounter?"初次见面 · 先认识这个词":repeat?"再记一次":mode==="review"?"复习已学词":"连续学习"}</span></div>
       <div className="question">
         <div className="word-meta"><span>{current.category}</span><span>{current.kind}</span></div>
-        <h2 lang="fr" className={`word ${current.french.length>15?"long":""}`}>{current.french}</h2>
+        <h2 lang={question.reverse?"zh-CN":"fr"} className={`word ${question.prompt.length>15||question.reverse?"long":""}`}>{question.prompt}</h2>
         {firstEncounter&&<p className="intro-meaning">{current.meaning}</p>}
-        <div className="audio-controls"><button className={`audio-button ${speakingWord?"speaking":""}`} onClick={()=>speak(current.french)} aria-label={`播放 ${current.french} 的法语发音`}><Volume2 size={17}/>{speakingWord?"播放中":needsGesture?"开启发音":"重听"}</button><button className={`slow-button ${speakingSlowWord?"speaking":""}`} onClick={()=>speak(current.french,true)} aria-label="慢速播放法语发音" aria-pressed={speakingSlowWord}><Snail size={17}/>{speakingSlowWord?"慢速播放中":"慢速"}</button></div>
+        {question.canPlayWord&&<div className="audio-controls"><button className={`audio-button ${speakingWord?"speaking":""}`} onClick={()=>speak(current.french)} aria-label={`播放 ${current.french} 的法语发音`}><Volume2 size={17}/>{speakingWord?"播放中":needsGesture?"开启发音":"重听"}</button><button className={`slow-button ${speakingSlowWord?"speaking":""}`} onClick={()=>speak(current.french,true)} aria-label="慢速播放法语发音" aria-pressed={speakingSlowWord}><Snail size={17}/>{speakingSlowWord?"慢速播放中":"慢速"}</button></div>}
         {firstEncounter&&<ExampleSentences word={current} speak={speak} activeSpeech={activeSpeech}/>}
         {audioError&&<p className="audio-error" role="status">{audioError}</p>}
       </div>
@@ -221,17 +226,17 @@ export default function StudyApp(){
           <button className="next-button" disabled={lock} onClick={()=>void choose(null,"introduce")}>记住了，下一词</button>
           <button className="master-button" disabled={lock} onClick={()=>void choose(null,"master")}><Scissors size={17}/>斩掉 · 这个词我会了</button>
         </div>:<>
-          <p className={`prompt ${answerFeedback?"answer-verdict":""}`} role="status" aria-live="polite">{answerFeedback?<span>{answerFeedback.correct?<CheckCircle2 size={18}/>:<X size={18}/>} {answerFeedback.correct?"答对了！":`答错了 · 正确：${current.meaning}`}</span>:<>选择对应的中文意思 <button type="button" className="hint-button" disabled={lock||hintWord===current.id} onClick={()=>void showHint()} aria-expanded={hintWord===current.id} aria-controls="word-hint"><Lightbulb size={16}/>{hintWord===current.id?"已提示":"提示"}</button></>}</p>
+          <p className={`prompt ${answerFeedback?"answer-verdict":""}`} role="status" aria-live="polite">{answerFeedback?<span>{answerFeedback.correct?<CheckCircle2 size={18}/>:<X size={18}/>} {answerFeedback.correct?"答对了！":`答错了 · 正确：${question.answer}`}</span>:<>{question.instruction} <button type="button" className="hint-button" disabled={lock||hintWord===current.id} onClick={()=>void showHint()} aria-expanded={hintWord===current.id} aria-controls="word-hint"><Lightbulb size={16}/>{hintWord===current.id?"已提示":"提示"}</button></>}</p>
           {hintWord===current.id&&<aside id="word-hint" className="word-hint" role="note" aria-label="法语例句提示">
             {current.examples.map((example,index)=><p key={index} lang="fr">{example.french}</p>)}
             <MemoryHint word={current}/>
           </aside>}
-          <div className="option-grid">{options.map((option,i)=>{const right=!!answerFeedback&&option.id===current.id,wrong=!!answerFeedback&&!answerFeedback.correct&&option.id===answerFeedback.selectedId;return <button key={option.id} disabled={lock} className={`option ${answerFeedback?(right?"correct answered":wrong?"wrong answered":"dimmed"):""}`} onClick={()=>void choose(option.id)} aria-label={`${i+1}. ${option.meaning}`}><span className="option-letter" aria-hidden="true">{String.fromCharCode(65+i)}</span><span className="option-label">{option.meaning}</span>{right?<Check size={20}/>:wrong?<X size={20}/>:null}</button>;})}</div>
+          <div className="option-grid">{options.map((option,i)=>{const right=!!answerFeedback&&option.id===current.id,wrong=!!answerFeedback&&!answerFeedback.correct&&option.id===answerFeedback.selectedId;return <button key={option.id} disabled={lock} className={`option ${answerFeedback?(right?"correct answered":wrong?"wrong answered":"dimmed"):""}`} onClick={()=>void choose(option.id)} aria-label={`${i+1}. ${question.reverse?option.french:option.meaning}`}><span className="option-letter" aria-hidden="true">{String.fromCharCode(65+i)}</span><span className="option-label" lang={question.reverse?"fr":"zh-CN"}>{question.reverse?option.french:option.meaning}</span>{right?<Check size={20}/>:wrong?<X size={20}/>:null}</button>;})}</div>
           <div className="quick-actions"><button className="unknown" disabled={lock} onClick={()=>void choose(null)}>不认识</button><button className="master-button" disabled={lock} onClick={()=>void choose(null,"master")}><Scissors size={17}/>斩掉 · 这个词我会了</button></div>
         </>}
         {saveFailure}{previous}
       </div>
     </section>;
   };
-  return <div className="app"><header className="topbar"><div className="brand"><span className="brandmark" aria-hidden="true">m.</span><div><h1 lang="fr">Mot à Mot</h1><p>法语词卡</p></div></div><div className="language"><Globe2 size={17}/><b>Français</b><span>· 中文</span></div></header><main className="layout"><div><Tabs className="practice-tabs" value={mode} onValueChange={value=>{if(!lock)begin(value as Mode,progress,deck);}}><div className="tabbar"><TabsList className="study-tabs" aria-label="练习方式"><TabsTrigger className="study-tab" value="learn" disabled={lock}><BookOpen size={16}/>学习</TabsTrigger><TabsTrigger className="study-tab" value="review" disabled={lock}><RotateCcw size={16}/>复习<span className="count-pill">{reviewable}</span></TabsTrigger></TabsList><Select value={deck} onValueChange={changeDeck} disabled={lock}><SelectTrigger className="deck-select" aria-label="选择词库"><SelectValue/></SelectTrigger><SelectContent>{(["core","intermediate","basic","all"] as Deck[]).map(d=><SelectItem key={d} value={d}>{deckLabels[d]} · {deckWords(d).length} 词</SelectItem>)}</SelectContent></Select></div><TabsContent value={mode}>{content()}</TabsContent></Tabs><div className="practice-footer"><div className="sound-settings"><label className="auto-label" htmlFor="auto-audio"><Switch id="auto-audio" className="auto-switch" checked={autoAudio} onCheckedChange={setAuto} disabled={!!answerFeedback}/>自动发音</label><label className="auto-label" htmlFor="answer-sounds"><Switch id="answer-sounds" className="auto-switch" checked={soundEffects} onCheckedChange={checked=>{setSoundEffects(checked);try{localStorage.setItem("mot-answer-sounds",String(checked));}catch{}}}/>答题音效</label></div><span className="autosave"><ShieldCheck size={14}/>{saveError?"等待重试":saving?"正在保存":loading?"读取进度中":loadError?"进度未连接":"已保存到本机"}</span></div></div><aside className="side" aria-label="学习概览"><div><p className="side-kicker">MON VOCABULAIRE</p><h2>{deckLabels[deck]}</h2><p className="side-subtitle">当前 {pool.length.toLocaleString()} 词 · 总词库 {words.length.toLocaleString()} 词</p><p className="vocabulary-hint">{deck==="core"?"日常沟通优先 · 常用词与表达":deck==="intermediate"?"保留原词库中的专题与书面表达":"词汇与常用表达"}</p></div><dl className="stats"><div><dt>已经练过</dt><dd>{loading?"—":learned}<span>词</span></dd></div><div><dt>今日待复习</dt><dd>{loading?"—":reviewable}<span>词</span></dd></div><div><dt>已经斩掉</dt><dd>{loading?"—":mastered}<span>词</span></dd></div><div><dt>还未学习</dt><dd>{loading?"—":pool.length-covered}<span>词</span></dd></div></dl><Progress className="deck-progress" value={covered/pool.length*100} aria-label="词库学习进度"/><div className="deck-progress-label"><span>当前词组进度</span><span>{covered} / {pool.length}</span></div><div className="note"><Clock3 size={18}/><p><strong>新词先看释义，再做练习。</strong><br/>看完点“记住了，下一词”，稍后再选意思。答题后自动进入下一词。</p></div><div className="note"><Headphones size={18}/><p>每天复习所有已学且未斩掉的词。<br/>独立答对后移出今日待复习；答错或用提示，排到队尾。<br/>按设备当地时间，每天零点更新。</p></div></aside></main><p className="app-footnote">Mot à mot · 一个词，一个词地学。<br/>进度仅保存在此浏览器，清除网站数据会丢失，不会跨设备同步。<br/><span className="frequency-credit">选词参考 <a href="https://github.com/chrplr/openlexicon/blob/master/datasets-info/Lexique383/README-Lexique.md" target="_blank" rel="noreferrer">Lexique 3</a> 字幕词频 · 按生活用途筛选<br/>词频数据 © New &amp; Pallier · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a></span></p></div>;
+  return <div className="app"><header className="topbar"><div className="brand"><span className="brandmark" aria-hidden="true">m.</span><div><h1 lang="fr">Mot à Mot</h1><p>法语词卡</p></div></div><div className="language"><Globe2 size={17}/><b>Français</b><span>· 中文</span></div></header><main className="layout"><div><Tabs className="practice-tabs" value={mode} onValueChange={value=>{if(!lock)begin(value as Mode,progress,deck);}}><div className="tabbar"><TabsList className="study-tabs" aria-label="练习方式"><TabsTrigger className="study-tab" value="learn" disabled={lock}><BookOpen size={16}/>学习</TabsTrigger><TabsTrigger className="study-tab" value="review" disabled={lock}><RotateCcw size={16}/>复习<span className="count-pill">{reviewable}</span></TabsTrigger></TabsList><Select value={deck} onValueChange={changeDeck} disabled={lock}><SelectTrigger className="deck-select" aria-label="选择词库"><SelectValue/></SelectTrigger><SelectContent>{(["core","intermediate","basic","all"] as Deck[]).map(d=><SelectItem key={d} value={d}>{deckLabels[d]} · {deckWords(d).length} 词</SelectItem>)}</SelectContent></Select></div><TabsContent value={mode}>{content()}</TabsContent></Tabs><div className="practice-footer"><div className="sound-settings"><label className="auto-label" htmlFor="auto-audio"><Switch id="auto-audio" className="auto-switch" checked={autoAudio} onCheckedChange={setAuto} disabled={!!answerFeedback}/>自动发音</label><label className="auto-label" htmlFor="answer-sounds"><Switch id="answer-sounds" className="auto-switch" checked={soundEffects} onCheckedChange={checked=>{setSoundEffects(checked);try{localStorage.setItem("mot-answer-sounds",String(checked));}catch{}}}/>答题音效</label></div><span className="autosave"><ShieldCheck size={14}/>{saveError?"等待重试":saving?"正在保存":loading?"读取进度中":loadError?"进度未连接":"已保存到本机"}</span></div></div><aside className="side" aria-label="学习概览"><div><p className="side-kicker">MON VOCABULAIRE</p><h2>{deckLabels[deck]}</h2><p className="side-subtitle">当前 {pool.length.toLocaleString()} 词 · 总词库 {words.length.toLocaleString()} 词</p><p className="vocabulary-hint">{deck==="core"?"日常沟通优先 · 常用词与表达":deck==="intermediate"?"保留原词库中的专题与书面表达":"词汇与常用表达"}</p></div><dl className="stats"><div><dt>已经练过</dt><dd>{loading?"—":learned}<span>词</span></dd></div><div><dt>今日待复习</dt><dd>{loading?"—":reviewable}<span>词</span></dd></div><div><dt>已经斩掉</dt><dd>{loading?"—":mastered}<span>词</span></dd></div><div><dt>还未学习</dt><dd>{loading?"—":pool.length-covered}<span>词</span></dd></div></dl><Progress className="deck-progress" value={covered/pool.length*100} aria-label="词库学习进度"/><div className="deck-progress-label"><span>当前词组进度</span><span>{covered} / {pool.length}</span></div><div className="note"><Clock3 size={18}/><p><strong>新词先看释义，再做练习。</strong><br/>看完点“记住了，下一词”。练习混合看法语选中文、看中文选法语，答完自动下一题。</p></div><div className="note"><Headphones size={18}/><p>每天复习所有已学且未斩掉的词。<br/>独立答对后移出今日待复习；答错或用提示，排到队尾。<br/>按设备当地时间，每天零点更新。</p></div></aside></main><p className="app-footnote">Mot à mot · 一个词，一个词地学。<br/>进度仅保存在此浏览器，清除网站数据会丢失，不会跨设备同步。<br/><span className="frequency-credit">选词参考 <a href="https://github.com/chrplr/openlexicon/blob/master/datasets-info/Lexique383/README-Lexique.md" target="_blank" rel="noreferrer">Lexique 3</a> 字幕词频 · 按生活用途筛选<br/>词频数据 © New &amp; Pallier · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a></span></p></div>;
 }
