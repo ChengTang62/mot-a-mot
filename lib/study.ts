@@ -166,3 +166,15 @@ export function optionsFor(word:Word):Word[]{
   }
   return shuffled([word,...distractors]);
 }
+
+export type QuestionDirection="fr-zh"|"zh-fr";
+export function questionPresentation(word:Word,direction:QuestionDirection,firstEncounter=false){
+  const reverse=!firstEncounter&&direction==="zh-fr";
+  return {
+    reverse,
+    prompt:reverse?word.meaning:word.french,
+    answer:reverse?word.french:word.meaning,
+    instruction:reverse?"选择对应的法语词语":"选择对应的中文意思",
+    canPlayWord:!reverse,
+  };
+}
